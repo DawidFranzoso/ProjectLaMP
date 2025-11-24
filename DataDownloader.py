@@ -53,8 +53,10 @@ class DataDownloader:
 
         with open(filepath, "w") as f:
             delimiter = "id"
-            for line in data_stream.iter_lines(decode_unicode=True, delimiter=delimiter):
-                line += delimiter
+            for line_no, line in enumerate(data_stream.iter_lines(decode_unicode=True, delimiter=delimiter)):
+                if line_no != 0:
+                    line = delimiter + line
+
                 print(line)
                 f.write(line)
 
