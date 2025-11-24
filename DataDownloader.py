@@ -1,7 +1,7 @@
 import json
 import os
 from dataclasses import dataclass
-from typing import Literal
+from typing import Literal, List
 import requests
 
 
@@ -52,15 +52,17 @@ class DataDownloader:
             data_stream.encoding = 'utf-8'
 
         with open(filepath, "w") as f:
-            for line in data_stream.iter_lines(decode_unicode=True, delimiter='{"id": '):
-                if line:
-                    print(line)
-                    f.write(line)
+            for line in data_stream.iter_lines(decode_unicode=True, delimiter="id"):
+                print(line)
+                f.write(line)
 
         print(f"Downloaded: {filepath}")
 
     @staticmethod
-    def maybe_download_all(force: bool = False):
+    def maybe_download_all(tasks: List[int] = None, force: bool = False):
+        if tasks is None:
+            tasks = list(range(1, 1 + 7))
+
         # noinspection PyTypeChecker
         [
             DataDownloader.maybe_download_entry(
@@ -72,7 +74,7 @@ class DataDownloader:
                 ),
                 force=force,
             )
-            for task_number in range(1, 1 + 7)
+            for task_number in tasks
             for split_name in ["training", "validation", "test"]
             for is_time_based in [False, True]
             for is_output in [False, True]
