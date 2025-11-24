@@ -3,9 +3,9 @@
 
 #SBATCH --ntasks=1                   # All #SBATCH commands need to be uninterrupted (by newlines too)
 #SBATCH --nodes=1
-#SBATCH --mem=20G
+#SBATCH --mem=10G
 #SBATCH --gres=gpu:1
-#SBATCH --time=01:00:00
+#SBATCH --time=10:00
 #SBATCH --account=p_scads_finetune
 #SBATCH --job-name=fancyExp
 #SBATCH --output=simulation-%j.out
