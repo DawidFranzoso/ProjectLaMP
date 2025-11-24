@@ -1,3 +1,4 @@
+import json
 import os
 from dataclasses import dataclass
 from typing import Literal
@@ -45,10 +46,16 @@ class DataDownloader:
 
         print(f"Downloading: {filepath}")
 
-        request_data = requests.get(entry.get_url())
+        data_stream = requests.get(entry.get_url(), stream=True)
+
+        if data_stream.encoding is None:
+            data_stream.encoding = 'utf-8'
 
         with open(filepath, "w") as f:
-            f.write(request_data.content)
+            for line in data_stream.iter_lines(decode_unicode=True, delimiter='{"id": '):
+                if line:
+                    print(line)
+                    f.write(line)
 
         print(f"Downloaded: {filepath}")
 
