@@ -6,7 +6,7 @@
 #SBATCH --mem=20G
 #SBATCH --gres=gpu:1
 #SBATCH --time=01:00:00
-#SBATCH --account=<KTR>
+#SBATCH --account=dafr579c
 #SBATCH --job-name=fancyExp
 #SBATCH --output=simulation-%j.out
 #SBATCH --error=simulation-%j.err
