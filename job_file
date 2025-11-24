@@ -16,5 +16,5 @@
 module purge                          # Set up environment, e.g., clean/switch modules environment
 # module load pytorch                   # load necessary modules
 
-srun --gres=gpu:1 echo "Hello"
+srun --gres=gpu:1 -c 1 --nodes=1 --mem=10G echo "Hello"
 # srun ./application [options]          # Execute parallel application with srun
