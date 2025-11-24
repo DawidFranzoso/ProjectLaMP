@@ -13,6 +13,7 @@
 #SBATCH --partition=capella-interactive  # my job is small
 
 module purge                          # Set up environment, e.g., clean/switch modules environment
-module load pytorch                   # load necessary modules
+# module load pytorch                   # load necessary modules
 
-srun ./application [options]          # Execute parallel application with srun
+srun echo "Hello"
+# srun ./application [options]          # Execute parallel application with srun
