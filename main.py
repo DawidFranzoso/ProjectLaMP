@@ -216,6 +216,7 @@ with device:
 
     for total_steps, contrastive_sample in enumerate(contrastive_sample_generator(dataset=dataset, batch_size=64), start=1):
         with torch.enable_grad():
+            print(total_steps)
             predicted_styles = {
                 sample_role: predict_style_tensor(
                     encoder_input=data["input_ids"].to(device),
