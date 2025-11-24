@@ -9,7 +9,7 @@ DataDownloader.maybe_download_all(tasks=[7])
 x, y = [
     DataDownloader.DataEntry(
         task_number=7,
-        split_name="training",
+        split_name="validation",
         is_time_based=False,
         is_output=is_output,
     ).load_json() for is_output in (False, True)
