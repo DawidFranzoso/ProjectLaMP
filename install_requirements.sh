@@ -1,0 +1,1 @@
+pip install -r LaMP/requirements.txt -r PEFT/requirements.txt -r ROPG/requirements.txt -r RSPG/requirements.txt
