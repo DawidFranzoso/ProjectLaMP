@@ -8,7 +8,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --time=10:00
 #SBATCH --account=p_scads_finetune
-#SBATCH --job-name=fancyExp
+#SBATCH --job-name=lamp_finetuning
 #SBATCH --output=simulation-%j.out
 #SBATCH --error=simulation-%j.err
 #SBATCH --partition=capella-interactive  # my job is small
@@ -16,5 +16,5 @@
 module purge                          # Set up environment, e.g., clean/switch modules environment
 # module load pytorch                   # load necessary modules
 
-srun echo "Hello"
+srun echo "Hello" --gres=gpu:1
 # srun ./application [options]          # Execute parallel application with srun
