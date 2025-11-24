@@ -23,7 +23,9 @@ torch.manual_seed(42)
 
 wandb_api_key = os.environ.get("WANDB_API_KEY", None)
 device = torch.device(os.environ.get("DEVICE", "cuda"))
+model_size = os.environ.get("MODEL_SIZE", "xxl")
 
+run_name = f"{datetime.now().replace(microsecond=0)}"
 if wandb_api_key is not None:
     wandb.login(key=wandb_api_key)
     wandb.init(
@@ -37,7 +39,7 @@ if wandb_api_key is not None:
         reinit=True,
         # tags=[f"hp_opt{hp_optimizer_run_id}"] + [[], ["hp_opt_baseline"]][hp_constant_run_id == 1],
         # group=f"hp_opt{hp_optimizer_run_id}",
-        name=f"{datetime.now().replace(microsecond=0)}",
+        name=run_name,
         # notes=None,
         # magic=None,
         # config_exclude_keys=None,
@@ -95,8 +97,9 @@ def load_model(size: str = "small"):
     return model, tokenizer
 
 
-style_oracle, style_oracle_tokenizer = load_model(size="small")
-prediction_model, prediction_tokenizer = load_model(size="small")
+style_oracle, style_oracle_tokenizer = load_model(size=model_size)
+# prediction_model, prediction_tokenizer = load_model(size=model_size)
+
 
 # since I am training it on ZIH I allow myself to be computation-inefficient for ease of development
 def get_contrastive_index_pairs(dataset_length: int):
@@ -251,3 +254,6 @@ with device:
             if wandb_api_key is not None:
                 wandb.log(metrics_dict)
             steps_metric *= 0  # resets metrics
+            model_filepath = f"outputs/style_oracle/{run_name}_step{total_steps}.pt"
+            os.makedirs("/".join(model_filepath.split("/")[:-1]), exist_ok=True)
+            torch.save(obj=style_oracle, f=model_filepath)
