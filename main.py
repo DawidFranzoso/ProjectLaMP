@@ -4,7 +4,7 @@ from DataDownloader import DataDownloader
 from eval.evaluation import LaMPEvaluation
 import json
 
-DataDownloader.maybe_download_all(tasks=[7], force=True)
+DataDownloader.maybe_download_all(tasks=[7])
 
 x, y = [
     DataDownloader.DataEntry(
