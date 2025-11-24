@@ -38,14 +38,14 @@ class DataDownloader:
         filename = filepath.split("/")[-1]
         dirpath = "/".join(filepath.split("/")[:-1])
 
-        print(f"Downloading: {filepath}")
-
-        request_data = requests.get(entry.get_url())
-
         os.makedirs(dirpath, exist_ok=True)
 
         if filename in os.listdir(dirpath) and not force:
             return
+
+        print(f"Downloading: {filepath}")
+
+        request_data = requests.get(entry.get_url())
 
         with open(filepath, "w") as f:
             f.write(request_data.content)
