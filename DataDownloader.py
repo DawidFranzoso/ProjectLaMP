@@ -33,9 +33,9 @@ class DataDownloader:
                 f"/{self.split_name}/{'y' if self.is_output else 'x'}.json"
             )
 
-        def load_json(self):
+        def load_json(self) -> dict:
             with open(self.get_filename()) as f:
-                return "\n".join(f.readlines())
+                return json.load(f)
 
     @staticmethod
     def maybe_download_entry(entry: DataEntry, force: bool = False):

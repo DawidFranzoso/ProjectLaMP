@@ -4,7 +4,7 @@ from DataDownloader import DataDownloader
 from eval.evaluation import LaMPEvaluation
 import json
 
-DataDownloader.maybe_download_all(tasks=[7])
+DataDownloader.maybe_download_all(tasks=[7], force=True)
 
 x, y = [
     DataDownloader.DataEntry(
@@ -16,9 +16,9 @@ x, y = [
 ]
 
 print("X:")
-print(x[-7000:])
+print(str(x)[-7000:])
 print("Y:")
-print(y[-7000:])
+print(str(y)[-7000:])
 
 """
 
