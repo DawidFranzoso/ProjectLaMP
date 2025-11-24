@@ -12,7 +12,7 @@ x, y = [
         split_name="training",
         is_time_based=False,
         is_output=is_output,
-    ) for is_output in (False, True)
+    ).load_json() for is_output in (False, True)
 ]
 
 print("X:")
