@@ -52,7 +52,9 @@ class DataDownloader:
             data_stream.encoding = 'utf-8'
 
         with open(filepath, "w") as f:
-            for line in data_stream.iter_lines(decode_unicode=True, delimiter="id"):
+            delimiter = "id"
+            for line in data_stream.iter_lines(decode_unicode=True, delimiter=delimiter):
+                line += delimiter
                 print(line)
                 f.write(line)
 
