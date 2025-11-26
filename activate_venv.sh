@@ -1,1 +1,1 @@
-source bin/activate
+source ../bin/activate
