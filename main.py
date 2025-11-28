@@ -91,8 +91,8 @@ dataset = list(dataset)  # the task7 dataset is very small so it's ok
 
 
 def load_model(size: str = "small"):
-    model = AutoModelForSeq2SeqLM.from_pretrained(f"google/flan-t5-{size}").to(device)
-    tokenizer = AutoTokenizer.from_pretrained(f"google/flan-t5-{size}")
+    model = AutoModelForSeq2SeqLM.from_pretrained(f"google/flan-t5-{size}", cache_dir="..").to(device)
+    tokenizer = AutoTokenizer.from_pretrained(f"google/flan-t5-{size}", cache_dir="..")
 
     return model, tokenizer
 
