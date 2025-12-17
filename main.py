@@ -28,6 +28,7 @@ wandb_api_key = os.environ.get("WANDB_API_KEY", None)
 device = torch.device(os.environ.get("DEVICE", "cuda"))
 print(f"{torch.cuda.is_available() = }")
 print(f"{wandb_api_key=}")
+print(f"{torch.__version__=}")
 model_size = os.environ.get("MODEL_SIZE", "xxl")
 
 run_name = f"{datetime.now().replace(microsecond=0)}"
