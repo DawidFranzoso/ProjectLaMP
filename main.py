@@ -3,7 +3,6 @@ import json
 import os
 import random
 from datetime import datetime
-from inspect import Parameter
 import torch.cuda
 
 import torch.optim
@@ -28,6 +27,7 @@ torch.manual_seed(42)
 wandb_api_key = os.environ.get("WANDB_API_KEY", None)
 device = torch.device(os.environ.get("DEVICE", "cuda"))
 print(f"{torch.cuda.is_available() = }")
+print(f"{wandb_api_key=}")
 model_size = os.environ.get("MODEL_SIZE", "xxl")
 
 run_name = f"{datetime.now().replace(microsecond=0)}"
