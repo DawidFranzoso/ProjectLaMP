@@ -1,0 +1,3815 @@
+[{
+    "total_steps": 10,
+    "total_samples": 640,
+    "loss": -0.03359615057706833,
+    "positive_similarity": 0.5809988975524902,
+    "negative_similarity": 0.5473987460136414
+},
+{
+    "total_steps": 20,
+    "total_samples": 1280,
+    "loss": -0.03286072984337807,
+    "positive_similarity": 0.5808475017547607,
+    "negative_similarity": 0.547984778881073
+},
+{
+    "total_steps": 30,
+    "total_samples": 1920,
+    "loss": -0.03337961807847023,
+    "positive_similarity": 0.5839565992355347,
+    "negative_similarity": 0.5505597591400146
+},
+{
+    "total_steps": 40,
+    "total_samples": 2560,
+    "loss": -0.03481212630867958,
+    "positive_similarity": 0.5853399038314819,
+    "negative_similarity": 0.550491988658905
+},
+{
+    "total_steps": 50,
+    "total_samples": 3200,
+    "loss": -0.033623453229665756,
+    "positive_similarity": 0.5847471952438354,
+    "negative_similarity": 0.55109041929245
+},
+{
+    "total_steps": 60,
+    "total_samples": 3840,
+    "loss": -0.03462887927889824,
+    "positive_similarity": 0.5846149921417236,
+    "negative_similarity": 0.5499582886695862
+},
+{
+    "total_steps": 70,
+    "total_samples": 4480,
+    "loss": -0.03485982492566109,
+    "positive_similarity": 0.5837533473968506,
+    "negative_similarity": 0.5488591194152832
+},
+{
+    "total_steps": 80,
+    "total_samples": 5120,
+    "loss": -0.03521110117435455,
+    "positive_similarity": 0.5833473205566406,
+    "negative_similarity": 0.5481048822402954
+},
+{
+    "total_steps": 90,
+    "total_samples": 5760,
+    "loss": -0.03525977209210396,
+    "positive_similarity": 0.5822332501411438,
+    "negative_similarity": 0.5469455718994141
+},
+{
+    "total_steps": 100,
+    "total_samples": 6400,
+    "loss": -0.03570817410945892,
+    "positive_similarity": 0.5816527605056763,
+    "negative_similarity": 0.545917272567749
+},
+{
+    "total_steps": 110,
+    "total_samples": 7040,
+    "loss": -0.03623247146606445,
+    "positive_similarity": 0.5808299779891968,
+    "negative_similarity": 0.5445662140846252
+},
+{
+    "total_steps": 120,
+    "total_samples": 7680,
+    "loss": -0.03720243275165558,
+    "positive_similarity": 0.5801113843917847,
+    "negative_similarity": 0.5428802371025085
+},
+{
+    "total_steps": 130,
+    "total_samples": 8320,
+    "loss": -0.03729874640703201,
+    "positive_similarity": 0.5782259702682495,
+    "negative_similarity": 0.5408994555473328
+},
+{
+    "total_steps": 140,
+    "total_samples": 8960,
+    "loss": -0.037387456744909286,
+    "positive_similarity": 0.577094554901123,
+    "negative_similarity": 0.5396812558174133
+},
+{
+    "total_steps": 150,
+    "total_samples": 9600,
+    "loss": -0.0376037172973156,
+    "positive_similarity": 0.5758060216903687,
+    "negative_similarity": 0.5381782054901123
+},
+{
+    "total_steps": 160,
+    "total_samples": 10240,
+    "loss": -0.0380704440176487,
+    "positive_similarity": 0.5744165182113647,
+    "negative_similarity": 0.5363235473632812
+},
+{
+    "total_steps": 170,
+    "total_samples": 10880,
+    "loss": -0.03827470913529396,
+    "positive_similarity": 0.572800874710083,
+    "negative_similarity": 0.5345051884651184
+},
+{
+    "total_steps": 180,
+    "total_samples": 11520,
+    "loss": -0.03839019685983658,
+    "positive_similarity": 0.5711842775344849,
+    "negative_similarity": 0.5327743291854858
+},
+{
+    "total_steps": 190,
+    "total_samples": 12160,
+    "loss": -0.03854111582040787,
+    "positive_similarity": 0.56968754529953,
+    "negative_similarity": 0.5311276912689209
+},
+{
+    "total_steps": 200,
+    "total_samples": 12800,
+    "loss": -0.03904466703534126,
+    "positive_similarity": 0.5681524276733398,
+    "negative_similarity": 0.5290898084640503
+},
+{
+    "total_steps": 210,
+    "total_samples": 13440,
+    "loss": -0.03948987275362015,
+    "positive_similarity": 0.5663878321647644,
+    "negative_similarity": 0.5268790125846863
+},
+{
+    "total_steps": 220,
+    "total_samples": 14080,
+    "loss": -0.039579473435878754,
+    "positive_similarity": 0.5642613172531128,
+    "negative_similarity": 0.5246636867523193
+},
+{
+    "total_steps": 230,
+    "total_samples": 14720,
+    "loss": -0.039596077054739,
+    "positive_similarity": 0.5620788931846619,
+    "negative_similarity": 0.5224652886390686
+},
+{
+    "total_steps": 240,
+    "total_samples": 15360,
+    "loss": -0.04001079499721527,
+    "positive_similarity": 0.5602425336837769,
+    "negative_similarity": 0.5202129483222961
+},
+{
+    "total_steps": 250,
+    "total_samples": 16000,
+    "loss": -0.040147487074136734,
+    "positive_similarity": 0.5578709244728088,
+    "negative_similarity": 0.5177045464515686
+},
+{
+    "total_steps": 260,
+    "total_samples": 16640,
+    "loss": -0.04044140502810478,
+    "positive_similarity": 0.555741548538208,
+    "negative_similarity": 0.5152812004089355
+},
+{
+    "total_steps": 270,
+    "total_samples": 17280,
+    "loss": -0.040913257747888565,
+    "positive_similarity": 0.5537149906158447,
+    "negative_similarity": 0.5127831697463989
+},
+{
+    "total_steps": 280,
+    "total_samples": 17920,
+    "loss": -0.041381772607564926,
+    "positive_similarity": 0.5514742732048035,
+    "negative_similarity": 0.5100740790367126
+},
+{
+    "total_steps": 290,
+    "total_samples": 18560,
+    "loss": -0.04211829975247383,
+    "positive_similarity": 0.5490379333496094,
+    "negative_similarity": 0.5069018006324768
+},
+{
+    "total_steps": 300,
+    "total_samples": 19200,
+    "loss": -0.042500242590904236,
+    "positive_similarity": 0.5465479493141174,
+    "negative_similarity": 0.5040284395217896
+},
+{
+    "total_steps": 310,
+    "total_samples": 19840,
+    "loss": -0.04306264594197273,
+    "positive_similarity": 0.5438240766525269,
+    "negative_similarity": 0.5007426142692566
+},
+{
+    "total_steps": 320,
+    "total_samples": 20480,
+    "loss": -0.04355615749955177,
+    "positive_similarity": 0.5411573052406311,
+    "negative_similarity": 0.4975828230381012
+},
+{
+    "total_steps": 330,
+    "total_samples": 21120,
+    "loss": -0.0442618727684021,
+    "positive_similarity": 0.5387262105941772,
+    "negative_similarity": 0.4944465458393097
+},
+{
+    "total_steps": 340,
+    "total_samples": 21760,
+    "loss": -0.0450008250772953,
+    "positive_similarity": 0.5364059209823608,
+    "negative_similarity": 0.4913877844810486
+},
+{
+    "total_steps": 350,
+    "total_samples": 22400,
+    "loss": -0.04562124237418175,
+    "positive_similarity": 0.5337843298912048,
+    "negative_similarity": 0.4881460964679718
+},
+{
+    "total_steps": 360,
+    "total_samples": 23040,
+    "loss": -0.04633183032274246,
+    "positive_similarity": 0.531154215335846,
+    "negative_similarity": 0.48480579257011414
+},
+{
+    "total_steps": 370,
+    "total_samples": 23680,
+    "loss": -0.04694779962301254,
+    "positive_similarity": 0.5285531282424927,
+    "negative_similarity": 0.48158910870552063
+},
+{
+    "total_steps": 380,
+    "total_samples": 24320,
+    "loss": -0.04767481982707977,
+    "positive_similarity": 0.5259132981300354,
+    "negative_similarity": 0.47822266817092896
+},
+{
+    "total_steps": 390,
+    "total_samples": 24960,
+    "loss": -0.04835386201739311,
+    "positive_similarity": 0.5233237147331238,
+    "negative_similarity": 0.47495442628860474
+},
+{
+    "total_steps": 400,
+    "total_samples": 25600,
+    "loss": -0.04927396774291992,
+    "positive_similarity": 0.5208244919776917,
+    "negative_similarity": 0.47153469920158386
+},
+{
+    "total_steps": 410,
+    "total_samples": 26240,
+    "loss": -0.05033831670880318,
+    "positive_similarity": 0.5185542106628418,
+    "negative_similarity": 0.46820053458213806
+},
+{
+    "total_steps": 420,
+    "total_samples": 26880,
+    "loss": -0.051274459809064865,
+    "positive_similarity": 0.5161488652229309,
+    "negative_similarity": 0.4648573398590088
+},
+{
+    "total_steps": 430,
+    "total_samples": 27520,
+    "loss": -0.0521288625895977,
+    "positive_similarity": 0.5135166645050049,
+    "negative_similarity": 0.46137121319770813
+},
+{
+    "total_steps": 440,
+    "total_samples": 28160,
+    "loss": -0.05360323563218117,
+    "positive_similarity": 0.5113760828971863,
+    "negative_similarity": 0.4577561318874359
+},
+{
+    "total_steps": 450,
+    "total_samples": 28800,
+    "loss": -0.05475222319364548,
+    "positive_similarity": 0.5092071890830994,
+    "negative_similarity": 0.45443862676620483
+},
+{
+    "total_steps": 460,
+    "total_samples": 29440,
+    "loss": -0.05562767758965492,
+    "positive_similarity": 0.5068919062614441,
+    "negative_similarity": 0.45124685764312744
+},
+{
+    "total_steps": 470,
+    "total_samples": 30080,
+    "loss": -0.05690499767661095,
+    "positive_similarity": 0.5050306916236877,
+    "negative_similarity": 0.44810864329338074
+},
+{
+    "total_steps": 480,
+    "total_samples": 30720,
+    "loss": -0.05837593600153923,
+    "positive_similarity": 0.5029032230377197,
+    "negative_similarity": 0.44450920820236206
+},
+{
+    "total_steps": 490,
+    "total_samples": 31360,
+    "loss": -0.059593766927719116,
+    "positive_similarity": 0.5008922219276428,
+    "negative_similarity": 0.44127964973449707
+},
+{
+    "total_steps": 500,
+    "total_samples": 32000,
+    "loss": -0.06155119091272354,
+    "positive_similarity": 0.49939411878585815,
+    "negative_similarity": 0.4378233551979065
+},
+{
+    "total_steps": 510,
+    "total_samples": 32640,
+    "loss": -0.06293349713087082,
+    "positive_similarity": 0.4975358247756958,
+    "negative_similarity": 0.4345830976963043
+},
+{
+    "total_steps": 520,
+    "total_samples": 33280,
+    "loss": -0.06504151225090027,
+    "positive_similarity": 0.4961349070072174,
+    "negative_similarity": 0.4310745298862457
+},
+{
+    "total_steps": 530,
+    "total_samples": 33920,
+    "loss": -0.06689071655273438,
+    "positive_similarity": 0.49465498328208923,
+    "negative_similarity": 0.4277456998825073
+},
+{
+    "total_steps": 540,
+    "total_samples": 34560,
+    "loss": -0.06893032789230347,
+    "positive_similarity": 0.4932125508785248,
+    "negative_similarity": 0.4242621064186096
+},
+{
+    "total_steps": 550,
+    "total_samples": 35200,
+    "loss": -0.07088447362184525,
+    "positive_similarity": 0.4916514754295349,
+    "negative_similarity": 0.42074698209762573
+},
+{
+    "total_steps": 560,
+    "total_samples": 35840,
+    "loss": -0.07286137342453003,
+    "positive_similarity": 0.48996949195861816,
+    "negative_similarity": 0.41708749532699585
+},
+{
+    "total_steps": 570,
+    "total_samples": 36480,
+    "loss": -0.07487332075834274,
+    "positive_similarity": 0.4886762201786041,
+    "negative_similarity": 0.41377872228622437
+},
+{
+    "total_steps": 580,
+    "total_samples": 37120,
+    "loss": -0.07735002040863037,
+    "positive_similarity": 0.487699955701828,
+    "negative_similarity": 0.4103235900402069
+},
+{
+    "total_steps": 590,
+    "total_samples": 37760,
+    "loss": -0.0795985534787178,
+    "positive_similarity": 0.4870746433734894,
+    "negative_similarity": 0.4074452221393585
+},
+{
+    "total_steps": 600,
+    "total_samples": 38400,
+    "loss": -0.08169025927782059,
+    "positive_similarity": 0.4861588776111603,
+    "negative_similarity": 0.404432088136673
+},
+{
+    "total_steps": 610,
+    "total_samples": 39040,
+    "loss": -0.0836789458990097,
+    "positive_similarity": 0.484853595495224,
+    "negative_similarity": 0.4011217951774597
+},
+{
+    "total_steps": 620,
+    "total_samples": 39680,
+    "loss": -0.08620694279670715,
+    "positive_similarity": 0.48402705788612366,
+    "negative_similarity": 0.3977373242378235
+},
+{
+    "total_steps": 630,
+    "total_samples": 40320,
+    "loss": -0.08881714195013046,
+    "positive_similarity": 0.48348450660705566,
+    "negative_similarity": 0.39454185962677
+},
+{
+    "total_steps": 640,
+    "total_samples": 40960,
+    "loss": -0.09144020825624466,
+    "positive_similarity": 0.4830181300640106,
+    "negative_similarity": 0.391385942697525
+},
+{
+    "total_steps": 650,
+    "total_samples": 41600,
+    "loss": -0.09401042759418488,
+    "positive_similarity": 0.4825373589992523,
+    "negative_similarity": 0.3882569372653961
+},
+{
+    "total_steps": 660,
+    "total_samples": 42240,
+    "loss": -0.09687772393226624,
+    "positive_similarity": 0.4820304811000824,
+    "negative_similarity": 0.38480323553085327
+},
+{
+    "total_steps": 670,
+    "total_samples": 42880,
+    "loss": -0.10018940269947052,
+    "positive_similarity": 0.4821026921272278,
+    "negative_similarity": 0.3814815282821655
+},
+{
+    "total_steps": 680,
+    "total_samples": 43520,
+    "loss": -0.10321783274412155,
+    "positive_similarity": 0.4821244478225708,
+    "negative_similarity": 0.37839290499687195
+},
+{
+    "total_steps": 690,
+    "total_samples": 44160,
+    "loss": -0.10725759714841843,
+    "positive_similarity": 0.48230621218681335,
+    "negative_similarity": 0.37443703413009644
+},
+{
+    "total_steps": 700,
+    "total_samples": 44800,
+    "loss": -0.10994020104408264,
+    "positive_similarity": 0.4819674789905548,
+    "negative_similarity": 0.3713342547416687
+},
+{
+    "total_steps": 710,
+    "total_samples": 45440,
+    "loss": -0.11274676024913788,
+    "positive_similarity": 0.48188483715057373,
+    "negative_similarity": 0.3683738112449646
+},
+{
+    "total_steps": 720,
+    "total_samples": 46080,
+    "loss": -0.11537124216556549,
+    "positive_similarity": 0.4815124273300171,
+    "negative_similarity": 0.36529386043548584
+},
+{
+    "total_steps": 730,
+    "total_samples": 46720,
+    "loss": -0.1185370460152626,
+    "positive_similarity": 0.48146557807922363,
+    "negative_similarity": 0.3619886636734009
+},
+{
+    "total_steps": 740,
+    "total_samples": 47360,
+    "loss": -0.12096307426691055,
+    "positive_similarity": 0.48140212893486023,
+    "negative_similarity": 0.35940611362457275
+},
+{
+    "total_steps": 750,
+    "total_samples": 48000,
+    "loss": -0.12361811101436615,
+    "positive_similarity": 0.4813929498195648,
+    "negative_similarity": 0.3566367030143738
+},
+{
+    "total_steps": 760,
+    "total_samples": 48640,
+    "loss": -0.12679189443588257,
+    "positive_similarity": 0.4820219874382019,
+    "negative_similarity": 0.3539861738681793
+},
+{
+    "total_steps": 770,
+    "total_samples": 49280,
+    "loss": -0.12985214591026306,
+    "positive_similarity": 0.4823372960090637,
+    "negative_similarity": 0.3511370122432709
+},
+{
+    "total_steps": 780,
+    "total_samples": 49920,
+    "loss": -0.1328144073486328,
+    "positive_similarity": 0.48238158226013184,
+    "negative_similarity": 0.3481023609638214
+},
+{
+    "total_steps": 790,
+    "total_samples": 50560,
+    "loss": -0.1359202116727829,
+    "positive_similarity": 0.4829868674278259,
+    "negative_similarity": 0.3454746901988983
+},
+{
+    "total_steps": 800,
+    "total_samples": 51200,
+    "loss": -0.13886478543281555,
+    "positive_similarity": 0.48333385586738586,
+    "negative_similarity": 0.34275123476982117
+},
+{
+    "total_steps": 810,
+    "total_samples": 51840,
+    "loss": -0.14197774231433868,
+    "positive_similarity": 0.48393258452415466,
+    "negative_similarity": 0.3400881886482239
+},
+{
+    "total_steps": 820,
+    "total_samples": 52480,
+    "loss": -0.1442660391330719,
+    "positive_similarity": 0.48420798778533936,
+    "negative_similarity": 0.33795419335365295
+},
+{
+    "total_steps": 830,
+    "total_samples": 53120,
+    "loss": -0.1466090977191925,
+    "positive_similarity": 0.48453855514526367,
+    "negative_similarity": 0.33578798174858093
+},
+{
+    "total_steps": 840,
+    "total_samples": 53760,
+    "loss": -0.14919133484363556,
+    "positive_similarity": 0.4850127100944519,
+    "negative_similarity": 0.33351004123687744
+},
+{
+    "total_steps": 850,
+    "total_samples": 54400,
+    "loss": -0.15266230702400208,
+    "positive_similarity": 0.48524144291877747,
+    "negative_similarity": 0.33009639382362366
+},
+{
+    "total_steps": 860,
+    "total_samples": 55040,
+    "loss": -0.1554202437400818,
+    "positive_similarity": 0.4856468737125397,
+    "negative_similarity": 0.3275647461414337
+},
+{
+    "total_steps": 870,
+    "total_samples": 55680,
+    "loss": -0.15755534172058105,
+    "positive_similarity": 0.4851834774017334,
+    "negative_similarity": 0.32479459047317505
+},
+{
+    "total_steps": 880,
+    "total_samples": 56320,
+    "loss": -0.16017518937587738,
+    "positive_similarity": 0.4853547215461731,
+    "negative_similarity": 0.32215431332588196
+},
+{
+    "total_steps": 890,
+    "total_samples": 56960,
+    "loss": -0.16204121708869934,
+    "positive_similarity": 0.48527732491493225,
+    "negative_similarity": 0.32000476121902466
+},
+{
+    "total_steps": 900,
+    "total_samples": 57600,
+    "loss": -0.1634274125099182,
+    "positive_similarity": 0.4849812388420105,
+    "negative_similarity": 0.31812089681625366
+},
+{
+    "total_steps": 910,
+    "total_samples": 58240,
+    "loss": -0.16441141068935394,
+    "positive_similarity": 0.4846264123916626,
+    "negative_similarity": 0.3165906071662903
+},
+{
+    "total_steps": 920,
+    "total_samples": 58880,
+    "loss": -0.16654318571090698,
+    "positive_similarity": 0.484814316034317,
+    "negative_similarity": 0.31442931294441223
+},
+{
+    "total_steps": 930,
+    "total_samples": 59520,
+    "loss": -0.1695193648338318,
+    "positive_similarity": 0.48519378900527954,
+    "negative_similarity": 0.31161564588546753
+},
+{
+    "total_steps": 940,
+    "total_samples": 60160,
+    "loss": -0.17157171666622162,
+    "positive_similarity": 0.4850964844226837,
+    "negative_similarity": 0.3092474639415741
+},
+{
+    "total_steps": 950,
+    "total_samples": 60800,
+    "loss": -0.17360909283161163,
+    "positive_similarity": 0.4853816032409668,
+    "negative_similarity": 0.30727851390838623
+},
+{
+    "total_steps": 960,
+    "total_samples": 61440,
+    "loss": -0.1750301718711853,
+    "positive_similarity": 0.485960453748703,
+    "negative_similarity": 0.3062148988246918
+},
+{
+    "total_steps": 970,
+    "total_samples": 62080,
+    "loss": -0.17678390443325043,
+    "positive_similarity": 0.4869177043437958,
+    "negative_similarity": 0.305191308259964
+},
+{
+    "total_steps": 980,
+    "total_samples": 62720,
+    "loss": -0.17817223072052002,
+    "positive_similarity": 0.48767077922821045,
+    "negative_similarity": 0.3043341040611267
+},
+{
+    "total_steps": 990,
+    "total_samples": 63360,
+    "loss": -0.17964135110378265,
+    "positive_similarity": 0.48857617378234863,
+    "negative_similarity": 0.3035498559474945
+},
+{
+    "total_steps": 1000,
+    "total_samples": 64000,
+    "loss": -0.1804026961326599,
+    "positive_similarity": 0.48934638500213623,
+    "negative_similarity": 0.3033432960510254
+},
+{
+    "total_steps": 1010,
+    "total_samples": 64640,
+    "loss": -0.18180091679096222,
+    "positive_similarity": 0.48979002237319946,
+    "negative_similarity": 0.30218300223350525
+},
+{
+    "total_steps": 1020,
+    "total_samples": 65280,
+    "loss": -0.18343999981880188,
+    "positive_similarity": 0.49019476771354675,
+    "negative_similarity": 0.3007562756538391
+},
+{
+    "total_steps": 1030,
+    "total_samples": 65920,
+    "loss": -0.18637403845787048,
+    "positive_similarity": 0.4908970892429352,
+    "negative_similarity": 0.298343688249588
+},
+{
+    "total_steps": 1040,
+    "total_samples": 66560,
+    "loss": -0.18879902362823486,
+    "positive_similarity": 0.4916413426399231,
+    "negative_similarity": 0.29648536443710327
+},
+{
+    "total_steps": 1050,
+    "total_samples": 67200,
+    "loss": -0.19157686829566956,
+    "positive_similarity": 0.4917401075363159,
+    "negative_similarity": 0.29364895820617676
+},
+{
+    "total_steps": 1060,
+    "total_samples": 67840,
+    "loss": -0.19361716508865356,
+    "positive_similarity": 0.49187856912612915,
+    "negative_similarity": 0.2915908396244049
+},
+{
+    "total_steps": 1070,
+    "total_samples": 68480,
+    "loss": -0.19662174582481384,
+    "positive_similarity": 0.491791307926178,
+    "negative_similarity": 0.2883439064025879
+},
+{
+    "total_steps": 1080,
+    "total_samples": 69120,
+    "loss": -0.1991303712129593,
+    "positive_similarity": 0.49202072620391846,
+    "negative_similarity": 0.28591498732566833
+},
+{
+    "total_steps": 1090,
+    "total_samples": 69760,
+    "loss": -0.20064151287078857,
+    "positive_similarity": 0.4918711185455322,
+    "negative_similarity": 0.2841041386127472
+},
+{
+    "total_steps": 1100,
+    "total_samples": 70400,
+    "loss": -0.20270127058029175,
+    "positive_similarity": 0.49191248416900635,
+    "negative_similarity": 0.2819366753101349
+},
+{
+    "total_steps": 1110,
+    "total_samples": 71040,
+    "loss": -0.2040037214756012,
+    "positive_similarity": 0.4915471076965332,
+    "negative_similarity": 0.28012973070144653
+},
+{
+    "total_steps": 1120,
+    "total_samples": 71680,
+    "loss": -0.20594795048236847,
+    "positive_similarity": 0.49190419912338257,
+    "negative_similarity": 0.2783784866333008
+},
+{
+    "total_steps": 1130,
+    "total_samples": 72320,
+    "loss": -0.20774494111537933,
+    "positive_similarity": 0.4915405809879303,
+    "negative_similarity": 0.2760889530181885
+},
+{
+    "total_steps": 1140,
+    "total_samples": 72960,
+    "loss": -0.20992714166641235,
+    "positive_similarity": 0.4913809895515442,
+    "negative_similarity": 0.27362367510795593
+},
+{
+    "total_steps": 1150,
+    "total_samples": 73600,
+    "loss": -0.2112678587436676,
+    "positive_similarity": 0.4909708797931671,
+    "negative_similarity": 0.27175503969192505
+},
+{
+    "total_steps": 1160,
+    "total_samples": 74240,
+    "loss": -0.21328021585941315,
+    "positive_similarity": 0.4905880391597748,
+    "negative_similarity": 0.26925256848335266
+},
+{
+    "total_steps": 1170,
+    "total_samples": 74880,
+    "loss": -0.2155068963766098,
+    "positive_similarity": 0.49060192704200745,
+    "negative_similarity": 0.26692476868629456
+},
+{
+    "total_steps": 1180,
+    "total_samples": 75520,
+    "loss": -0.2172183096408844,
+    "positive_similarity": 0.49043184518814087,
+    "negative_similarity": 0.26492002606391907
+},
+{
+    "total_steps": 1190,
+    "total_samples": 76160,
+    "loss": -0.219498410820961,
+    "positive_similarity": 0.4907833933830261,
+    "negative_similarity": 0.26287156343460083
+},
+{
+    "total_steps": 1200,
+    "total_samples": 76800,
+    "loss": -0.2212524712085724,
+    "positive_similarity": 0.49105459451675415,
+    "negative_similarity": 0.2612657845020294
+},
+{
+    "total_steps": 1210,
+    "total_samples": 77440,
+    "loss": -0.22321517765522003,
+    "positive_similarity": 0.4916703402996063,
+    "negative_similarity": 0.25978389382362366
+},
+{
+    "total_steps": 1220,
+    "total_samples": 78080,
+    "loss": -0.22537460923194885,
+    "positive_similarity": 0.49193859100341797,
+    "negative_similarity": 0.25777745246887207
+},
+{
+    "total_steps": 1230,
+    "total_samples": 78720,
+    "loss": -0.2265768051147461,
+    "positive_similarity": 0.4916920065879822,
+    "negative_similarity": 0.25621241331100464
+},
+{
+    "total_steps": 1240,
+    "total_samples": 79360,
+    "loss": -0.22838999330997467,
+    "positive_similarity": 0.492428719997406,
+    "negative_similarity": 0.25499287247657776
+},
+{
+    "total_steps": 1250,
+    "total_samples": 80000,
+    "loss": -0.2299737185239792,
+    "positive_similarity": 0.49261316657066345,
+    "negative_similarity": 0.25346726179122925
+},
+{
+    "total_steps": 1260,
+    "total_samples": 80640,
+    "loss": -0.2314022183418274,
+    "positive_similarity": 0.4932478964328766,
+    "negative_similarity": 0.2525346577167511
+},
+{
+    "total_steps": 1270,
+    "total_samples": 81280,
+    "loss": -0.2330060601234436,
+    "positive_similarity": 0.49341103434562683,
+    "negative_similarity": 0.25097212195396423
+},
+{
+    "total_steps": 1280,
+    "total_samples": 81920,
+    "loss": -0.2347448468208313,
+    "positive_similarity": 0.4939364194869995,
+    "negative_similarity": 0.24961629509925842
+},
+{
+    "total_steps": 1290,
+    "total_samples": 82560,
+    "loss": -0.23607505857944489,
+    "positive_similarity": 0.4939260482788086,
+    "negative_similarity": 0.24815867841243744
+},
+{
+    "total_steps": 1300,
+    "total_samples": 83200,
+    "loss": -0.23748363554477692,
+    "positive_similarity": 0.4941128194332123,
+    "negative_similarity": 0.24680525064468384
+},
+{
+    "total_steps": 1310,
+    "total_samples": 83840,
+    "loss": -0.23934714496135712,
+    "positive_similarity": 0.4939362406730652,
+    "negative_similarity": 0.24465052783489227
+},
+{
+    "total_steps": 1320,
+    "total_samples": 84480,
+    "loss": -0.24110707640647888,
+    "positive_similarity": 0.494300901889801,
+    "negative_similarity": 0.24312566220760345
+},
+{
+    "total_steps": 1330,
+    "total_samples": 85120,
+    "loss": -0.24250687658786774,
+    "positive_similarity": 0.4938599169254303,
+    "negative_similarity": 0.24117252230644226
+},
+{
+    "total_steps": 1340,
+    "total_samples": 85760,
+    "loss": -0.24425727128982544,
+    "positive_similarity": 0.4937865436077118,
+    "negative_similarity": 0.23922847211360931
+},
+{
+    "total_steps": 1350,
+    "total_samples": 86400,
+    "loss": -0.24625301361083984,
+    "positive_similarity": 0.4937865138053894,
+    "negative_similarity": 0.23710280656814575
+},
+{
+    "total_steps": 1360,
+    "total_samples": 87040,
+    "loss": -0.24765771627426147,
+    "positive_similarity": 0.4936926066875458,
+    "negative_similarity": 0.23548947274684906
+},
+{
+    "total_steps": 1370,
+    "total_samples": 87680,
+    "loss": -0.249201700091362,
+    "positive_similarity": 0.4935759902000427,
+    "negative_similarity": 0.23370365798473358
+},
+{
+    "total_steps": 1380,
+    "total_samples": 88320,
+    "loss": -0.25099506974220276,
+    "positive_similarity": 0.4935075044631958,
+    "negative_similarity": 0.23172131180763245
+},
+{
+    "total_steps": 1390,
+    "total_samples": 88960,
+    "loss": -0.2522653043270111,
+    "positive_similarity": 0.493217408657074,
+    "negative_similarity": 0.23005785048007965
+},
+{
+    "total_steps": 1400,
+    "total_samples": 89600,
+    "loss": -0.25366973876953125,
+    "positive_similarity": 0.49306103587150574,
+    "negative_similarity": 0.22838933765888214
+},
+{
+    "total_steps": 1410,
+    "total_samples": 90240,
+    "loss": -0.25524887442588806,
+    "positive_similarity": 0.49316951632499695,
+    "negative_similarity": 0.22680480778217316
+},
+{
+    "total_steps": 1420,
+    "total_samples": 90880,
+    "loss": -0.2562001645565033,
+    "positive_similarity": 0.49297115206718445,
+    "negative_similarity": 0.2255270928144455
+},
+{
+    "total_steps": 1430,
+    "total_samples": 91520,
+    "loss": -0.25791001319885254,
+    "positive_similarity": 0.49269556999206543,
+    "negative_similarity": 0.22343187034130096
+},
+{
+    "total_steps": 1440,
+    "total_samples": 92160,
+    "loss": -0.25938335061073303,
+    "positive_similarity": 0.49265196919441223,
+    "negative_similarity": 0.2217998504638672
+},
+{
+    "total_steps": 1450,
+    "total_samples": 92800,
+    "loss": -0.2609039545059204,
+    "positive_similarity": 0.49289125204086304,
+    "negative_similarity": 0.2204127162694931
+},
+{
+    "total_steps": 1460,
+    "total_samples": 93440,
+    "loss": -0.26218488812446594,
+    "positive_similarity": 0.49283653497695923,
+    "negative_similarity": 0.21897701919078827
+},
+{
+    "total_steps": 1470,
+    "total_samples": 94080,
+    "loss": -0.26305338740348816,
+    "positive_similarity": 0.4927661716938019,
+    "negative_similarity": 0.21794173121452332
+},
+{
+    "total_steps": 1480,
+    "total_samples": 94720,
+    "loss": -0.2641957700252533,
+    "positive_similarity": 0.49278345704078674,
+    "negative_similarity": 0.21671602129936218
+},
+{
+    "total_steps": 1490,
+    "total_samples": 95360,
+    "loss": -0.26490142941474915,
+    "positive_similarity": 0.4923565983772278,
+    "negative_similarity": 0.21549582481384277
+},
+{
+    "total_steps": 1500,
+    "total_samples": 96000,
+    "loss": -0.2663605511188507,
+    "positive_similarity": 0.4925389885902405,
+    "negative_similarity": 0.2141115665435791
+},
+{
+    "total_steps": 1510,
+    "total_samples": 96640,
+    "loss": -0.2677920460700989,
+    "positive_similarity": 0.4924575686454773,
+    "negative_similarity": 0.21248087286949158
+},
+{
+    "total_steps": 1520,
+    "total_samples": 97280,
+    "loss": -0.26932036876678467,
+    "positive_similarity": 0.4924947917461395,
+    "negative_similarity": 0.21088549494743347
+},
+{
+    "total_steps": 1530,
+    "total_samples": 97920,
+    "loss": -0.2701989710330963,
+    "positive_similarity": 0.4920334219932556,
+    "negative_similarity": 0.20945163071155548
+},
+{
+    "total_steps": 1540,
+    "total_samples": 98560,
+    "loss": -0.27083995938301086,
+    "positive_similarity": 0.49164336919784546,
+    "negative_similarity": 0.20833466947078705
+},
+{
+    "total_steps": 1550,
+    "total_samples": 99200,
+    "loss": -0.2716517746448517,
+    "positive_similarity": 0.4913332164287567,
+    "negative_similarity": 0.20712466537952423
+},
+{
+    "total_steps": 1560,
+    "total_samples": 99840,
+    "loss": -0.27264752984046936,
+    "positive_similarity": 0.4913291037082672,
+    "negative_similarity": 0.20603418350219727
+},
+{
+    "total_steps": 1570,
+    "total_samples": 100480,
+    "loss": -0.27394574880599976,
+    "positive_similarity": 0.49156075716018677,
+    "negative_similarity": 0.2048589289188385
+},
+{
+    "total_steps": 1580,
+    "total_samples": 101120,
+    "loss": -0.2751891613006592,
+    "positive_similarity": 0.49147504568099976,
+    "negative_similarity": 0.20344118773937225
+},
+{
+    "total_steps": 1590,
+    "total_samples": 101760,
+    "loss": -0.2760479748249054,
+    "positive_similarity": 0.491527795791626,
+    "negative_similarity": 0.20254041254520416
+},
+{
+    "total_steps": 1600,
+    "total_samples": 102400,
+    "loss": -0.27660319209098816,
+    "positive_similarity": 0.4912256598472595,
+    "negative_similarity": 0.20159830152988434
+},
+{
+    "total_steps": 1610,
+    "total_samples": 103040,
+    "loss": -0.2771182060241699,
+    "positive_similarity": 0.49098971486091614,
+    "negative_similarity": 0.20076076686382294
+},
+{
+    "total_steps": 1620,
+    "total_samples": 103680,
+    "loss": -0.27821025252342224,
+    "positive_similarity": 0.4912213087081909,
+    "negative_similarity": 0.19981256127357483
+},
+{
+    "total_steps": 1630,
+    "total_samples": 104320,
+    "loss": -0.27904012799263,
+    "positive_similarity": 0.49129319190979004,
+    "negative_similarity": 0.19897396862506866
+},
+{
+    "total_steps": 1640,
+    "total_samples": 104960,
+    "loss": -0.2802947759628296,
+    "positive_similarity": 0.49149346351623535,
+    "negative_similarity": 0.19783024489879608
+},
+{
+    "total_steps": 1650,
+    "total_samples": 105600,
+    "loss": -0.2814694046974182,
+    "positive_similarity": 0.49201416969299316,
+    "negative_similarity": 0.19708530604839325
+},
+{
+    "total_steps": 1660,
+    "total_samples": 106240,
+    "loss": -0.28228625655174255,
+    "positive_similarity": 0.4921723008155823,
+    "negative_similarity": 0.1963508427143097
+},
+{
+    "total_steps": 1670,
+    "total_samples": 106880,
+    "loss": -0.28293898701667786,
+    "positive_similarity": 0.49219968914985657,
+    "negative_similarity": 0.19564375281333923
+},
+{
+    "total_steps": 1680,
+    "total_samples": 107520,
+    "loss": -0.28416305780410767,
+    "positive_similarity": 0.49260613322257996,
+    "negative_similarity": 0.19473549723625183
+},
+{
+    "total_steps": 1690,
+    "total_samples": 108160,
+    "loss": -0.2848510146141052,
+    "positive_similarity": 0.49281805753707886,
+    "negative_similarity": 0.19418275356292725
+},
+{
+    "total_steps": 1700,
+    "total_samples": 108800,
+    "loss": -0.2858872711658478,
+    "positive_similarity": 0.49311673641204834,
+    "negative_similarity": 0.19335529208183289
+},
+{
+    "total_steps": 1710,
+    "total_samples": 109440,
+    "loss": -0.2864513695240021,
+    "positive_similarity": 0.4928484261035919,
+    "negative_similarity": 0.1924559324979782
+},
+{
+    "total_steps": 1720,
+    "total_samples": 110080,
+    "loss": -0.28735852241516113,
+    "positive_similarity": 0.49312692880630493,
+    "negative_similarity": 0.19175246357917786
+},
+{
+    "total_steps": 1730,
+    "total_samples": 110720,
+    "loss": -0.2880517840385437,
+    "positive_similarity": 0.49307844042778015,
+    "negative_similarity": 0.190936878323555
+},
+{
+    "total_steps": 1740,
+    "total_samples": 111360,
+    "loss": -0.2891926169395447,
+    "positive_similarity": 0.49298831820487976,
+    "negative_similarity": 0.18963877856731415
+},
+{
+    "total_steps": 1750,
+    "total_samples": 112000,
+    "loss": -0.28994277119636536,
+    "positive_similarity": 0.4929700493812561,
+    "negative_similarity": 0.18880192935466766
+},
+{
+    "total_steps": 1760,
+    "total_samples": 112640,
+    "loss": -0.2908287048339844,
+    "positive_similarity": 0.4931192994117737,
+    "negative_similarity": 0.18798010051250458
+},
+{
+    "total_steps": 1770,
+    "total_samples": 113280,
+    "loss": -0.2912806272506714,
+    "positive_similarity": 0.4931243360042572,
+    "negative_similarity": 0.18745557963848114
+},
+{
+    "total_steps": 1780,
+    "total_samples": 113920,
+    "loss": -0.29183709621429443,
+    "positive_similarity": 0.49326762557029724,
+    "negative_similarity": 0.18696458637714386
+},
+{
+    "total_steps": 1790,
+    "total_samples": 114560,
+    "loss": -0.29248756170272827,
+    "positive_similarity": 0.4932321608066559,
+    "negative_similarity": 0.18621300160884857
+},
+{
+    "total_steps": 1800,
+    "total_samples": 115200,
+    "loss": -0.2932659685611725,
+    "positive_similarity": 0.49325525760650635,
+    "negative_similarity": 0.1853961944580078
+},
+{
+    "total_steps": 1810,
+    "total_samples": 115840,
+    "loss": -0.293525367975235,
+    "positive_similarity": 0.49274832010269165,
+    "negative_similarity": 0.18458594381809235
+},
+{
+    "total_steps": 1820,
+    "total_samples": 116480,
+    "loss": -0.2943149507045746,
+    "positive_similarity": 0.49268487095832825,
+    "negative_similarity": 0.1836775243282318
+},
+{
+    "total_steps": 1830,
+    "total_samples": 117120,
+    "loss": -0.2953113913536072,
+    "positive_similarity": 0.49275821447372437,
+    "negative_similarity": 0.18270473182201385
+},
+{
+    "total_steps": 1840,
+    "total_samples": 117760,
+    "loss": -0.296044260263443,
+    "positive_similarity": 0.49274373054504395,
+    "negative_similarity": 0.18191327154636383
+},
+{
+    "total_steps": 1850,
+    "total_samples": 118400,
+    "loss": -0.2971143126487732,
+    "positive_similarity": 0.49295762181282043,
+    "negative_similarity": 0.18100570142269135
+},
+{
+    "total_steps": 1860,
+    "total_samples": 119040,
+    "loss": -0.29826825857162476,
+    "positive_similarity": 0.49324801564216614,
+    "negative_similarity": 0.18009519577026367
+},
+{
+    "total_steps": 1870,
+    "total_samples": 119680,
+    "loss": -0.2992355525493622,
+    "positive_similarity": 0.49334967136383057,
+    "negative_similarity": 0.17919179797172546
+},
+{
+    "total_steps": 1880,
+    "total_samples": 120320,
+    "loss": -0.2999783158302307,
+    "positive_similarity": 0.4936709702014923,
+    "negative_similarity": 0.17871811985969543
+},
+{
+    "total_steps": 1890,
+    "total_samples": 120960,
+    "loss": -0.3008797764778137,
+    "positive_similarity": 0.4938327372074127,
+    "negative_similarity": 0.1779448688030243
+},
+{
+    "total_steps": 1900,
+    "total_samples": 121600,
+    "loss": -0.3017197549343109,
+    "positive_similarity": 0.49397802352905273,
+    "negative_similarity": 0.17720703780651093
+},
+{
+    "total_steps": 1910,
+    "total_samples": 122240,
+    "loss": -0.30216526985168457,
+    "positive_similarity": 0.4940609633922577,
+    "negative_similarity": 0.17679870128631592
+},
+{
+    "total_steps": 1920,
+    "total_samples": 122880,
+    "loss": -0.30282890796661377,
+    "positive_similarity": 0.49424540996551514,
+    "negative_similarity": 0.17627018690109253
+},
+{
+    "total_steps": 1930,
+    "total_samples": 123520,
+    "loss": -0.3032594323158264,
+    "positive_similarity": 0.4944547116756439,
+    "negative_similarity": 0.17599555850028992
+},
+{
+    "total_steps": 1940,
+    "total_samples": 124160,
+    "loss": -0.303956001996994,
+    "positive_similarity": 0.4947136640548706,
+    "negative_similarity": 0.17550405859947205
+},
+{
+    "total_steps": 1950,
+    "total_samples": 124800,
+    "loss": -0.30439522862434387,
+    "positive_similarity": 0.49475616216659546,
+    "negative_similarity": 0.1750747561454773
+},
+{
+    "total_steps": 1960,
+    "total_samples": 125440,
+    "loss": -0.3050016164779663,
+    "positive_similarity": 0.4948972761631012,
+    "negative_similarity": 0.17457404732704163
+},
+{
+    "total_steps": 1970,
+    "total_samples": 126080,
+    "loss": -0.3056376576423645,
+    "positive_similarity": 0.4951593577861786,
+    "negative_similarity": 0.17416389286518097
+},
+{
+    "total_steps": 1980,
+    "total_samples": 126720,
+    "loss": -0.30622735619544983,
+    "positive_similarity": 0.4951561987400055,
+    "negative_similarity": 0.17354770004749298
+},
+{
+    "total_steps": 1990,
+    "total_samples": 127360,
+    "loss": -0.30692926049232483,
+    "positive_similarity": 0.4952572286128998,
+    "negative_similarity": 0.1729172021150589
+},
+{
+    "total_steps": 2000,
+    "total_samples": 128000,
+    "loss": -0.307944655418396,
+    "positive_similarity": 0.4954676926136017,
+    "negative_similarity": 0.17209216952323914
+},
+{
+    "total_steps": 2010,
+    "total_samples": 128640,
+    "loss": -0.30843037366867065,
+    "positive_similarity": 0.4953159689903259,
+    "negative_similarity": 0.17143172025680542
+},
+{
+    "total_steps": 2020,
+    "total_samples": 129280,
+    "loss": -0.308894544839859,
+    "positive_similarity": 0.49523991346359253,
+    "negative_similarity": 0.17087015509605408
+},
+{
+    "total_steps": 2030,
+    "total_samples": 129920,
+    "loss": -0.30966097116470337,
+    "positive_similarity": 0.49532637000083923,
+    "negative_similarity": 0.17015932500362396
+},
+{
+    "total_steps": 2040,
+    "total_samples": 130560,
+    "loss": -0.3102719783782959,
+    "positive_similarity": 0.4954012334346771,
+    "negative_similarity": 0.1695997416973114
+},
+{
+    "total_steps": 2050,
+    "total_samples": 131200,
+    "loss": -0.31077808141708374,
+    "positive_similarity": 0.49550577998161316,
+    "negative_similarity": 0.1691731959581375
+},
+{
+    "total_steps": 2060,
+    "total_samples": 131840,
+    "loss": -0.3109894394874573,
+    "positive_similarity": 0.49552395939826965,
+    "negative_similarity": 0.16895265877246857
+},
+{
+    "total_steps": 2070,
+    "total_samples": 132480,
+    "loss": -0.3112820088863373,
+    "positive_similarity": 0.4956916570663452,
+    "negative_similarity": 0.1688024252653122
+},
+{
+    "total_steps": 2080,
+    "total_samples": 133120,
+    "loss": -0.31155988574028015,
+    "positive_similarity": 0.4957771897315979,
+    "negative_similarity": 0.16857856512069702
+},
+{
+    "total_steps": 2090,
+    "total_samples": 133760,
+    "loss": -0.3117941915988922,
+    "positive_similarity": 0.4957650601863861,
+    "negative_similarity": 0.1682993322610855
+},
+{
+    "total_steps": 2100,
+    "total_samples": 134400,
+    "loss": -0.31207844614982605,
+    "positive_similarity": 0.49579042196273804,
+    "negative_similarity": 0.1680002063512802
+},
+{
+    "total_steps": 2110,
+    "total_samples": 135040,
+    "loss": -0.3122011423110962,
+    "positive_similarity": 0.49562907218933105,
+    "negative_similarity": 0.16768181324005127
+},
+{
+    "total_steps": 2120,
+    "total_samples": 135680,
+    "loss": -0.31256183981895447,
+    "positive_similarity": 0.49553418159484863,
+    "negative_similarity": 0.16719114780426025
+},
+{
+    "total_steps": 2130,
+    "total_samples": 136320,
+    "loss": -0.3130249083042145,
+    "positive_similarity": 0.4955503046512604,
+    "negative_similarity": 0.1667068898677826
+},
+{
+    "total_steps": 2140,
+    "total_samples": 136960,
+    "loss": -0.3136194050312042,
+    "positive_similarity": 0.49548813700675964,
+    "negative_similarity": 0.16601087152957916
+},
+{
+    "total_steps": 2150,
+    "total_samples": 137600,
+    "loss": -0.3139476776123047,
+    "positive_similarity": 0.49537035822868347,
+    "negative_similarity": 0.16552288830280304
+},
+{
+    "total_steps": 2160,
+    "total_samples": 138240,
+    "loss": -0.31442025303840637,
+    "positive_similarity": 0.4951482117176056,
+    "negative_similarity": 0.16479147970676422
+},
+{
+    "total_steps": 2170,
+    "total_samples": 138880,
+    "loss": -0.3152272403240204,
+    "positive_similarity": 0.495271235704422,
+    "negative_similarity": 0.16406531631946564
+},
+{
+    "total_steps": 2180,
+    "total_samples": 139520,
+    "loss": -0.3158942461013794,
+    "positive_similarity": 0.4952356815338135,
+    "negative_similarity": 0.16330979764461517
+},
+{
+    "total_steps": 2190,
+    "total_samples": 140160,
+    "loss": -0.3163146674633026,
+    "positive_similarity": 0.4952205419540405,
+    "negative_similarity": 0.16283875703811646
+},
+{
+    "total_steps": 2200,
+    "total_samples": 140800,
+    "loss": -0.31718820333480835,
+    "positive_similarity": 0.4953356385231018,
+    "negative_similarity": 0.16202975809574127
+},
+{
+    "total_steps": 2210,
+    "total_samples": 141440,
+    "loss": -0.31779223680496216,
+    "positive_similarity": 0.49527209997177124,
+    "negative_similarity": 0.1613302081823349
+},
+{
+    "total_steps": 2220,
+    "total_samples": 142080,
+    "loss": -0.3185403645038605,
+    "positive_similarity": 0.49545037746429443,
+    "negative_similarity": 0.16072410345077515
+},
+{
+    "total_steps": 2230,
+    "total_samples": 142720,
+    "loss": -0.31926658749580383,
+    "positive_similarity": 0.49564334750175476,
+    "negative_similarity": 0.16014963388442993
+},
+{
+    "total_steps": 2240,
+    "total_samples": 143360,
+    "loss": -0.3197443187236786,
+    "positive_similarity": 0.4959271252155304,
+    "negative_similarity": 0.15991711616516113
+},
+{
+    "total_steps": 2250,
+    "total_samples": 144000,
+    "loss": -0.32059723138809204,
+    "positive_similarity": 0.4962199926376343,
+    "negative_similarity": 0.15931236743927002
+},
+{
+    "total_steps": 2260,
+    "total_samples": 144640,
+    "loss": -0.32071638107299805,
+    "positive_similarity": 0.4962654709815979,
+    "negative_similarity": 0.15921013057231903
+},
+{
+    "total_steps": 2270,
+    "total_samples": 145280,
+    "loss": -0.3208146095275879,
+    "positive_similarity": 0.4964098632335663,
+    "negative_similarity": 0.159221351146698
+},
+{
+    "total_steps": 2280,
+    "total_samples": 145920,
+    "loss": -0.3211264908313751,
+    "positive_similarity": 0.4966885447502136,
+    "negative_similarity": 0.15914791822433472
+},
+{
+    "total_steps": 2290,
+    "total_samples": 146560,
+    "loss": -0.3212260603904724,
+    "positive_similarity": 0.49676936864852905,
+    "negative_similarity": 0.15909358859062195
+},
+{
+    "total_steps": 2300,
+    "total_samples": 147200,
+    "loss": -0.32159000635147095,
+    "positive_similarity": 0.4972161054611206,
+    "negative_similarity": 0.1591397225856781
+},
+{
+    "total_steps": 2310,
+    "total_samples": 147840,
+    "loss": -0.32192549109458923,
+    "positive_similarity": 0.4974001944065094,
+    "negative_similarity": 0.15894776582717896
+},
+{
+    "total_steps": 2320,
+    "total_samples": 148480,
+    "loss": -0.3223191797733307,
+    "positive_similarity": 0.4976777136325836,
+    "negative_similarity": 0.1587987244129181
+},
+{
+    "total_steps": 2330,
+    "total_samples": 149120,
+    "loss": -0.32281309366226196,
+    "positive_similarity": 0.497858464717865,
+    "negative_similarity": 0.15845774114131927
+},
+{
+    "total_steps": 2340,
+    "total_samples": 149760,
+    "loss": -0.32335981726646423,
+    "positive_similarity": 0.4983084797859192,
+    "negative_similarity": 0.1583300232887268
+},
+{
+    "total_steps": 2350,
+    "total_samples": 150400,
+    "loss": -0.32395514845848083,
+    "positive_similarity": 0.49854499101638794,
+    "negative_similarity": 0.15793587267398834
+},
+{
+    "total_steps": 2360,
+    "total_samples": 151040,
+    "loss": -0.32455000281333923,
+    "positive_similarity": 0.4987885653972626,
+    "negative_similarity": 0.15754979848861694
+},
+{
+    "total_steps": 2370,
+    "total_samples": 151680,
+    "loss": -0.3251281976699829,
+    "positive_similarity": 0.49887368083000183,
+    "negative_similarity": 0.15702734887599945
+},
+{
+    "total_steps": 2380,
+    "total_samples": 152320,
+    "loss": -0.3256995975971222,
+    "positive_similarity": 0.49905404448509216,
+    "negative_similarity": 0.1565932184457779
+},
+{
+    "total_steps": 2390,
+    "total_samples": 152960,
+    "loss": -0.3261082172393799,
+    "positive_similarity": 0.4991046190261841,
+    "negative_similarity": 0.15620602667331696
+},
+{
+    "total_steps": 2400,
+    "total_samples": 153600,
+    "loss": -0.3267674744129181,
+    "positive_similarity": 0.49925896525382996,
+    "negative_similarity": 0.15566232800483704
+},
+{
+    "total_steps": 2410,
+    "total_samples": 154240,
+    "loss": -0.3273540437221527,
+    "positive_similarity": 0.4992740750312805,
+    "negative_similarity": 0.15505895018577576
+},
+{
+    "total_steps": 2420,
+    "total_samples": 154880,
+    "loss": -0.3278511166572571,
+    "positive_similarity": 0.4992823898792267,
+    "negative_similarity": 0.15453696250915527
+},
+{
+    "total_steps": 2430,
+    "total_samples": 155520,
+    "loss": -0.3280695378780365,
+    "positive_similarity": 0.49899640679359436,
+    "negative_similarity": 0.15399867296218872
+},
+{
+    "total_steps": 2440,
+    "total_samples": 156160,
+    "loss": -0.32807305455207825,
+    "positive_similarity": 0.4988061189651489,
+    "negative_similarity": 0.15378005802631378
+},
+{
+    "total_steps": 2450,
+    "total_samples": 156800,
+    "loss": -0.32830163836479187,
+    "positive_similarity": 0.49860191345214844,
+    "negative_similarity": 0.15331944823265076
+},
+{
+    "total_steps": 2460,
+    "total_samples": 157440,
+    "loss": -0.3284631073474884,
+    "positive_similarity": 0.4986221492290497,
+    "negative_similarity": 0.1531411111354828
+},
+{
+    "total_steps": 2470,
+    "total_samples": 158080,
+    "loss": -0.32882019877433777,
+    "positive_similarity": 0.4985355734825134,
+    "negative_similarity": 0.15266063809394836
+},
+{
+    "total_steps": 2480,
+    "total_samples": 158720,
+    "loss": -0.3290339708328247,
+    "positive_similarity": 0.4983411431312561,
+    "negative_similarity": 0.15221866965293884
+},
+{
+    "total_steps": 2490,
+    "total_samples": 159360,
+    "loss": -0.3296410143375397,
+    "positive_similarity": 0.49853515625,
+    "negative_similarity": 0.15176619589328766
+},
+{
+    "total_steps": 2500,
+    "total_samples": 160000,
+    "loss": -0.3298526406288147,
+    "positive_similarity": 0.49846723675727844,
+    "negative_similarity": 0.15145395696163177
+},
+{
+    "total_steps": 2510,
+    "total_samples": 160640,
+    "loss": -0.33038732409477234,
+    "positive_similarity": 0.49848759174346924,
+    "negative_similarity": 0.15092012286186218
+},
+{
+    "total_steps": 2520,
+    "total_samples": 161280,
+    "loss": -0.3308285176753998,
+    "positive_similarity": 0.49848082661628723,
+    "negative_similarity": 0.150447279214859
+},
+{
+    "total_steps": 2530,
+    "total_samples": 161920,
+    "loss": -0.3314976990222931,
+    "positive_similarity": 0.49867910146713257,
+    "negative_similarity": 0.14995382726192474
+},
+{
+    "total_steps": 2540,
+    "total_samples": 162560,
+    "loss": -0.33219537138938904,
+    "positive_similarity": 0.49888932704925537,
+    "negative_similarity": 0.14944861829280853
+},
+{
+    "total_steps": 2550,
+    "total_samples": 163200,
+    "loss": -0.3328133225440979,
+    "positive_similarity": 0.49902284145355225,
+    "negative_similarity": 0.14894334971904755
+},
+{
+    "total_steps": 2560,
+    "total_samples": 163840,
+    "loss": -0.3334950804710388,
+    "positive_similarity": 0.4992470145225525,
+    "negative_similarity": 0.14847417175769806
+},
+{
+    "total_steps": 2570,
+    "total_samples": 164480,
+    "loss": -0.33390143513679504,
+    "positive_similarity": 0.4994324743747711,
+    "negative_similarity": 0.1482391506433487
+},
+{
+    "total_steps": 2580,
+    "total_samples": 165120,
+    "loss": -0.3343002200126648,
+    "positive_similarity": 0.4995362460613251,
+    "negative_similarity": 0.14792439341545105
+},
+{
+    "total_steps": 2590,
+    "total_samples": 165760,
+    "loss": -0.3348856568336487,
+    "positive_similarity": 0.4997462332248688,
+    "negative_similarity": 0.14752981066703796
+},
+{
+    "total_steps": 2600,
+    "total_samples": 166400,
+    "loss": -0.3354507386684418,
+    "positive_similarity": 0.4998771548271179,
+    "negative_similarity": 0.14707881212234497
+},
+{
+    "total_steps": 2610,
+    "total_samples": 167040,
+    "loss": -0.33586716651916504,
+    "positive_similarity": 0.499878853559494,
+    "negative_similarity": 0.14665663242340088
+},
+{
+    "total_steps": 2620,
+    "total_samples": 167680,
+    "loss": -0.3361358940601349,
+    "positive_similarity": 0.5000426173210144,
+    "negative_similarity": 0.14652672410011292
+},
+{
+    "total_steps": 2630,
+    "total_samples": 168320,
+    "loss": -0.3364007771015167,
+    "positive_similarity": 0.5001718997955322,
+    "negative_similarity": 0.14637118577957153
+},
+{
+    "total_steps": 2640,
+    "total_samples": 168960,
+    "loss": -0.3364514708518982,
+    "positive_similarity": 0.5001544952392578,
+    "negative_similarity": 0.14628362655639648
+},
+{
+    "total_steps": 2650,
+    "total_samples": 169600,
+    "loss": -0.33659833669662476,
+    "positive_similarity": 0.5002972483634949,
+    "negative_similarity": 0.14625446498394012
+},
+{
+    "total_steps": 2660,
+    "total_samples": 170240,
+    "loss": -0.33701568841934204,
+    "positive_similarity": 0.5005321502685547,
+    "negative_similarity": 0.14603586494922638
+},
+{
+    "total_steps": 2670,
+    "total_samples": 170880,
+    "loss": -0.3375571370124817,
+    "positive_similarity": 0.5006665587425232,
+    "negative_similarity": 0.14559151232242584
+},
+{
+    "total_steps": 2680,
+    "total_samples": 171520,
+    "loss": -0.33774200081825256,
+    "positive_similarity": 0.5008097887039185,
+    "negative_similarity": 0.1455262005329132
+},
+{
+    "total_steps": 2690,
+    "total_samples": 172160,
+    "loss": -0.3379153311252594,
+    "positive_similarity": 0.5010030269622803,
+    "negative_similarity": 0.14552097022533417
+},
+{
+    "total_steps": 2700,
+    "total_samples": 172800,
+    "loss": -0.3379876911640167,
+    "positive_similarity": 0.5008735656738281,
+    "negative_similarity": 0.1452997475862503
+},
+{
+    "total_steps": 2710,
+    "total_samples": 173440,
+    "loss": -0.33842918276786804,
+    "positive_similarity": 0.5009177923202515,
+    "negative_similarity": 0.1448768675327301
+},
+{
+    "total_steps": 2720,
+    "total_samples": 174080,
+    "loss": -0.33861133456230164,
+    "positive_similarity": 0.500856876373291,
+    "negative_similarity": 0.1446203589439392
+},
+{
+    "total_steps": 2730,
+    "total_samples": 174720,
+    "loss": -0.3389865458011627,
+    "positive_similarity": 0.5008349418640137,
+    "negative_similarity": 0.1442025750875473
+},
+{
+    "total_steps": 2740,
+    "total_samples": 175360,
+    "loss": -0.3392873704433441,
+    "positive_similarity": 0.5008057951927185,
+    "negative_similarity": 0.1438504159450531
+},
+{
+    "total_steps": 2750,
+    "total_samples": 176000,
+    "loss": -0.3398791253566742,
+    "positive_similarity": 0.5009724497795105,
+    "negative_similarity": 0.14339791238307953
+},
+{
+    "total_steps": 2760,
+    "total_samples": 176640,
+    "loss": -0.34039783477783203,
+    "positive_similarity": 0.5009485483169556,
+    "negative_similarity": 0.14283686876296997
+},
+{
+    "total_steps": 2770,
+    "total_samples": 177280,
+    "loss": -0.3405857980251312,
+    "positive_similarity": 0.5007960200309753,
+    "negative_similarity": 0.14248132705688477
+},
+{
+    "total_steps": 2780,
+    "total_samples": 177920,
+    "loss": -0.34080660343170166,
+    "positive_similarity": 0.5007690787315369,
+    "negative_similarity": 0.14221906661987305
+},
+{
+    "total_steps": 2790,
+    "total_samples": 178560,
+    "loss": -0.3411811888217926,
+    "positive_similarity": 0.5007176995277405,
+    "negative_similarity": 0.14177961647510529
+},
+{
+    "total_steps": 2800,
+    "total_samples": 179200,
+    "loss": -0.34164631366729736,
+    "positive_similarity": 0.5008410811424255,
+    "negative_similarity": 0.14141374826431274
+},
+{
+    "total_steps": 2810,
+    "total_samples": 179840,
+    "loss": -0.3421406149864197,
+    "positive_similarity": 0.5010194182395935,
+    "negative_similarity": 0.1410718858242035
+},
+{
+    "total_steps": 2820,
+    "total_samples": 180480,
+    "loss": -0.34219783544540405,
+    "positive_similarity": 0.5010438561439514,
+    "negative_similarity": 0.14102119207382202
+},
+{
+    "total_steps": 2830,
+    "total_samples": 181120,
+    "loss": -0.34273257851600647,
+    "positive_similarity": 0.5011688470840454,
+    "negative_similarity": 0.14058668911457062
+},
+{
+    "total_steps": 2840,
+    "total_samples": 181760,
+    "loss": -0.34308651089668274,
+    "positive_similarity": 0.5012633800506592,
+    "negative_similarity": 0.1402977854013443
+},
+{
+    "total_steps": 2850,
+    "total_samples": 182400,
+    "loss": -0.34320491552352905,
+    "positive_similarity": 0.5013877153396606,
+    "negative_similarity": 0.14027975499629974
+},
+{
+    "total_steps": 2860,
+    "total_samples": 183040,
+    "loss": -0.34355151653289795,
+    "positive_similarity": 0.5014625787734985,
+    "negative_similarity": 0.13997980952262878
+},
+{
+    "total_steps": 2870,
+    "total_samples": 183680,
+    "loss": -0.3437863290309906,
+    "positive_similarity": 0.501480758190155,
+    "negative_similarity": 0.13974212110042572
+},
+{
+    "total_steps": 2880,
+    "total_samples": 184320,
+    "loss": -0.34381237626075745,
+    "positive_similarity": 0.5013468265533447,
+    "negative_similarity": 0.1395578682422638
+},
+{
+    "total_steps": 2890,
+    "total_samples": 184960,
+    "loss": -0.34406641125679016,
+    "positive_similarity": 0.5014160871505737,
+    "negative_similarity": 0.13934823870658875
+},
+{
+    "total_steps": 2900,
+    "total_samples": 185600,
+    "loss": -0.344552606344223,
+    "positive_similarity": 0.5015279650688171,
+    "negative_similarity": 0.1389385610818863
+},
+{
+    "total_steps": 2910,
+    "total_samples": 186240,
+    "loss": -0.3451462984085083,
+    "positive_similarity": 0.5016064643859863,
+    "negative_similarity": 0.13839319348335266
+},
+{
+    "total_steps": 2920,
+    "total_samples": 186880,
+    "loss": -0.3456391394138336,
+    "positive_similarity": 0.5017110109329224,
+    "negative_similarity": 0.13798335194587708
+},
+{
+    "total_steps": 2930,
+    "total_samples": 187520,
+    "loss": -0.34606513381004333,
+    "positive_similarity": 0.5017905831336975,
+    "negative_similarity": 0.13760104775428772
+},
+{
+    "total_steps": 2940,
+    "total_samples": 188160,
+    "loss": -0.3462182879447937,
+    "positive_similarity": 0.5015524625778198,
+    "negative_similarity": 0.1371871680021286
+},
+{
+    "total_steps": 2950,
+    "total_samples": 188800,
+    "loss": -0.34684380888938904,
+    "positive_similarity": 0.5016811490058899,
+    "negative_similarity": 0.13665911555290222
+},
+{
+    "total_steps": 2960,
+    "total_samples": 189440,
+    "loss": -0.34728488326072693,
+    "positive_similarity": 0.5016680359840393,
+    "negative_similarity": 0.13616864383220673
+},
+{
+    "total_steps": 2970,
+    "total_samples": 190080,
+    "loss": -0.34782543778419495,
+    "positive_similarity": 0.5016536116600037,
+    "negative_similarity": 0.13557979464530945
+},
+{
+    "total_steps": 2980,
+    "total_samples": 190720,
+    "loss": -0.34829628467559814,
+    "positive_similarity": 0.5017258524894714,
+    "negative_similarity": 0.1351388394832611
+},
+{
+    "total_steps": 2990,
+    "total_samples": 191360,
+    "loss": -0.34865719079971313,
+    "positive_similarity": 0.5016669631004333,
+    "negative_similarity": 0.13469061255455017
+},
+{
+    "total_steps": 3000,
+    "total_samples": 192000,
+    "loss": -0.3493496775627136,
+    "positive_similarity": 0.5018064379692078,
+    "negative_similarity": 0.134103924036026
+},
+{
+    "total_steps": 3010,
+    "total_samples": 192640,
+    "loss": -0.3496890962123871,
+    "positive_similarity": 0.5017864108085632,
+    "negative_similarity": 0.13370516896247864
+},
+{
+    "total_steps": 3020,
+    "total_samples": 193280,
+    "loss": -0.3501538038253784,
+    "positive_similarity": 0.5018200278282166,
+    "negative_similarity": 0.13323716819286346
+},
+{
+    "total_steps": 3030,
+    "total_samples": 193920,
+    "loss": -0.35036909580230713,
+    "positive_similarity": 0.50177001953125,
+    "negative_similarity": 0.13293808698654175
+},
+{
+    "total_steps": 3040,
+    "total_samples": 194560,
+    "loss": -0.3508409261703491,
+    "positive_similarity": 0.5017421245574951,
+    "negative_similarity": 0.13240954279899597
+},
+{
+    "total_steps": 3050,
+    "total_samples": 195200,
+    "loss": -0.3514444828033447,
+    "positive_similarity": 0.5019821524620056,
+    "negative_similarity": 0.13200905919075012
+},
+{
+    "total_steps": 3060,
+    "total_samples": 195840,
+    "loss": -0.3518160581588745,
+    "positive_similarity": 0.5020690560340881,
+    "negative_similarity": 0.13169027864933014
+},
+{
+    "total_steps": 3070,
+    "total_samples": 196480,
+    "loss": -0.3520970642566681,
+    "positive_similarity": 0.5021864771842957,
+    "negative_similarity": 0.13148856163024902
+},
+{
+    "total_steps": 3080,
+    "total_samples": 197120,
+    "loss": -0.352280855178833,
+    "positive_similarity": 0.5022656917572021,
+    "negative_similarity": 0.13134166598320007
+},
+{
+    "total_steps": 3090,
+    "total_samples": 197760,
+    "loss": -0.35264214873313904,
+    "positive_similarity": 0.5023993253707886,
+    "negative_similarity": 0.1310756504535675
+},
+{
+    "total_steps": 3100,
+    "total_samples": 198400,
+    "loss": -0.35275837779045105,
+    "positive_similarity": 0.5025230646133423,
+    "negative_similarity": 0.13103799521923065
+},
+{
+    "total_steps": 3110,
+    "total_samples": 199040,
+    "loss": -0.3531765937805176,
+    "positive_similarity": 0.5026847720146179,
+    "negative_similarity": 0.13074398040771484
+},
+{
+    "total_steps": 3120,
+    "total_samples": 199680,
+    "loss": -0.3536306619644165,
+    "positive_similarity": 0.5028669238090515,
+    "negative_similarity": 0.13043290376663208
+},
+{
+    "total_steps": 3130,
+    "total_samples": 200320,
+    "loss": -0.3539144694805145,
+    "positive_similarity": 0.5027864575386047,
+    "negative_similarity": 0.1300390064716339
+},
+{
+    "total_steps": 3140,
+    "total_samples": 200960,
+    "loss": -0.3539804518222809,
+    "positive_similarity": 0.5028135180473328,
+    "negative_similarity": 0.1299773007631302
+},
+{
+    "total_steps": 3150,
+    "total_samples": 201600,
+    "loss": -0.35425886511802673,
+    "positive_similarity": 0.502890944480896,
+    "negative_similarity": 0.12975157797336578
+},
+{
+    "total_steps": 3160,
+    "total_samples": 202240,
+    "loss": -0.3546139895915985,
+    "positive_similarity": 0.5030251741409302,
+    "negative_similarity": 0.12950816750526428
+},
+{
+    "total_steps": 3170,
+    "total_samples": 202880,
+    "loss": -0.35489392280578613,
+    "positive_similarity": 0.5029736757278442,
+    "negative_similarity": 0.12915870547294617
+},
+{
+    "total_steps": 3180,
+    "total_samples": 203520,
+    "loss": -0.35518643260002136,
+    "positive_similarity": 0.5029579401016235,
+    "negative_similarity": 0.12883280217647552
+},
+{
+    "total_steps": 3190,
+    "total_samples": 204160,
+    "loss": -0.35547319054603577,
+    "positive_similarity": 0.5029397010803223,
+    "negative_similarity": 0.1285129338502884
+},
+{
+    "total_steps": 3200,
+    "total_samples": 204800,
+    "loss": -0.35588088631629944,
+    "positive_similarity": 0.5030187368392944,
+    "negative_similarity": 0.12817005813121796
+},
+{
+    "total_steps": 3210,
+    "total_samples": 205440,
+    "loss": -0.35636216402053833,
+    "positive_similarity": 0.5031928420066833,
+    "negative_similarity": 0.12784063816070557
+},
+{
+    "total_steps": 3220,
+    "total_samples": 206080,
+    "loss": -0.3564094007015228,
+    "positive_similarity": 0.5029280185699463,
+    "negative_similarity": 0.12752388417720795
+},
+{
+    "total_steps": 3230,
+    "total_samples": 206720,
+    "loss": -0.35665163397789,
+    "positive_similarity": 0.5029585361480713,
+    "negative_similarity": 0.1273033618927002
+},
+{
+    "total_steps": 3240,
+    "total_samples": 207360,
+    "loss": -0.35675543546676636,
+    "positive_similarity": 0.5027438402175903,
+    "negative_similarity": 0.12698356807231903
+},
+{
+    "total_steps": 3250,
+    "total_samples": 208000,
+    "loss": -0.3569931387901306,
+    "positive_similarity": 0.5027401447296143,
+    "negative_similarity": 0.1267388015985489
+},
+{
+    "total_steps": 3260,
+    "total_samples": 208640,
+    "loss": -0.357270747423172,
+    "positive_similarity": 0.5027030110359192,
+    "negative_similarity": 0.12642036378383636
+},
+{
+    "total_steps": 3270,
+    "total_samples": 209280,
+    "loss": -0.3573774993419647,
+    "positive_similarity": 0.5026410818099976,
+    "negative_similarity": 0.12624409794807434
+},
+{
+    "total_steps": 3280,
+    "total_samples": 209920,
+    "loss": -0.3576616942882538,
+    "positive_similarity": 0.50246661901474,
+    "negative_similarity": 0.12578964233398438
+},
+{
+    "total_steps": 3290,
+    "total_samples": 210560,
+    "loss": -0.35794755816459656,
+    "positive_similarity": 0.5022762417793274,
+    "negative_similarity": 0.12531256675720215
+},
+{
+    "total_steps": 3300,
+    "total_samples": 211200,
+    "loss": -0.3581530749797821,
+    "positive_similarity": 0.5021434426307678,
+    "negative_similarity": 0.12496892362833023
+},
+{
+    "total_steps": 3310,
+    "total_samples": 211840,
+    "loss": -0.3582838475704193,
+    "positive_similarity": 0.5020948648452759,
+    "negative_similarity": 0.12478585541248322
+},
+{
+    "total_steps": 3320,
+    "total_samples": 212480,
+    "loss": -0.35846686363220215,
+    "positive_similarity": 0.502069890499115,
+    "negative_similarity": 0.12457279115915298
+},
+{
+    "total_steps": 3330,
+    "total_samples": 213120,
+    "loss": -0.35865265130996704,
+    "positive_similarity": 0.5020722150802612,
+    "negative_similarity": 0.1243770495057106
+},
+{
+    "total_steps": 3340,
+    "total_samples": 213760,
+    "loss": -0.35888415575027466,
+    "positive_similarity": 0.5020495653152466,
+    "negative_similarity": 0.12411263585090637
+},
+{
+    "total_steps": 3350,
+    "total_samples": 214400,
+    "loss": -0.35909661650657654,
+    "positive_similarity": 0.5018880367279053,
+    "negative_similarity": 0.12373825162649155
+},
+{
+    "total_steps": 3360,
+    "total_samples": 215040,
+    "loss": -0.35921329259872437,
+    "positive_similarity": 0.5017737746238708,
+    "negative_similarity": 0.12349750101566315
+},
+{
+    "total_steps": 3370,
+    "total_samples": 215680,
+    "loss": -0.359380304813385,
+    "positive_similarity": 0.5016793608665466,
+    "negative_similarity": 0.1232326477766037
+},
+{
+    "total_steps": 3380,
+    "total_samples": 216320,
+    "loss": -0.3597392439842224,
+    "positive_similarity": 0.5016960501670837,
+    "negative_similarity": 0.12287991493940353
+},
+{
+    "total_steps": 3390,
+    "total_samples": 216960,
+    "loss": -0.35980838537216187,
+    "positive_similarity": 0.5015944242477417,
+    "negative_similarity": 0.12270303070545197
+},
+{
+    "total_steps": 3400,
+    "total_samples": 217600,
+    "loss": -0.35968413949012756,
+    "positive_similarity": 0.5013567805290222,
+    "negative_similarity": 0.12258392572402954
+},
+{
+    "total_steps": 3410,
+    "total_samples": 218240,
+    "loss": -0.36004191637039185,
+    "positive_similarity": 0.5013692378997803,
+    "negative_similarity": 0.12223441153764725
+},
+{
+    "total_steps": 3420,
+    "total_samples": 218880,
+    "loss": -0.3601822853088379,
+    "positive_similarity": 0.501390278339386,
+    "negative_similarity": 0.12210603058338165
+},
+{
+    "total_steps": 3430,
+    "total_samples": 219520,
+    "loss": -0.36055830121040344,
+    "positive_similarity": 0.5014108419418335,
+    "negative_similarity": 0.12174323201179504
+},
+{
+    "total_steps": 3440,
+    "total_samples": 220160,
+    "loss": -0.36086493730545044,
+    "positive_similarity": 0.5013896226882935,
+    "negative_similarity": 0.12140900641679764
+},
+{
+    "total_steps": 3450,
+    "total_samples": 220800,
+    "loss": -0.36118918657302856,
+    "positive_similarity": 0.5014553070068359,
+    "negative_similarity": 0.12113722413778305
+},
+{
+    "total_steps": 3460,
+    "total_samples": 221440,
+    "loss": -0.3613731861114502,
+    "positive_similarity": 0.5014411807060242,
+    "negative_similarity": 0.12093236297369003
+},
+{
+    "total_steps": 3470,
+    "total_samples": 222080,
+    "loss": -0.36138007044792175,
+    "positive_similarity": 0.5013421177864075,
+    "negative_similarity": 0.12082318216562271
+},
+{
+    "total_steps": 3480,
+    "total_samples": 222720,
+    "loss": -0.36162394285202026,
+    "positive_similarity": 0.501347541809082,
+    "negative_similarity": 0.1205722764134407
+},
+{
+    "total_steps": 3490,
+    "total_samples": 223360,
+    "loss": -0.3618718683719635,
+    "positive_similarity": 0.5014370679855347,
+    "negative_similarity": 0.12040174007415771
+},
+{
+    "total_steps": 3500,
+    "total_samples": 224000,
+    "loss": -0.36193549633026123,
+    "positive_similarity": 0.5014001727104187,
+    "negative_similarity": 0.12029500305652618
+},
+{
+    "total_steps": 3510,
+    "total_samples": 224640,
+    "loss": -0.36212629079818726,
+    "positive_similarity": 0.5013718605041504,
+    "negative_similarity": 0.1200602799654007
+},
+{
+    "total_steps": 3520,
+    "total_samples": 225280,
+    "loss": -0.36201146245002747,
+    "positive_similarity": 0.5011875629425049,
+    "negative_similarity": 0.11998873949050903
+},
+{
+    "total_steps": 3530,
+    "total_samples": 225920,
+    "loss": -0.36209413409233093,
+    "positive_similarity": 0.5010162591934204,
+    "negative_similarity": 0.11973030120134354
+},
+{
+    "total_steps": 3540,
+    "total_samples": 226560,
+    "loss": -0.3620566725730896,
+    "positive_similarity": 0.5008164644241333,
+    "negative_similarity": 0.11956023424863815
+},
+{
+    "total_steps": 3550,
+    "total_samples": 227200,
+    "loss": -0.36202502250671387,
+    "positive_similarity": 0.5006076097488403,
+    "negative_similarity": 0.1193738505244255
+},
+{
+    "total_steps": 3560,
+    "total_samples": 227840,
+    "loss": -0.36200714111328125,
+    "positive_similarity": 0.5003407001495361,
+    "negative_similarity": 0.11912556737661362
+},
+{
+    "total_steps": 3570,
+    "total_samples": 228480,
+    "loss": -0.36189204454421997,
+    "positive_similarity": 0.4999995529651642,
+    "negative_similarity": 0.11889825761318207
+},
+{
+    "total_steps": 3580,
+    "total_samples": 229120,
+    "loss": -0.3616904616355896,
+    "positive_similarity": 0.49950751662254333,
+    "negative_similarity": 0.11861254274845123
+},
+{
+    "total_steps": 3590,
+    "total_samples": 229760,
+    "loss": -0.3615332841873169,
+    "positive_similarity": 0.4990830421447754,
+    "negative_similarity": 0.11835048347711563
+},
+{
+    "total_steps": 3600,
+    "total_samples": 230400,
+    "loss": -0.36171114444732666,
+    "positive_similarity": 0.4988364577293396,
+    "negative_similarity": 0.11792989820241928
+},
+{
+    "total_steps": 3610,
+    "total_samples": 231040,
+    "loss": -0.3617272973060608,
+    "positive_similarity": 0.4984420835971832,
+    "negative_similarity": 0.11753027886152267
+},
+{
+    "total_steps": 3620,
+    "total_samples": 231680,
+    "loss": -0.361672043800354,
+    "positive_similarity": 0.4981022775173187,
+    "negative_similarity": 0.11725353449583054
+},
+{
+    "total_steps": 3630,
+    "total_samples": 232320,
+    "loss": -0.36175501346588135,
+    "positive_similarity": 0.49783802032470703,
+    "negative_similarity": 0.11691424995660782
+},
+{
+    "total_steps": 3640,
+    "total_samples": 232960,
+    "loss": -0.3619949519634247,
+    "positive_similarity": 0.49772536754608154,
+    "negative_similarity": 0.11656324565410614
+},
+{
+    "total_steps": 3650,
+    "total_samples": 233600,
+    "loss": -0.3618655502796173,
+    "positive_similarity": 0.49745064973831177,
+    "negative_similarity": 0.11642465740442276
+},
+{
+    "total_steps": 3660,
+    "total_samples": 234240,
+    "loss": -0.36176761984825134,
+    "positive_similarity": 0.49725809693336487,
+    "negative_similarity": 0.11633817851543427
+},
+{
+    "total_steps": 3670,
+    "total_samples": 234880,
+    "loss": -0.361659973859787,
+    "positive_similarity": 0.49712830781936646,
+    "negative_similarity": 0.11631789058446884
+},
+{
+    "total_steps": 3680,
+    "total_samples": 235520,
+    "loss": -0.3615277111530304,
+    "positive_similarity": 0.49695053696632385,
+    "negative_similarity": 0.11628187447786331
+},
+{
+    "total_steps": 3690,
+    "total_samples": 236160,
+    "loss": -0.36138859391212463,
+    "positive_similarity": 0.4967920780181885,
+    "negative_similarity": 0.11627011746168137
+},
+{
+    "total_steps": 3700,
+    "total_samples": 236800,
+    "loss": -0.3612137734889984,
+    "positive_similarity": 0.4967348277568817,
+    "negative_similarity": 0.11639311909675598
+},
+{
+    "total_steps": 3710,
+    "total_samples": 237440,
+    "loss": -0.3609921932220459,
+    "positive_similarity": 0.4965568482875824,
+    "negative_similarity": 0.11644557118415833
+},
+{
+    "total_steps": 3720,
+    "total_samples": 238080,
+    "loss": -0.3607731759548187,
+    "positive_similarity": 0.4962775707244873,
+    "negative_similarity": 0.1163974404335022
+},
+{
+    "total_steps": 3730,
+    "total_samples": 238720,
+    "loss": -0.3607534170150757,
+    "positive_similarity": 0.4959978759288788,
+    "negative_similarity": 0.11615028977394104
+},
+{
+    "total_steps": 3740,
+    "total_samples": 239360,
+    "loss": -0.36071687936782837,
+    "positive_similarity": 0.4957207143306732,
+    "negative_similarity": 0.11592132598161697
+},
+{
+    "total_steps": 3750,
+    "total_samples": 240000,
+    "loss": -0.36063677072525024,
+    "positive_similarity": 0.49536892771720886,
+    "negative_similarity": 0.11566474288702011
+},
+{
+    "total_steps": 3760,
+    "total_samples": 240640,
+    "loss": -0.3604847192764282,
+    "positive_similarity": 0.4950869679450989,
+    "negative_similarity": 0.11554945260286331
+},
+{
+    "total_steps": 3770,
+    "total_samples": 241280,
+    "loss": -0.3603426218032837,
+    "positive_similarity": 0.4948044717311859,
+    "negative_similarity": 0.11541978269815445
+},
+{
+    "total_steps": 3780,
+    "total_samples": 241920,
+    "loss": -0.3601610064506531,
+    "positive_similarity": 0.4946199953556061,
+    "negative_similarity": 0.11542526632547379
+},
+{
+    "total_steps": 3790,
+    "total_samples": 242560,
+    "loss": -0.3597469627857208,
+    "positive_similarity": 0.49436458945274353,
+    "negative_similarity": 0.11559242755174637
+},
+{
+    "total_steps": 3800,
+    "total_samples": 243200,
+    "loss": -0.3594645857810974,
+    "positive_similarity": 0.49435582756996155,
+    "negative_similarity": 0.11587034165859222
+},
+{
+    "total_steps": 3810,
+    "total_samples": 243840,
+    "loss": -0.3592067062854767,
+    "positive_similarity": 0.49430790543556213,
+    "negative_similarity": 0.11608289927244186
+},
+{
+    "total_steps": 3820,
+    "total_samples": 244480,
+    "loss": -0.3588959872722626,
+    "positive_similarity": 0.49419230222702026,
+    "negative_similarity": 0.11629258841276169
+},
+{
+    "total_steps": 3830,
+    "total_samples": 245120,
+    "loss": -0.3589625656604767,
+    "positive_similarity": 0.49412301182746887,
+    "negative_similarity": 0.1161712035536766
+},
+{
+    "total_steps": 3840,
+    "total_samples": 245760,
+    "loss": -0.35877472162246704,
+    "positive_similarity": 0.4939737319946289,
+    "negative_similarity": 0.11622145026922226
+},
+{
+    "total_steps": 3850,
+    "total_samples": 246400,
+    "loss": -0.35861659049987793,
+    "positive_similarity": 0.49372580647468567,
+    "negative_similarity": 0.11614494025707245
+},
+{
+    "total_steps": 3860,
+    "total_samples": 247040,
+    "loss": -0.35860759019851685,
+    "positive_similarity": 0.49357667565345764,
+    "negative_similarity": 0.11601431667804718
+},
+{
+    "total_steps": 3870,
+    "total_samples": 247680,
+    "loss": -0.3586161136627197,
+    "positive_similarity": 0.49357256293296814,
+    "negative_similarity": 0.11601007729768753
+},
+{
+    "total_steps": 3880,
+    "total_samples": 248320,
+    "loss": -0.35851913690567017,
+    "positive_similarity": 0.4934861361980438,
+    "negative_similarity": 0.11603136360645294
+},
+{
+    "total_steps": 3890,
+    "total_samples": 248960,
+    "loss": -0.3582872152328491,
+    "positive_similarity": 0.4934130012989044,
+    "negative_similarity": 0.11619344353675842
+},
+{
+    "total_steps": 3900,
+    "total_samples": 249600,
+    "loss": -0.3580857813358307,
+    "positive_similarity": 0.4933570623397827,
+    "negative_similarity": 0.11634311079978943
+},
+{
+    "total_steps": 3910,
+    "total_samples": 250240,
+    "loss": -0.35788023471832275,
+    "positive_similarity": 0.49323928356170654,
+    "negative_similarity": 0.11643067747354507
+},
+{
+    "total_steps": 3920,
+    "total_samples": 250880,
+    "loss": -0.3575746715068817,
+    "positive_similarity": 0.49311134219169617,
+    "negative_similarity": 0.11660747975111008
+},
+{
+    "total_steps": 3930,
+    "total_samples": 251520,
+    "loss": -0.3573234975337982,
+    "positive_similarity": 0.492982417345047,
+    "negative_similarity": 0.11672861129045486
+},
+{
+    "total_steps": 3940,
+    "total_samples": 252160,
+    "loss": -0.3571494221687317,
+    "positive_similarity": 0.49283093214035034,
+    "negative_similarity": 0.11674676835536957
+},
+{
+    "total_steps": 3950,
+    "total_samples": 252800,
+    "loss": -0.3569183945655823,
+    "positive_similarity": 0.49254900217056274,
+    "negative_similarity": 0.11669089645147324
+},
+{
+    "total_steps": 3960,
+    "total_samples": 253440,
+    "loss": -0.3566928505897522,
+    "positive_similarity": 0.49226415157318115,
+    "negative_similarity": 0.11662957072257996
+},
+{
+    "total_steps": 3970,
+    "total_samples": 254080,
+    "loss": -0.3565272390842438,
+    "positive_similarity": 0.49190497398376465,
+    "negative_similarity": 0.11643171310424805
+},
+{
+    "total_steps": 3980,
+    "total_samples": 254720,
+    "loss": -0.35663896799087524,
+    "positive_similarity": 0.4916496276855469,
+    "negative_similarity": 0.11606301367282867
+},
+{
+    "total_steps": 3990,
+    "total_samples": 255360,
+    "loss": -0.3567161560058594,
+    "positive_similarity": 0.49143272638320923,
+    "negative_similarity": 0.11576352268457413
+},
+{
+    "total_steps": 4000,
+    "total_samples": 256000,
+    "loss": -0.35672104358673096,
+    "positive_similarity": 0.4911247491836548,
+    "negative_similarity": 0.1154559925198555
+},
+{
+    "total_steps": 4010,
+    "total_samples": 256640,
+    "loss": -0.3564414978027344,
+    "positive_similarity": 0.49090710282325745,
+    "negative_similarity": 0.11551371961832047
+},
+{
+    "total_steps": 4020,
+    "total_samples": 257280,
+    "loss": -0.3562702238559723,
+    "positive_similarity": 0.49079442024230957,
+    "negative_similarity": 0.11557196080684662
+},
+{
+    "total_steps": 4030,
+    "total_samples": 257920,
+    "loss": -0.355892539024353,
+    "positive_similarity": 0.49074721336364746,
+    "negative_similarity": 0.11589701473712921
+},
+{
+    "total_steps": 4040,
+    "total_samples": 258560,
+    "loss": -0.3554699122905731,
+    "positive_similarity": 0.49076685309410095,
+    "negative_similarity": 0.1163313165307045
+},
+{
+    "total_steps": 4050,
+    "total_samples": 259200,
+    "loss": -0.35516178607940674,
+    "positive_similarity": 0.49071893095970154,
+    "negative_similarity": 0.11659132689237595
+},
+{
+    "total_steps": 4060,
+    "total_samples": 259840,
+    "loss": -0.3548586070537567,
+    "positive_similarity": 0.490709125995636,
+    "negative_similarity": 0.11688058078289032
+},
+{
+    "total_steps": 4070,
+    "total_samples": 260480,
+    "loss": -0.35456129908561707,
+    "positive_similarity": 0.4905366599559784,
+    "negative_similarity": 0.11700674891471863
+},
+{
+    "total_steps": 4080,
+    "total_samples": 261120,
+    "loss": -0.35430118441581726,
+    "positive_similarity": 0.4903421700000763,
+    "negative_similarity": 0.11706950515508652
+},
+{
+    "total_steps": 4090,
+    "total_samples": 261760,
+    "loss": -0.3541242480278015,
+    "positive_similarity": 0.4900963306427002,
+    "negative_similarity": 0.11699945479631424
+},
+{
+    "total_steps": 4100,
+    "total_samples": 262400,
+    "loss": -0.35387131571769714,
+    "positive_similarity": 0.4897718131542206,
+    "negative_similarity": 0.1169237270951271
+},
+{
+    "total_steps": 4110,
+    "total_samples": 263040,
+    "loss": -0.3535557985305786,
+    "positive_similarity": 0.4895254373550415,
+    "negative_similarity": 0.11698831617832184
+},
+{
+    "total_steps": 4120,
+    "total_samples": 263680,
+    "loss": -0.3532367944717407,
+    "positive_similarity": 0.48925575613975525,
+    "negative_similarity": 0.11703331023454666
+},
+{
+    "total_steps": 4130,
+    "total_samples": 264320,
+    "loss": -0.3530283570289612,
+    "positive_similarity": 0.4889974892139435,
+    "negative_similarity": 0.11697474122047424
+},
+{
+    "total_steps": 4140,
+    "total_samples": 264960,
+    "loss": -0.3526628911495209,
+    "positive_similarity": 0.4887906014919281,
+    "negative_similarity": 0.11712539196014404
+},
+{
+    "total_steps": 4150,
+    "total_samples": 265600,
+    "loss": -0.3524276912212372,
+    "positive_similarity": 0.48859235644340515,
+    "negative_similarity": 0.11715634912252426
+},
+{
+    "total_steps": 4160,
+    "total_samples": 266240,
+    "loss": -0.35221877694129944,
+    "positive_similarity": 0.48837825655937195,
+    "negative_similarity": 0.11714617162942886
+},
+{
+    "total_steps": 4170,
+    "total_samples": 266880,
+    "loss": -0.352172315120697,
+    "positive_similarity": 0.48816776275634766,
+    "negative_similarity": 0.11697956919670105
+},
+{
+    "total_steps": 4180,
+    "total_samples": 267520,
+    "loss": -0.35194525122642517,
+    "positive_similarity": 0.4878346621990204,
+    "negative_similarity": 0.11687983572483063
+},
+{
+    "total_steps": 4190,
+    "total_samples": 268160,
+    "loss": -0.35182374715805054,
+    "positive_similarity": 0.48772311210632324,
+    "negative_similarity": 0.11689236760139465
+},
+{
+    "total_steps": 4200,
+    "total_samples": 268800,
+    "loss": -0.3515707552433014,
+    "positive_similarity": 0.48783573508262634,
+    "negative_similarity": 0.11725132167339325
+},
+{
+    "total_steps": 4210,
+    "total_samples": 269440,
+    "loss": -0.35117241740226746,
+    "positive_similarity": 0.48794668912887573,
+    "negative_similarity": 0.11775039881467819
+},
+{
+    "total_steps": 4220,
+    "total_samples": 270080,
+    "loss": -0.3508927524089813,
+    "positive_similarity": 0.4882732629776001,
+    "negative_similarity": 0.11832885444164276
+},
+{
+    "total_steps": 4230,
+    "total_samples": 270720,
+    "loss": -0.35027459263801575,
+    "positive_similarity": 0.4885381758213043,
+    "negative_similarity": 0.11918260902166367
+},
+{
+    "total_steps": 4240,
+    "total_samples": 271360,
+    "loss": -0.3497864902019501,
+    "positive_similarity": 0.4888901114463806,
+    "negative_similarity": 0.11999081820249557
+},
+{
+    "total_steps": 4250,
+    "total_samples": 272000,
+    "loss": -0.3492050766944885,
+    "positive_similarity": 0.48911669850349426,
+    "negative_similarity": 0.12077425420284271
+},
+{
+    "total_steps": 4260,
+    "total_samples": 272640,
+    "loss": -0.34882470965385437,
+    "positive_similarity": 0.48930129408836365,
+    "negative_similarity": 0.12132558971643448
+},
+{
+    "total_steps": 4270,
+    "total_samples": 273280,
+    "loss": -0.34848564863204956,
+    "positive_similarity": 0.4893830716609955,
+    "negative_similarity": 0.12174281477928162
+},
+{
+    "total_steps": 4280,
+    "total_samples": 273920,
+    "loss": -0.34824857115745544,
+    "positive_similarity": 0.4894409477710724,
+    "negative_similarity": 0.1220313087105751
+},
+{
+    "total_steps": 4290,
+    "total_samples": 274560,
+    "loss": -0.3481861650943756,
+    "positive_similarity": 0.48939138650894165,
+    "negative_similarity": 0.12204402685165405
+},
+{
+    "total_steps": 4300,
+    "total_samples": 275200,
+    "loss": -0.34810101985931396,
+    "positive_similarity": 0.4892660081386566,
+    "negative_similarity": 0.12200157344341278
+},
+{
+    "total_steps": 4310,
+    "total_samples": 275840,
+    "loss": -0.34812602400779724,
+    "positive_similarity": 0.48904967308044434,
+    "negative_similarity": 0.12175753712654114
+},
+{
+    "total_steps": 4320,
+    "total_samples": 276480,
+    "loss": -0.3480609953403473,
+    "positive_similarity": 0.48875150084495544,
+    "negative_similarity": 0.12152181565761566
+},
+{
+    "total_steps": 4330,
+    "total_samples": 277120,
+    "loss": -0.3479347825050354,
+    "positive_similarity": 0.48846593499183655,
+    "negative_similarity": 0.12135505676269531
+},
+{
+    "total_steps": 4340,
+    "total_samples": 277760,
+    "loss": -0.34767627716064453,
+    "positive_similarity": 0.48807036876678467,
+    "negative_similarity": 0.12120983749628067
+},
+{
+    "total_steps": 4350,
+    "total_samples": 278400,
+    "loss": -0.3475237786769867,
+    "positive_similarity": 0.4877839684486389,
+    "negative_similarity": 0.1210690289735794
+},
+{
+    "total_steps": 4360,
+    "total_samples": 279040,
+    "loss": -0.3471927046775818,
+    "positive_similarity": 0.4874075949192047,
+    "negative_similarity": 0.12101459503173828
+},
+{
+    "total_steps": 4370,
+    "total_samples": 279680,
+    "loss": -0.3470125198364258,
+    "positive_similarity": 0.48718172311782837,
+    "negative_similarity": 0.12095227837562561
+},
+{
+    "total_steps": 4380,
+    "total_samples": 280320,
+    "loss": -0.34681135416030884,
+    "positive_similarity": 0.4869779944419861,
+    "negative_similarity": 0.12093488872051239
+},
+{
+    "total_steps": 4390,
+    "total_samples": 280960,
+    "loss": -0.34653547406196594,
+    "positive_similarity": 0.4867847263813019,
+    "negative_similarity": 0.1209985688328743
+},
+{
+    "total_steps": 4400,
+    "total_samples": 281600,
+    "loss": -0.3462514281272888,
+    "positive_similarity": 0.48655667901039124,
+    "negative_similarity": 0.12104155868291855
+},
+{
+    "total_steps": 4410,
+    "total_samples": 282240,
+    "loss": -0.3460342586040497,
+    "positive_similarity": 0.48643946647644043,
+    "negative_similarity": 0.12111858278512955
+},
+{
+    "total_steps": 4420,
+    "total_samples": 282880,
+    "loss": -0.34564945101737976,
+    "positive_similarity": 0.48633894324302673,
+    "negative_similarity": 0.12138180434703827
+},
+{
+    "total_steps": 4430,
+    "total_samples": 283520,
+    "loss": -0.34532827138900757,
+    "positive_similarity": 0.48622235655784607,
+    "negative_similarity": 0.12156839668750763
+},
+{
+    "total_steps": 4440,
+    "total_samples": 284160,
+    "loss": -0.34498465061187744,
+    "positive_similarity": 0.48610690236091614,
+    "negative_similarity": 0.12177477777004242
+},
+{
+    "total_steps": 4450,
+    "total_samples": 284800,
+    "loss": -0.3446655869483948,
+    "positive_similarity": 0.48601263761520386,
+    "negative_similarity": 0.12197678536176682
+},
+{
+    "total_steps": 4460,
+    "total_samples": 285440,
+    "loss": -0.3443595767021179,
+    "positive_similarity": 0.4858122766017914,
+    "negative_similarity": 0.122066929936409
+},
+{
+    "total_steps": 4470,
+    "total_samples": 286080,
+    "loss": -0.34412845969200134,
+    "positive_similarity": 0.48560357093811035,
+    "negative_similarity": 0.1220775693655014
+},
+{
+    "total_steps": 4480,
+    "total_samples": 286720,
+    "loss": -0.3439873158931732,
+    "positive_similarity": 0.4854457378387451,
+    "negative_similarity": 0.12204388529062271
+},
+{
+    "total_steps": 4490,
+    "total_samples": 287360,
+    "loss": -0.3438345491886139,
+    "positive_similarity": 0.4852636754512787,
+    "negative_similarity": 0.1219964250922203
+},
+{
+    "total_steps": 4500,
+    "total_samples": 288000,
+    "loss": -0.3435409367084503,
+    "positive_similarity": 0.4849482774734497,
+    "negative_similarity": 0.12196040898561478
+},
+{
+    "total_steps": 4510,
+    "total_samples": 288640,
+    "loss": -0.34346312284469604,
+    "positive_similarity": 0.48470789194107056,
+    "negative_similarity": 0.12177609652280807
+},
+{
+    "total_steps": 4520,
+    "total_samples": 289280,
+    "loss": -0.3432059586048126,
+    "positive_similarity": 0.48442748188972473,
+    "negative_similarity": 0.12173399329185486
+},
+{
+    "total_steps": 4530,
+    "total_samples": 289920,
+    "loss": -0.3430422246456146,
+    "positive_similarity": 0.48411259055137634,
+    "negative_similarity": 0.12156733870506287
+},
+{
+    "total_steps": 4540,
+    "total_samples": 290560,
+    "loss": -0.34291258454322815,
+    "positive_similarity": 0.4837990701198578,
+    "negative_similarity": 0.12136632949113846
+},
+{
+    "total_steps": 4550,
+    "total_samples": 291200,
+    "loss": -0.3427053987979889,
+    "positive_similarity": 0.4834371507167816,
+    "negative_similarity": 0.12118955701589584
+},
+{
+    "total_steps": 4560,
+    "total_samples": 291840,
+    "loss": -0.3424057960510254,
+    "positive_similarity": 0.48312294483184814,
+    "negative_similarity": 0.12114760279655457
+},
+{
+    "total_steps": 4570,
+    "total_samples": 292480,
+    "loss": -0.3423244059085846,
+    "positive_similarity": 0.48288512229919434,
+    "negative_similarity": 0.12095867097377777
+},
+{
+    "total_steps": 4580,
+    "total_samples": 293120,
+    "loss": -0.3420950770378113,
+    "positive_similarity": 0.4825896918773651,
+    "negative_similarity": 0.12086818367242813
+},
+{
+    "total_steps": 4590,
+    "total_samples": 293760,
+    "loss": -0.3418748080730438,
+    "positive_similarity": 0.4822207987308502,
+    "negative_similarity": 0.12069226801395416
+},
+{
+    "total_steps": 4600,
+    "total_samples": 294400,
+    "loss": -0.34162160754203796,
+    "positive_similarity": 0.48197898268699646,
+    "negative_similarity": 0.12066898494958878
+},
+{
+    "total_steps": 4610,
+    "total_samples": 295040,
+    "loss": -0.34139347076416016,
+    "positive_similarity": 0.4816831648349762,
+    "negative_similarity": 0.12056779861450195
+},
+{
+    "total_steps": 4620,
+    "total_samples": 295680,
+    "loss": -0.3412601053714752,
+    "positive_similarity": 0.4814820885658264,
+    "negative_similarity": 0.1204642727971077
+},
+{
+    "total_steps": 4630,
+    "total_samples": 296320,
+    "loss": -0.34097743034362793,
+    "positive_similarity": 0.48116162419319153,
+    "negative_similarity": 0.12039665877819061
+},
+{
+    "total_steps": 4640,
+    "total_samples": 296960,
+    "loss": -0.34094175696372986,
+    "positive_similarity": 0.4810514748096466,
+    "negative_similarity": 0.1202879548072815
+},
+{
+    "total_steps": 4650,
+    "total_samples": 297600,
+    "loss": -0.3408597707748413,
+    "positive_similarity": 0.48090824484825134,
+    "negative_similarity": 0.12018556892871857
+},
+{
+    "total_steps": 4660,
+    "total_samples": 298240,
+    "loss": -0.34074220061302185,
+    "positive_similarity": 0.4805404245853424,
+    "negative_similarity": 0.11990448087453842
+},
+{
+    "total_steps": 4670,
+    "total_samples": 298880,
+    "loss": -0.34045907855033875,
+    "positive_similarity": 0.48016655445098877,
+    "negative_similarity": 0.11978212743997574
+},
+{
+    "total_steps": 4680,
+    "total_samples": 299520,
+    "loss": -0.34040555357933044,
+    "positive_similarity": 0.4799075126647949,
+    "negative_similarity": 0.11953508108854294
+},
+{
+    "total_steps": 4690,
+    "total_samples": 300160,
+    "loss": -0.3400788903236389,
+    "positive_similarity": 0.47952237725257874,
+    "negative_similarity": 0.11944103240966797
+},
+{
+    "total_steps": 4700,
+    "total_samples": 300800,
+    "loss": -0.33996957540512085,
+    "positive_similarity": 0.4792875647544861,
+    "negative_similarity": 0.11927792429924011
+},
+{
+    "total_steps": 4710,
+    "total_samples": 301440,
+    "loss": -0.3398880064487457,
+    "positive_similarity": 0.47904151678085327,
+    "negative_similarity": 0.11906938254833221
+},
+{
+    "total_steps": 4720,
+    "total_samples": 302080,
+    "loss": -0.3394049108028412,
+    "positive_similarity": 0.47871214151382446,
+    "negative_similarity": 0.1191791221499443
+},
+{
+    "total_steps": 4730,
+    "total_samples": 302720,
+    "loss": -0.33895280957221985,
+    "positive_similarity": 0.4783622622489929,
+    "negative_similarity": 0.11924188584089279
+},
+{
+    "total_steps": 4740,
+    "total_samples": 303360,
+    "loss": -0.338817834854126,
+    "positive_similarity": 0.47834211587905884,
+    "negative_similarity": 0.11930340528488159
+},
+{
+    "total_steps": 4750,
+    "total_samples": 304000,
+    "loss": -0.33847948908805847,
+    "positive_similarity": 0.4782204031944275,
+    "negative_similarity": 0.11946815252304077
+},
+{
+    "total_steps": 4760,
+    "total_samples": 304640,
+    "loss": -0.33813169598579407,
+    "positive_similarity": 0.4779934585094452,
+    "negative_similarity": 0.11954260617494583
+},
+{
+    "total_steps": 4770,
+    "total_samples": 305280,
+    "loss": -0.3378717601299286,
+    "positive_similarity": 0.4778446853160858,
+    "negative_similarity": 0.11960471421480179
+},
+{
+    "total_steps": 4780,
+    "total_samples": 305920,
+    "loss": -0.33763357996940613,
+    "positive_similarity": 0.47765472531318665,
+    "negative_similarity": 0.11960306018590927
+},
+{
+    "total_steps": 4790,
+    "total_samples": 306560,
+    "loss": -0.3373872935771942,
+    "positive_similarity": 0.4773698151111603,
+    "negative_similarity": 0.11951898783445358
+},
+{
+    "total_steps": 4800,
+    "total_samples": 307200,
+    "loss": -0.3372093141078949,
+    "positive_similarity": 0.4771782159805298,
+    "negative_similarity": 0.1194598600268364
+},
+{
+    "total_steps": 4810,
+    "total_samples": 307840,
+    "loss": -0.33698105812072754,
+    "positive_similarity": 0.4767586886882782,
+    "negative_similarity": 0.1192336305975914
+},
+{
+    "total_steps": 4820,
+    "total_samples": 308480,
+    "loss": -0.3366883099079132,
+    "positive_similarity": 0.47644877433776855,
+    "negative_similarity": 0.11917753517627716
+},
+{
+    "total_steps": 4830,
+    "total_samples": 309120,
+    "loss": -0.33644774556159973,
+    "positive_similarity": 0.47618958353996277,
+    "negative_similarity": 0.11911791563034058
+},
+{
+    "total_steps": 4840,
+    "total_samples": 309760,
+    "loss": -0.3364540636539459,
+    "positive_similarity": 0.47594720125198364,
+    "negative_similarity": 0.11882773041725159
+},
+{
+    "total_steps": 4850,
+    "total_samples": 310400,
+    "loss": -0.3363027274608612,
+    "positive_similarity": 0.47573354840278625,
+    "negative_similarity": 0.11872750520706177
+},
+{
+    "total_steps": 4860,
+    "total_samples": 311040,
+    "loss": -0.3360852003097534,
+    "positive_similarity": 0.47554534673690796,
+    "negative_similarity": 0.11871173232793808
+},
+{
+    "total_steps": 4870,
+    "total_samples": 311680,
+    "loss": -0.33588314056396484,
+    "positive_similarity": 0.47532549500465393,
+    "negative_similarity": 0.1186525970697403
+},
+{
+    "total_steps": 4880,
+    "total_samples": 312320,
+    "loss": -0.3356073498725891,
+    "positive_similarity": 0.4749807119369507,
+    "negative_similarity": 0.11854752153158188
+},
+{
+    "total_steps": 4890,
+    "total_samples": 312960,
+    "loss": -0.3354295790195465,
+    "positive_similarity": 0.47470465302467346,
+    "negative_similarity": 0.11841052025556564
+},
+{
+    "total_steps": 4900,
+    "total_samples": 313600,
+    "loss": -0.3351701498031616,
+    "positive_similarity": 0.4744815528392792,
+    "negative_similarity": 0.11839998513460159
+},
+{
+    "total_steps": 4910,
+    "total_samples": 314240,
+    "loss": -0.3348821699619293,
+    "positive_similarity": 0.4741494953632355,
+    "negative_similarity": 0.11831758916378021
+},
+{
+    "total_steps": 4920,
+    "total_samples": 314880,
+    "loss": -0.3346996605396271,
+    "positive_similarity": 0.47388991713523865,
+    "negative_similarity": 0.11820090562105179
+},
+{
+    "total_steps": 4930,
+    "total_samples": 315520,
+    "loss": -0.3344970643520355,
+    "positive_similarity": 0.4735501706600189,
+    "negative_similarity": 0.11802787333726883
+},
+{
+    "total_steps": 4940,
+    "total_samples": 316160,
+    "loss": -0.33436036109924316,
+    "positive_similarity": 0.473249614238739,
+    "negative_similarity": 0.11782494187355042
+},
+{
+    "total_steps": 4950,
+    "total_samples": 316800,
+    "loss": -0.3342154324054718,
+    "positive_similarity": 0.47300630807876587,
+    "negative_similarity": 0.11768671870231628
+},
+{
+    "total_steps": 4960,
+    "total_samples": 317440,
+    "loss": -0.3339967131614685,
+    "positive_similarity": 0.4726892411708832,
+    "negative_similarity": 0.11755035817623138
+},
+{
+    "total_steps": 4970,
+    "total_samples": 318080,
+    "loss": -0.3337136507034302,
+    "positive_similarity": 0.47235992550849915,
+    "negative_similarity": 0.11747174710035324
+},
+{
+    "total_steps": 4980,
+    "total_samples": 318720,
+    "loss": -0.33335280418395996,
+    "positive_similarity": 0.4720061421394348,
+    "negative_similarity": 0.11744256317615509
+},
+{
+    "total_steps": 4990,
+    "total_samples": 319360,
+    "loss": -0.33308568596839905,
+    "positive_similarity": 0.47166281938552856,
+    "negative_similarity": 0.11734022200107574
+},
+{
+    "total_steps": 5000,
+    "total_samples": 320000,
+    "loss": -0.33299678564071655,
+    "positive_similarity": 0.4714043140411377,
+    "negative_similarity": 0.1171402558684349
+},
+{
+    "total_steps": 5010,
+    "total_samples": 320640,
+    "loss": -0.3330027759075165,
+    "positive_similarity": 0.47119230031967163,
+    "negative_similarity": 0.11688726395368576
+},
+{
+    "total_steps": 5020,
+    "total_samples": 321280,
+    "loss": -0.33271870017051697,
+    "positive_similarity": 0.47089990973472595,
+    "negative_similarity": 0.11684881895780563
+},
+{
+    "total_steps": 5030,
+    "total_samples": 321920,
+    "loss": -0.3323529064655304,
+    "positive_similarity": 0.47059622406959534,
+    "negative_similarity": 0.11688384413719177
+},
+{
+    "total_steps": 5040,
+    "total_samples": 322560,
+    "loss": -0.3320891559123993,
+    "positive_similarity": 0.4702519476413727,
+    "negative_similarity": 0.11677831411361694
+},
+{
+    "total_steps": 5050,
+    "total_samples": 323200,
+    "loss": -0.3319668471813202,
+    "positive_similarity": 0.47004058957099915,
+    "negative_similarity": 0.1166597381234169
+},
+{
+    "total_steps": 5060,
+    "total_samples": 323840,
+    "loss": -0.3317069709300995,
+    "positive_similarity": 0.46977052092552185,
+    "negative_similarity": 0.1166209876537323
+},
+{
+    "total_steps": 5070,
+    "total_samples": 324480,
+    "loss": -0.33146435022354126,
+    "positive_similarity": 0.46949928998947144,
+    "negative_similarity": 0.11656805127859116
+},
+{
+    "total_steps": 5080,
+    "total_samples": 325120,
+    "loss": -0.33140498399734497,
+    "positive_similarity": 0.46938443183898926,
+    "negative_similarity": 0.11648476123809814
+},
+{
+    "total_steps": 5090,
+    "total_samples": 325760,
+    "loss": -0.3311718702316284,
+    "positive_similarity": 0.46915292739868164,
+    "negative_similarity": 0.11646056920289993
+},
+{
+    "total_steps": 5100,
+    "total_samples": 326400,
+    "loss": -0.33099716901779175,
+    "positive_similarity": 0.4688998758792877,
+    "negative_similarity": 0.1163586750626564
+},
+{
+    "total_steps": 5110,
+    "total_samples": 327040,
+    "loss": -0.33078545331954956,
+    "positive_similarity": 0.46875593066215515,
+    "negative_similarity": 0.11639861762523651
+},
+{
+    "total_steps": 5120,
+    "total_samples": 327680,
+    "loss": -0.330483615398407,
+    "positive_similarity": 0.46857914328575134,
+    "negative_similarity": 0.1164962500333786
+},
+{
+    "total_steps": 5130,
+    "total_samples": 328320,
+    "loss": -0.3300992548465729,
+    "positive_similarity": 0.4683907628059387,
+    "negative_similarity": 0.11666631698608398
+},
+{
+    "total_steps": 5140,
+    "total_samples": 328960,
+    "loss": -0.3298950493335724,
+    "positive_similarity": 0.4683540165424347,
+    "negative_similarity": 0.11680387705564499
+},
+{
+    "total_steps": 5150,
+    "total_samples": 329600,
+    "loss": -0.3296397626399994,
+    "positive_similarity": 0.46831443905830383,
+    "negative_similarity": 0.11698941886425018
+},
+{
+    "total_steps": 5160,
+    "total_samples": 330240,
+    "loss": -0.3293246626853943,
+    "positive_similarity": 0.4682720899581909,
+    "negative_similarity": 0.11723411083221436
+},
+{
+    "total_steps": 5170,
+    "total_samples": 330880,
+    "loss": -0.32900410890579224,
+    "positive_similarity": 0.4683084189891815,
+    "negative_similarity": 0.11756043881177902
+},
+{
+    "total_steps": 5180,
+    "total_samples": 331520,
+    "loss": -0.32858994603157043,
+    "positive_similarity": 0.46821603178977966,
+    "negative_similarity": 0.11785385012626648
+},
+{
+    "total_steps": 5190,
+    "total_samples": 332160,
+    "loss": -0.32821160554885864,
+    "positive_similarity": 0.468198299407959,
+    "negative_similarity": 0.11818789690732956
+},
+{
+    "total_steps": 5200,
+    "total_samples": 332800,
+    "loss": -0.3278599679470062,
+    "positive_similarity": 0.4681226313114166,
+    "negative_similarity": 0.11843889951705933
+},
+{
+    "total_steps": 5210,
+    "total_samples": 333440,
+    "loss": -0.32753992080688477,
+    "positive_similarity": 0.46804720163345337,
+    "negative_similarity": 0.11866448074579239
+},
+{
+    "total_steps": 5220,
+    "total_samples": 334080,
+    "loss": -0.3273502588272095,
+    "positive_similarity": 0.46802106499671936,
+    "negative_similarity": 0.11880595237016678
+},
+{
+    "total_steps": 5230,
+    "total_samples": 334720,
+    "loss": -0.32715344429016113,
+    "positive_similarity": 0.467989981174469,
+    "negative_similarity": 0.11895199865102768
+},
+{
+    "total_steps": 5240,
+    "total_samples": 335360,
+    "loss": -0.32693326473236084,
+    "positive_similarity": 0.46789804100990295,
+    "negative_similarity": 0.11906372755765915
+},
+{
+    "total_steps": 5250,
+    "total_samples": 336000,
+    "loss": -0.32660073041915894,
+    "positive_similarity": 0.4677521884441376,
+    "negative_similarity": 0.11923905462026596
+},
+{
+    "total_steps": 5260,
+    "total_samples": 336640,
+    "loss": -0.3262847065925598,
+    "positive_similarity": 0.4676300883293152,
+    "negative_similarity": 0.11942504346370697
+},
+{
+    "total_steps": 5270,
+    "total_samples": 337280,
+    "loss": -0.32603737711906433,
+    "positive_similarity": 0.4675234854221344,
+    "negative_similarity": 0.1195625364780426
+},
+{
+    "total_steps": 5280,
+    "total_samples": 337920,
+    "loss": -0.32585957646369934,
+    "positive_similarity": 0.4674203097820282,
+    "negative_similarity": 0.11963693797588348
+},
+{
+    "total_steps": 5290,
+    "total_samples": 338560,
+    "loss": -0.32566022872924805,
+    "positive_similarity": 0.46724000573158264,
+    "negative_similarity": 0.1196608766913414
+},
+{
+    "total_steps": 5300,
+    "total_samples": 339200,
+    "loss": -0.325269490480423,
+    "positive_similarity": 0.46701928973197937,
+    "negative_similarity": 0.11983700096607208
+},
+{
+    "total_steps": 5310,
+    "total_samples": 339840,
+    "loss": -0.3251524269580841,
+    "positive_similarity": 0.46694666147232056,
+    "negative_similarity": 0.11988742649555206
+},
+{
+    "total_steps": 5320,
+    "total_samples": 340480,
+    "loss": -0.32492494583129883,
+    "positive_similarity": 0.46684175729751587,
+    "negative_similarity": 0.12001759558916092
+},
+{
+    "total_steps": 5330,
+    "total_samples": 341120,
+    "loss": -0.32464393973350525,
+    "positive_similarity": 0.46671760082244873,
+    "negative_similarity": 0.1201811283826828
+},
+{
+    "total_steps": 5340,
+    "total_samples": 341760,
+    "loss": -0.3243868052959442,
+    "positive_similarity": 0.46652600169181824,
+    "negative_similarity": 0.12025230377912521
+},
+{
+    "total_steps": 5350,
+    "total_samples": 342400,
+    "loss": -0.3241451382637024,
+    "positive_similarity": 0.4663699269294739,
+    "negative_similarity": 0.12034260481595993
+},
+{
+    "total_steps": 5360,
+    "total_samples": 343040,
+    "loss": -0.32388103008270264,
+    "positive_similarity": 0.46617284417152405,
+    "negative_similarity": 0.1204151138663292
+},
+{
+    "total_steps": 5370,
+    "total_samples": 343680,
+    "loss": -0.32371336221694946,
+    "positive_similarity": 0.46606817841529846,
+    "negative_similarity": 0.12047678977251053
+},
+{
+    "total_steps": 5380,
+    "total_samples": 344320,
+    "loss": -0.32361602783203125,
+    "positive_similarity": 0.4659877121448517,
+    "negative_similarity": 0.12049081176519394
+},
+{
+    "total_steps": 5390,
+    "total_samples": 344960,
+    "loss": -0.32349905371665955,
+    "positive_similarity": 0.4659646451473236,
+    "negative_similarity": 0.12057763338088989
+},
+{
+    "total_steps": 5400,
+    "total_samples": 345600,
+    "loss": -0.32330143451690674,
+    "positive_similarity": 0.4657755494117737,
+    "negative_similarity": 0.12058524787425995
+},
+{
+    "total_steps": 5410,
+    "total_samples": 346240,
+    "loss": -0.3231247365474701,
+    "positive_similarity": 0.46567612886428833,
+    "negative_similarity": 0.12065485864877701
+},
+{
+    "total_steps": 5420,
+    "total_samples": 346880,
+    "loss": -0.32281526923179626,
+    "positive_similarity": 0.4654257595539093,
+    "negative_similarity": 0.12071328610181808
+},
+{
+    "total_steps": 5430,
+    "total_samples": 347520,
+    "loss": -0.32254558801651,
+    "positive_similarity": 0.46534034609794617,
+    "negative_similarity": 0.12089281529188156
+},
+{
+    "total_steps": 5440,
+    "total_samples": 348160,
+    "loss": -0.3222390115261078,
+    "positive_similarity": 0.46520546078681946,
+    "negative_similarity": 0.1210629865527153
+},
+{
+    "total_steps": 5450,
+    "total_samples": 348800,
+    "loss": -0.3220321834087372,
+    "positive_similarity": 0.46507513523101807,
+    "negative_similarity": 0.12113922834396362
+}]
