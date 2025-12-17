@@ -4,7 +4,7 @@ from datetime import datetime
 import json
 import os
 import random
-from typing import Literal, Iterable, Iterator, Optional, Callable
+from typing import Literal, Iterable, Iterator, Optional, Callable, List
 
 import torch
 from torch import nn
@@ -99,8 +99,7 @@ class StyleOracleTrainer:
                 negative_indices.append(
                     negative_indices.pop(0))  # we cycle to guarantee an index non-equal to positive index
 
-    @staticmethod
-    def contrastive_sample_generator(dataset, batch_size: int = 64,
+    def contrastive_sample_generator(self, dataset: List, batch_size: int = 64,
 
                                      # I believe in torch's ability to not retrace graph 5000 times like tf does
                                      padding: str = "longest",
@@ -194,7 +193,7 @@ class StyleOracleTrainer:
         return loss_fn
 
     def run_epoch(self,
-                  dataset: Iterable,
+                  dataset: List,
                   batch_size: int,
                   loss_fn: Callable,
                   optimizer: Optional[torch.optim.Optimizer],
@@ -226,7 +225,7 @@ class StyleOracleTrainer:
             steps_metric = nn.Parameter(torch.zeros(()), requires_grad=False)
 
             for total_steps, contrastive_sample in enumerate(
-                    StyleOracleTrainer.contrastive_sample_generator(dataset=dataset, batch_size=batch_size), start=1
+                self.contrastive_sample_generator(dataset=dataset, batch_size=batch_size), start=1
             ):
                 with ([contextlib.nullcontext, torch.enable_grad][is_training])():
                     predicted_styles = {
