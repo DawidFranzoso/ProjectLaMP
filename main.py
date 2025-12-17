@@ -9,14 +9,13 @@ import torch.cuda
 import torch.optim
 
 import wandb
-from dotenv import load_dotenv
 from torch import nn
 
 from DataDownloader import DataDownloader
 
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-load_dotenv()
+# load_dotenv()
 
 # I was asked to do this
 random.seed(42)
