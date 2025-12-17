@@ -240,16 +240,16 @@ class StyleOracleTrainer:
                         anchor_style=predicted_styles["anchor"],
                         positive_style=predicted_styles["positive"],
                         negative_style=predicted_styles["negative"],
-                    ).mean()  # I expect no nans
+                    )  # I expect no nans
 
-                loss_info["loss"].backward()
+                loss_info["loss"].mean().backward()
                 if is_training:
                     optimizer.step()
                 if is_training and lr_scheduler is not None:
                     lr_scheduler.step()
 
                 StyleOracleTrainer.update_metric(
-                    step=steps_metric, value=loss_info["loss"].detach(), aggregate=loss_metric
+                    step=steps_metric, value=loss_info["loss"].detach().mean(), aggregate=loss_metric
                 )
                 StyleOracleTrainer.update_metric(
                     step=steps_metric, value=loss_info["positive_similarity"].detach().mean(), aggregate=pos_sim_metric
