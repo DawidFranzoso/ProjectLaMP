@@ -264,7 +264,7 @@ class StyleOracleTrainer:
                     print(json.dumps(get_metrics_dict(), indent=4))
 
                 if cap_steps is not None:
-                    if steps_metric <= steps_metric:
+                    if cap_steps <= steps_metric:
                         break
 
             return get_metrics_dict()
