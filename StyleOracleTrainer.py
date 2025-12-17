@@ -100,7 +100,7 @@ class StyleOracleTrainer:
                     negative_indices.pop(0))  # we cycle to guarantee an index non-equal to positive index
 
     @staticmethod
-    def contrastive_sample_generator(self, dataset, batch_size: int = 64,
+    def contrastive_sample_generator(dataset, batch_size: int = 64,
 
                                      # I believe in torch's ability to not retrace graph 5000 times like tf does
                                      padding: str = "longest",
