@@ -207,62 +207,84 @@ def update_metric(value: torch.Tensor, aggregate: nn.Parameter):
 
 
 with device:
-    style_oracle_optimizer = torch.optim.AdamW(
+    style_oracle_optimizer = torch.optim.AdamW(  # from paper
         params=style_oracle.parameters(),  # TODO: only pass encoder params
         lr=5e-5,  # from paper
-        weight_decay=1e-4,
+        weight_decay=1e-4,  # from paper
+    )
+    epochs = 20  # from paper
+    warmup_steps = 0.05 * 10437 * epochs  # from paper (lamp-7 training set size = 10437)
+    physical_batch_size = 64
+
+    style_oracle_optimizer_lr_scheduler = torch.optim.lr_scheduler.LambdaLR(
+        style_oracle_optimizer,
+        lambda step: min(warmup_steps, step) / warmup_steps
     )
     style_similarity = torch.nn.CosineSimilarity(dim=-1, eps=1e-08)
 
     style_oracle.train()
-    log_freq = 5000
+    log_freq = 10
 
     loss_metric = nn.Parameter(torch.zeros(()), requires_grad=False)
     pos_sim_metric = nn.Parameter(torch.zeros(()), requires_grad=False)
     neg_sim_metric = nn.Parameter(torch.zeros(()), requires_grad=False)
     steps_metric = nn.Parameter(torch.zeros(()), requires_grad=False)
+    history = []
 
-    for total_steps, contrastive_sample in enumerate(contrastive_sample_generator(dataset=dataset, batch_size=64), start=1):
-        with torch.enable_grad():
-            print(total_steps)
-            predicted_styles = {
-                sample_role: predict_style_tensor(
-                    encoder_input=data["input_ids"].to(device),
-                    encoder_attention_mask=data["attention_mask"].to(device),
-                )
-                for sample_role, data in contrastive_sample.items()
-            }
+    def get_metric_dict(batch_size: int):
+        return {
+            "total_steps": total_steps,
+            "total_samples": total_steps * batch_size,
+            "loss": loss_metric.item(),
+            "positive_similarity": pos_sim_metric.item(),
+            "negative_similarity": neg_sim_metric.item(),
+        }
 
-            positive_similarity = style_similarity(predicted_styles["anchor"], predicted_styles["positive"])
-            negative_similarity = style_similarity(predicted_styles["anchor"], predicted_styles["negative"])
-            triplet_epsilon = 0.9
-            triplet_epsilon = torch.zeros_like(positive_similarity) + triplet_epsilon  # broadcast
-            loss = (
-                negative_similarity
-                - torch.minimum(positive_similarity, triplet_epsilon)
-            ).mean()  # I expect no nans
+    for epoch in range(1, 1 + epochs):
+        for total_steps, contrastive_sample in enumerate(
+                contrastive_sample_generator(dataset=dataset, batch_size=physical_batch_size), start=1
+        ):
+            with torch.enable_grad():
+                print(total_steps)
+                predicted_styles = {
+                    sample_role: predict_style_tensor(
+                        encoder_input=data["input_ids"].to(device),
+                        encoder_attention_mask=data["attention_mask"].to(device),
+                    )
+                    for sample_role, data in contrastive_sample.items()
+                }
 
-        loss.backward()
-        style_oracle_optimizer.step()
+                positive_similarity = style_similarity(predicted_styles["anchor"], predicted_styles["positive"])
+                negative_similarity = style_similarity(predicted_styles["anchor"], predicted_styles["negative"])
+                triplet_epsilon = 0.9
+                triplet_epsilon = torch.zeros_like(positive_similarity) + triplet_epsilon  # broadcast
+                loss = (
+                    negative_similarity
+                    - torch.minimum(positive_similarity, triplet_epsilon)
+                ).mean()  # I expect no nans
 
-        update_metric(value=loss.detach(), aggregate=loss_metric)
-        update_metric(value=positive_similarity.detach().mean(), aggregate=pos_sim_metric)
-        update_metric(value=negative_similarity.detach().mean(), aggregate=neg_sim_metric)
+            loss.backward()
+            style_oracle_optimizer.step()
+            style_oracle_optimizer_lr_scheduler.step()
 
-        steps_metric += 1
+            update_metric(value=loss.detach(), aggregate=loss_metric)
+            update_metric(value=positive_similarity.detach().mean(), aggregate=pos_sim_metric)
+            update_metric(value=negative_similarity.detach().mean(), aggregate=neg_sim_metric)
 
-        if steps_metric >= log_freq:
-            metrics_dict = {
-                "total_steps": total_steps,
-                "total_samples": total_steps * (batch_size := contrastive_sample["anchor"]["input_ids"].shape[0]),
-                "loss": loss_metric.item(),
-                "positive_similarity": pos_sim_metric.item(),
-                "negative_similarity": neg_sim_metric.item(),
-            }
-            print(json.dumps(metrics_dict, indent=4))
-            if wandb_api_key is not None:
-                wandb.log(metrics_dict)
-            steps_metric *= 0  # resets metrics
-            model_filepath = f"outputs/style_oracle/{run_name}_step{total_steps}.pt"
-            os.makedirs("/".join(model_filepath.split("/")[:-1]), exist_ok=True)
-            torch.save(obj=style_oracle, f=model_filepath)
+            steps_metric += 1
+
+            if steps_metric % log_freq == 0:
+                metrics_dict = get_metric_dict(batch_size=physical_batch_size)
+                print(json.dumps(metrics_dict, indent=4))
+
+        metrics_dict = get_metric_dict(batch_size=physical_batch_size)
+        print(json.dumps(metrics_dict, indent=4))
+        if wandb_api_key is not None:
+            wandb.log(metrics_dict)
+        history.append(metrics_dict)
+        steps_metric *= 0  # resets metrics
+        model_filepath = f"outputs/style_oracle/{run_name}_step{epoch}.pt"
+        os.makedirs("/".join(model_filepath.split("/")[:-1]), exist_ok=True)
+        torch.save(obj=style_oracle, f=model_filepath)
+        with open(model_filepath + ".history", "w") as f:
+            json.dump(history, f)
