@@ -15,7 +15,11 @@ from DataDownloader import DataDownloader
 
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
-# load_dotenv()
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 # I was asked to do this
 random.seed(42)
