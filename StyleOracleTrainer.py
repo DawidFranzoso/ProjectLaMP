@@ -8,7 +8,6 @@ from itertools import count
 from typing import Literal, Iterable, Iterator, Optional, Callable, List
 from types import MethodType
 
-import evaluate
 import torch
 from torch import nn
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, T5ForConditionalGeneration
@@ -252,7 +251,9 @@ class StyleOracleTrainer:
                 pos_sim_metric = nn.Parameter(torch.zeros(()), requires_grad=False)
                 neg_sim_metric = nn.Parameter(torch.zeros(()), requires_grad=False)
             else:
-                rouge = evaluate.load('rouge')
+                # rouge = evaluate.load('rouge')
+                pass
+
             steps_metric = nn.Parameter(torch.zeros(()), requires_grad=False)
 
             if triplet_mode:
