@@ -62,14 +62,36 @@ if wandb_api_key is not None:
     )
 
 
-DataDownloader.maybe_download_all(tasks=[7])
-style_oracle_trainer = StyleOracleTrainer.from_pretrained_flan_t5(device=device, size=model_size)
-
 epochs = 20  # from paper
 batch_size = 64
 warmup_steps = round(0.05 * (10437 / batch_size) * epochs)  # from paper (lamp-7 training set size = 10437)
 
+DataDownloader.maybe_download_all(tasks=[7])
+
+run_id = f"{datetime.now().replace(microsecond=0)}"
+
+baseline_trainer = StyleOracleTrainer.from_pretrained_flan_t5(device=device, size=model_size)
+baseline_trainer.run(
+    run_name=f"baseline_{run_id}",
+    triplet_mode=False,
+    epochs=epochs,
+    batch_size=batch_size,
+    optimizer_factory=lambda params: torch.optim.AdamW(  # from paper
+        params=params,
+        lr=5e-5,  # from paper
+        weight_decay=1e-4,  # from paper
+    ),
+    lr_scheduler_factory=lambda optimizer: torch.optim.lr_scheduler.LambdaLR(
+        optimizer,
+        lambda step: min(warmup_steps, step) / warmup_steps
+    ),
+)
+del baseline_trainer
+
+style_oracle_trainer = StyleOracleTrainer.from_pretrained_flan_t5(device=device, size=model_size)
 style_oracle_trainer.run(
+    run_name=f"oracle_1triplet_{run_id}",
+    triplet_mode=True,
     epochs=epochs,
     batch_size=batch_size,
     optimizer_factory=lambda params: torch.optim.AdamW(  # from paper
@@ -83,3 +105,25 @@ style_oracle_trainer.run(
     ),
     loss_fn=StyleOracleTrainer.build_triplet_loss(positive_weight=4)
 )
+style_oracle_trainer.run(
+    run_name=f"oracle_2classifier_{run_id}",
+    triplet_mode=False,
+    epochs=epochs,
+    batch_size=batch_size,
+    optimizer_factory=lambda params: torch.optim.AdamW(  # from paper
+        params=params,
+        lr=5e-5,  # from paper
+        weight_decay=1e-4,  # from paper
+    ),
+    lr_scheduler_factory=lambda optimizer: torch.optim.lr_scheduler.LambdaLR(
+        optimizer,
+        lambda step: min(warmup_steps, step) / warmup_steps
+    ),
+)
+
+# TODO: speedrun
+#  rouge from evaluate
+#  powerpoint B)
+#  present this shat
+#  gf christmas gift
+#  Marko's birthday
