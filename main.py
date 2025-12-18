@@ -64,7 +64,8 @@ if wandb_api_key is not None:
 
 epochs = 20  # from paper
 batch_size = 64
-warmup_steps = round(0.05 * (10437 / batch_size) * epochs)  # from paper (lamp-7 training set size = 10437)
+warmup_steps_triplet = round(0.05 * (10437 / batch_size) * epochs)  # from paper (lamp-7 training set size = 10437)
+warmup_steps_ce = round(0.05 * 10437 * epochs)  # from paper (lamp-7 training set size = 10437) (no batch size yet)
 
 DataDownloader.maybe_download_all(tasks=[7])
 
@@ -83,7 +84,7 @@ baseline_trainer.run(
     ),
     lr_scheduler_factory=lambda optimizer: torch.optim.lr_scheduler.LambdaLR(
         optimizer,
-        lambda step: min(warmup_steps, step) / warmup_steps
+        lambda step: min(warmup_steps_ce, step) / warmup_steps_ce
     ),
 )
 del baseline_trainer
@@ -101,7 +102,7 @@ style_oracle_trainer.run(
     ),
     lr_scheduler_factory=lambda optimizer: torch.optim.lr_scheduler.LambdaLR(
         optimizer,
-        lambda step: min(warmup_steps, step) / warmup_steps
+        lambda step: min(warmup_steps_triplet, step) / warmup_steps_triplet
     ),
     loss_fn=StyleOracleTrainer.build_triplet_loss(positive_weight=4)
 )
@@ -117,7 +118,7 @@ style_oracle_trainer.run(
     ),
     lr_scheduler_factory=lambda optimizer: torch.optim.lr_scheduler.LambdaLR(
         optimizer,
-        lambda step: min(warmup_steps, step) / warmup_steps
+        lambda step: min(warmup_steps_ce, step) / warmup_steps_ce
     ),
 )
 
