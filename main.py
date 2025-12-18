@@ -76,7 +76,7 @@ baseline_trainer.run(
     run_name=f"baseline_{run_id}",
     triplet_mode=False,
     epochs=epochs,
-    batch_size=batch_size,
+    batch_size=1,
     optimizer_factory=lambda params: torch.optim.AdamW(  # from paper
         params=params,
         lr=5e-5,  # from paper
@@ -110,7 +110,7 @@ style_oracle_trainer.run(
     run_name=f"oracle_2classifier_{run_id}",
     triplet_mode=False,
     epochs=epochs,
-    batch_size=batch_size,
+    batch_size=1,
     optimizer_factory=lambda params: torch.optim.AdamW(  # from paper
         params=params,
         lr=5e-5,  # from paper
