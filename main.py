@@ -106,6 +106,7 @@ style_oracle_trainer.run(
     ),
     loss_fn=StyleOracleTrainer.build_triplet_loss(positive_weight=4)
 )
+
 style_oracle_trainer.run(
     run_name=f"oracle_2classifier_{run_id}",
     triplet_mode=False,
@@ -124,7 +125,4 @@ style_oracle_trainer.run(
 
 # TODO: speedrun
 #  rouge from evaluate
-#  powerpoint B)
 #  present this shat
-#  gf christmas gift
-#  Marko's birthday

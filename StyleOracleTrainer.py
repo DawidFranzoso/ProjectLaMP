@@ -258,6 +258,8 @@ class StyleOracleTrainer:
 
             if triplet_mode:
                 dataset = self.contrastive_sample_generator(dataset=dataset, batch_size=batch_size)
+            else:
+                ...  # TODO
 
             for total_steps, sample in enumerate(dataset, start=1):
                 if not triplet_mode:
