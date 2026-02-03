@@ -305,6 +305,7 @@ class StyleOracleTrainer:
                     }
 
                     max_profile_tokens = max(map(len, profiles["attention_mask"]))
+                    max_profile_tokens = 6  # TODO: remove or make a variable (debug)
 
                     profiles = {
                         k: torch.stack([
