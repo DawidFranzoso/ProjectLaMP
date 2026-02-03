@@ -5,8 +5,6 @@ import torch.cuda
 
 import torch.optim
 
-import wandb
-
 from DataDownloader import DataDownloader
 
 from StyleOracleTrainer import StyleOracleTrainer
@@ -30,6 +28,8 @@ model_size = os.environ.get("MODEL_SIZE", "large")
 
 run_name = f"{datetime.now().replace(microsecond=0)}"
 if wandb_api_key is not None:
+    import wandb
+
     wandb.login(key=wandb_api_key)
     wandb.init(
         resume="never",
