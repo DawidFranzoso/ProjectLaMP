@@ -61,7 +61,8 @@ class DataDownloader:
                 if line_no != 0:
                     line = delimiter + line
 
-                print(line)
+                if (line_no + 1) % 100 == 0:
+                    print(f"{line_no + 1} lines complete")
                 f.write(line)
 
         print(f"Downloaded: {filepath}")
