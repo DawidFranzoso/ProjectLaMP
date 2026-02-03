@@ -25,6 +25,7 @@ print(f"{torch.cuda.is_available() = }")
 print(f"{wandb_api_key=}")
 print(f"{torch.__version__=}")
 model_size = os.environ.get("MODEL_SIZE", "large")
+override_batch_size = os.environ.get("OVERRIDE_BATCH_SIZE", None)
 
 run_name = f"{datetime.now().replace(microsecond=0)}"
 if wandb_api_key is not None:
@@ -67,6 +68,10 @@ batch_size = 64
 warmup_steps_triplet = round(0.05 * (10437 / batch_size) * epochs)  # from paper (lamp-7 training set size = 10437)
 warmup_steps_ce = round(0.05 * 10437 * epochs)  # from paper (lamp-7 training set size = 10437) (no batch size yet)
 
+if override_batch_size is not None:
+    batch_size = int(override_batch_size)
+    assert batch_size > 0
+
 DataDownloader.maybe_download_all(tasks=[7])
 
 run_id = f"{datetime.now().replace(microsecond=0)}"
@@ -76,7 +81,7 @@ baseline_trainer.run(
     run_name=f"baseline_{run_id}",
     triplet_mode=False,
     epochs=epochs,
-    batch_size=1,
+    batch_size=batch_size,
     optimizer_factory=lambda params: torch.optim.AdamW(  # from paper
         params=params,
         lr=5e-5,  # from paper
@@ -111,7 +116,7 @@ style_oracle_trainer.run(
     run_name=f"oracle_2classifier_{run_id}",
     triplet_mode=False,
     epochs=epochs,
-    batch_size=1,
+    batch_size=batch_size,
     optimizer_factory=lambda params: torch.optim.AdamW(  # from paper
         params=params,
         lr=5e-5,  # from paper

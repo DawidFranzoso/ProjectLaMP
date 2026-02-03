@@ -1,5 +1,6 @@
 import contextlib
 import copy
+import itertools
 from datetime import datetime
 import json
 import os
@@ -7,7 +8,7 @@ import random
 from itertools import count
 from typing import Literal, Iterable, Iterator, Optional, Callable, List
 from types import MethodType
-
+import numpy as np
 import torch
 from torch import nn
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, T5ForConditionalGeneration
@@ -167,18 +168,27 @@ class StyleOracleTrainer:
                     }
 
     def predict_style_tensor(self, encoder_input: torch.Tensor, encoder_attention_mask: torch.Tensor) -> torch.Tensor:
+        assert encoder_input.shape == encoder_attention_mask.shape
+
         encoder_representations = self.style_oracle(
-            input_ids=encoder_input,
-            attention_mask=encoder_attention_mask
+            input_ids=encoder_input.flatten(0, -2),
+            attention_mask=encoder_attention_mask.flatten(0, -2)
         ).last_hidden_state
+
+        encoder_representations = encoder_representations.view(*encoder_input.shape, encoder_representations.shape[-1])
 
         if self.oracle_mean_pooling:
             # mean pool over non-padding tokens
             # (we use mean pool because T5 has no cls token afaik)
-            representation_weight_mask = encoder_attention_mask / encoder_attention_mask.sum(-1, keepdim=True)
+            representation_weight_mask = (
+                encoder_attention_mask
+                / torch.maximum(torch.ones(()), encoder_attention_mask.sum(-1, keepdim=True))
+            )
             return (representation_weight_mask[..., None] * encoder_representations).sum(-2)
         else:
-            # if not mean pooling, just return first token
+            # if not mean pooling, just return first (any) token. Using the first one has the advantage that it
+            # is always the same position. Since encoder is not causal,
+            # the first token can contain as much as any other token
             return encoder_representations[..., 0, :]
 
     @staticmethod
@@ -259,19 +269,58 @@ class StyleOracleTrainer:
             if triplet_mode:
                 dataset = self.contrastive_sample_generator(dataset=dataset, batch_size=batch_size)
             else:
-                ...  # TODO
+                def batched_dataset(unbatched_dataset):
+                    keys = ("input", "label", "profile")
+                    empty = {k: [] for k in keys}
+                    ret = copy.copy(empty)
+                    for s in unbatched_dataset:
+                        for k in keys:
+                            ret[k].append(s[k])
+
+                        if len(ret["input"]) >= batch_size:
+                            yield ret
+                            ret = copy.copy(empty)
+
+                dataset = batched_dataset(dataset)
 
             for total_steps, sample in enumerate(dataset, start=1):
                 if not triplet_mode:
-                    input_ = self.tokenizer(sample["input"], return_tensors="pt").data
-                    label = self.tokenizer(label_raw := sample["label"], return_tensors="pt").data
-                    sample = {
-                        "anchor": self.tokenizer(
-                            sample["profile"],
-                            padding="longest",
-                            return_tensors="pt"
-                        ).data
+                    input_ = self.tokenizer(sample["input"], padding="longest", return_tensors="pt").data
+                    label = self.tokenizer(label_raw := sample["label"], padding="longest", return_tensors="pt").data
+
+                    # batching and padding shenanigans
+                    profile_sizes = list(map(len, sample["profile"]))
+
+                    flat_profiles = self.tokenizer(
+                        list(itertools.chain.from_iterable(sample["profile"])),
+                        padding="longest",
+                        return_tensors="pt"
+                    ).data
+
+                    profiles = {
+                        k: [
+                            flat_profiles[k][start:end]
+                            for start, end in zip([0, *np.cumsum(profile_sizes)[:-1]], [*np.cumsum(profile_sizes)])
+                        ] for k in flat_profiles.keys()
                     }
+
+                    max_profile_tokens = max(map(len, profiles["attention_mask"]))
+
+                    profiles = {
+                        k: torch.stack([
+                            torch.constant_pad_nd(
+                                p[:max_profile_tokens],  # in case I decide to limit max profile tokens later
+
+                                # I could make it cut from the left only, but idc enough to do it
+                                # I prefer readability
+                                pad=[0, 0, 0, max_profile_tokens - len(p)],
+                                value=0
+                            ) for p in profiles[k]
+                        ], dim=0)
+                        for k in profiles.keys()
+                    }
+
+                    sample = {"profile": profiles}
 
                 with ([contextlib.nullcontext, torch.enable_grad][is_training])():
                     with ([torch.no_grad, contextlib.nullcontext][triplet_mode])():
@@ -295,11 +344,15 @@ class StyleOracleTrainer:
                             attention_mask=input_["attention_mask"],
                         )["last_hidden_state"]
 
-                        style_vectors = predicted_styles["anchor"]
+                        style_vectors = predicted_styles["profile"]
 
-                        # TODO: batch this stuff together (not batched yet)
-                        style_vectors = style_vectors[None]
-
+                        encoder_attention_mask = torch.concat(
+                            tensors=[
+                                torch.ones_like(encoder_outputs[..., 0], dtype=sample["profile"]["attention_mask"].dtype),
+                                sample["profile"]["attention_mask"][..., 0]
+                            ],
+                            dim=-1,
+                        )
                         encoder_outputs = torch.concat([encoder_outputs, style_vectors], dim=-2)
 
                         decoder_input = torch.constant_pad_nd(
@@ -311,6 +364,7 @@ class StyleOracleTrainer:
                         outputs = self.classifier_model(
                             decoder_input_ids=decoder_input,
                             encoder_outputs=(encoder_outputs,),
+                            attention_mask=encoder_attention_mask,
                             labels=label["input_ids"],
                         )
 
