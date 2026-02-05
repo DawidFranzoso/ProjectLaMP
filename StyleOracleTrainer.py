@@ -350,7 +350,6 @@ class StyleOracleTrainer:
                             )
                             for sample_role, data in sample.items()
                         }
-                        continue  # TODO: remove bypass (debug)
 
                     if triplet_mode:
                         loss_info = loss_fn(
@@ -386,7 +385,9 @@ class StyleOracleTrainer:
 
                         style_vectors = predicted_styles["profile"]
 
-                        encoder_attention_mask = torch.concat(
+                        continue  # TODO: remove bypass (debug)
+
+                        encoder_attention_mask = torch.concat(  # TODO: memory leak here?
                             tensors=[
                                 torch.ones_like(encoder_outputs[..., 0], dtype=sample["profile"]["attention_mask"].dtype),
                                 sample["profile"]["attention_mask"][..., 0]
