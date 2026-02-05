@@ -11,6 +11,9 @@ from DataDownloader import DataDownloader
 from StyleOracleTrainer import StyleOracleTrainer
 import argparse
 
+import torch._dynamo as dynamo
+dynamo.config.recompile_limit = 32
+
 try:
     from dotenv import load_dotenv
     load_dotenv()
@@ -26,8 +29,6 @@ parser.add_argument("--max_recency", help="Max amount of recent profiles (tweets
 parser.add_argument("--baseline", action="store_true", required=False)
 parser.add_argument("--triplet_mode_weight_regularization", type=float, default=0, required=False)
 args = parser.parse_args()
-
-args.baseline = True  # TODO: remove (debug)
 
 wandb_api_key = os.environ.get("WANDB_API_KEY", None)
 device = torch.device(os.environ.get("DEVICE", "cuda"))
