@@ -301,7 +301,7 @@ class StyleOracleTrainer:
                 dataset = batched_dataset(dataset)
 
             for total_steps, sample in enumerate(dataset, start=1):
-                raw_sample = copy.deepcopy(sample)  # for debugging
+                # raw_sample = copy.deepcopy(sample)  # for debugging
 
                 if not triplet_mode:
                     input_ = self.tokenizer(sample["input"], padding="longest", return_tensors="pt").data
@@ -379,10 +379,10 @@ class StyleOracleTrainer:
                             )
                     else:
                         # TODO: memory leak here
-                        encoder_outputs: torch.Tensor = self.classifier_model.encoder(
-                            input_ids=input_["input_ids"],
-                            attention_mask=input_["attention_mask"],
-                        )["last_hidden_state"]
+                        # encoder_outputs: torch.Tensor = self.classifier_model.encoder(
+                        #     input_ids=input_["input_ids"],
+                        #     attention_mask=input_["attention_mask"],
+                        # )["last_hidden_state"]
 
                         style_vectors = predicted_styles["profile"]
 
