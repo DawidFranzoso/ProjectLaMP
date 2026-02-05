@@ -262,7 +262,9 @@ class StyleOracleTrainer:
             return ret
 
         with self.device:
+            mse = nn.MSELoss()
             loss_metric = nn.Parameter(torch.zeros(()), requires_grad=False)
+
             if triplet_mode:
                 pos_sim_metric = nn.Parameter(torch.zeros(()), requires_grad=False)
                 neg_sim_metric = nn.Parameter(torch.zeros(()), requires_grad=False)
@@ -357,7 +359,6 @@ class StyleOracleTrainer:
                         if triplet_mode_weight_regularization != 0:
                             loss_info["unregularized_loss"] = loss_info["loss"]
 
-                            mse = nn.MSELoss()
                             anchor_weight_l2 = torch.stack(
                                 list(map(
                                     lambda x__y: mse(*x__y),
@@ -456,14 +457,14 @@ class StyleOracleTrainer:
                 )
                 if triplet_mode:
                     StyleOracleTrainer.update_metric(
-                        step=steps_metric, value=loss_info["positive_similarity"].detach().mean(), aggregate=pos_sim_metric
+                        step=steps_metric, value=loss_info["positive_similarity"].mean().detach().item(), aggregate=pos_sim_metric
                     )
                     StyleOracleTrainer.update_metric(
-                        step=steps_metric, value=loss_info["negative_similarity"].detach().mean(), aggregate=neg_sim_metric
+                        step=steps_metric, value=loss_info["negative_similarity"].mean().detach().item(), aggregate=neg_sim_metric
                     )
                     if triplet_mode_weight_regularization != 0:
                         StyleOracleTrainer.update_metric(
-                            step=steps_metric, value=loss_info["regularization"].detach(), aggregate=regularization_metric,
+                            step=steps_metric, value=loss_info["regularization"].detach().item(), aggregate=regularization_metric,
                         )
 
                 steps_metric += 1
