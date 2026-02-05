@@ -379,12 +379,16 @@ class StyleOracleTrainer:
                             )
                     else:
                         # TODO: memory leak here
-                        # encoder_outputs: torch.Tensor = self.classifier_model.encoder(
-                        #     input_ids=input_["input_ids"],
-                        #     attention_mask=input_["attention_mask"],
-                        # )["last_hidden_state"]
+                        encoder_outputs: torch.Tensor = self.classifier_model.encoder(
+                            input_ids=input_["input_ids"],
+                            attention_mask=input_["attention_mask"],
+                        )["last_hidden_state"]
 
                         style_vectors = predicted_styles["profile"]
+                        free, total = torch.cuda.mem_get_info("cuda")
+                        mem_used_GB = (total - free) / (2 ** 30)
+
+                        print(f"Cuda memory used: {mem_used_GB:.3f} GB")
 
                         continue  # TODO: remove bypass (debug)
 
