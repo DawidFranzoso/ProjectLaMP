@@ -286,7 +286,7 @@ class StyleOracleTrainer:
             if triplet_mode:
                 dataset = self.contrastive_sample_generator(dataset=dataset, batch_size=batch_size)
             else:
-                dataset = list(filter(lambda sample: len(sample["input"]) <= 300, dataset))
+                dataset = list(filter(lambda sample: len(sample["input"]) <= 40, dataset))
 
                 def batched_dataset(unbatched_dataset):
                     keys = ("input", "label", "profile")
@@ -296,7 +296,7 @@ class StyleOracleTrainer:
                         for k in keys:
                             if k == "profile":
                                 # truncate profiles to avoid insane memory usage for outliers
-                                s[k] = list(map(lambda p: p[:300], s[k]))
+                                s[k] = list(map(lambda p: p[:40], s[k]))
 
                             ret[k].append(s[k])
 
