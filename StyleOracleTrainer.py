@@ -475,6 +475,10 @@ class StyleOracleTrainer:
                     if cap_steps <= steps_metric:
                         break
 
+                del loss_info
+                del raw_sample
+                del sample
+
             return get_metrics_dict()
 
     def run(self,
