@@ -230,8 +230,12 @@ class StyleOracleTrainer:
                   optimizer: Optional[torch.optim.Optimizer],
                   lr_scheduler: Optional[torch.optim.lr_scheduler.LRScheduler] = None,
                   log_freq: int = 10,
-                  cap_steps: Optional[int] = None
+                  cap_steps: Optional[int] = None,
+                  max_recency: Optional[int] = 4,
+                  triplet_mode_weight_regularization: float = 0.,
                   ):
+        assert 0 <= triplet_mode_weight_regularization <= 1
+
         is_training = optimizer is not None
 
         if is_training:
@@ -260,6 +264,12 @@ class StyleOracleTrainer:
             if triplet_mode:
                 pos_sim_metric = nn.Parameter(torch.zeros(()), requires_grad=False)
                 neg_sim_metric = nn.Parameter(torch.zeros(()), requires_grad=False)
+
+                if triplet_mode_weight_regularization != 0:
+                    # noinspection PyTypeChecker
+                    classifier_anchor_weights = list(map(nn.Parameter.clone, self.classifier_model.parameters()))
+                    # noinspection PyTypeChecker
+                    style_anchor_weights = list(map(nn.Parameter.clone, self.classifier_model.parameters()))
             else:
                 # rouge = evaluate.load('rouge')
                 pass
@@ -288,6 +298,9 @@ class StyleOracleTrainer:
                     input_ = self.tokenizer(sample["input"], padding="longest", return_tensors="pt").data
                     label = self.tokenizer(label_raw := sample["label"], padding="longest", return_tensors="pt").data
 
+                    if max_recency is not None:
+                        sample["profile"] = list(map(lambda p: p[-max_recency:], sample["profile"]))
+
                     # batching and padding shenanigans
                     profile_sizes = list(map(len, sample["profile"]))
 
@@ -305,15 +318,11 @@ class StyleOracleTrainer:
                     }
 
                     max_profile_tokens = max(map(len, profiles["attention_mask"]))
-                    max_profile_tokens = 6  # TODO: remove or make a variable (debug)
 
                     profiles = {
                         k: torch.stack([
                             torch.constant_pad_nd(
-                                p[:max_profile_tokens],  # in case I decide to limit max profile tokens later
-
-                                # I could make it cut from the left only, but idc enough to do it
-                                # I prefer readability
+                                p,
                                 pad=[0, 0, 0, max_profile_tokens - len(p)],
                                 value=0
                             ) for p in profiles[k]
@@ -339,6 +348,27 @@ class StyleOracleTrainer:
                             positive_style=predicted_styles["positive"],
                             negative_style=predicted_styles["negative"],
                         )  # I expect no nans
+
+                        if triplet_mode_weight_regularization != 0:
+                            loss_info["unregularized_loss"] = loss_info["loss"]
+
+                            mse = nn.MSELoss()
+                            anchor_weight_l2 = torch.stack(
+                                list(map(
+                                    lambda x__y: mse(*x__y),
+                                        itertools.chain(
+                                            zip(style_anchor_weights, self.style_oracle.parameters()),
+                                            zip(classifier_anchor_weights, self.classifier_model.parameters()),
+                                        )
+                                    )
+                                )
+                            ).mean()
+
+                            loss_info["regularization"] = anchor_weight_l2
+                            loss_info["loss"] = (
+                                triplet_mode_weight_regularization * loss_info["regularization"]
+                                + (1 - triplet_mode_weight_regularization) * loss_info["unregularized_loss"]
+                            )
                     else:
                         encoder_outputs: torch.Tensor = self.classifier_model.encoder(
                             input_ids=input_["input_ids"],
@@ -415,16 +445,6 @@ class StyleOracleTrainer:
 
             return get_metrics_dict()
 
-    def run_ce_epoch(self,
-                     dataset: List,
-                     batch_size: int,
-                     loss_fn: Callable,
-                     optimizer: Optional[torch.optim.Optimizer],
-                     lr_scheduler: Optional[torch.optim.lr_scheduler.LRScheduler] = None,
-                     log_freq: int = 10,
-                     ):
-        ...
-
     def run(self,
             triplet_mode: bool,
             epochs: int,
@@ -435,6 +455,8 @@ class StyleOracleTrainer:
             loss_fn: Callable = None,
             log_freq: int = 10,
             run_name: str = None,
+            max_recency: Optional[int] = 4,
+            triplet_mode_weight_regularization: float = 0.,
             ):
         if loss_fn is None:
             if triplet_mode:
@@ -476,6 +498,8 @@ class StyleOracleTrainer:
                 lr_scheduler=lr_scheduler,
                 log_freq=log_freq,
                 cap_steps=(10437 // batch_size) if triplet_mode else None,
+                max_recency=max_recency,
+                triplet_mode_weight_regularization=triplet_mode_weight_regularization,
             )
             print(f"Validation ({epoch=})")
             metrics_dict |= self.run_epoch(
@@ -487,6 +511,8 @@ class StyleOracleTrainer:
                 lr_scheduler=None,
                 log_freq=log_freq,
                 cap_steps=(1500 // batch_size) if triplet_mode else None,
+                max_recency=max_recency,
+                # no regularization for validation
             )
 
             print(json.dumps(metrics_dict, indent=4))
@@ -500,3 +526,5 @@ class StyleOracleTrainer:
             torch.save(obj=self.style_oracle, f=model_filepath)
             with open(model_filepath + ".history", "w") as f:
                 json.dump(history, f)
+
+        return history

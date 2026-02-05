@@ -1,3 +1,4 @@
+import json
 import os
 import random
 from datetime import datetime
@@ -8,6 +9,7 @@ import torch.optim
 from DataDownloader import DataDownloader
 
 from StyleOracleTrainer import StyleOracleTrainer
+import argparse
 
 try:
     from dotenv import load_dotenv
@@ -18,6 +20,14 @@ except ImportError:
 # I was asked to do this
 random.seed(42)
 torch.manual_seed(42)
+
+parser = argparse.ArgumentParser("python main.py")
+parser.add_argument("--max_recency", help="Max amount of recent profiles (tweets) used.", type=int, default=4, required=False)
+parser.add_argument("--baseline", action="store_true", required=False)
+parser.add_argument("--triplet_mode_weight_regularization", type=float, default=0, required=False)
+args = parser.parse_args()
+
+args.triplet_mode_weight_regularization = 0.01  # TODO: remove (debug)
 
 wandb_api_key = os.environ.get("WANDB_API_KEY", None)
 device = torch.device(os.environ.get("DEVICE", "cuda"))
@@ -37,7 +47,7 @@ if wandb_api_key is not None:
 
         # job_type=None,
         dir=None,
-        config={},  # TODO: maybe todo
+        config=vars(args),
         project="ExtremelyCoolLampProject",
         entity="dawidfranzoso",
         reinit=True,
@@ -76,57 +86,75 @@ DataDownloader.maybe_download_all(tasks=[7])
 
 run_id = f"{datetime.now().replace(microsecond=0)}"
 
-baseline_trainer = StyleOracleTrainer.from_pretrained_flan_t5(device=device, size=model_size)
-baseline_trainer.run(
-    run_name=f"baseline_{run_id}",
-    triplet_mode=False,
-    epochs=epochs,
-    batch_size=batch_size,
-    optimizer_factory=lambda params: torch.optim.AdamW(  # from paper
-        params=params,
-        lr=5e-5,  # from paper
-        weight_decay=1e-4,  # from paper
-    ),
-    lr_scheduler_factory=lambda optimizer: torch.optim.lr_scheduler.LambdaLR(
-        optimizer,
-        lambda step: min(warmup_steps_ce, step) / warmup_steps_ce
-    ),
-)
-del baseline_trainer
+if args.baseline:
+    print("Baseline training")
+    baseline_trainer = StyleOracleTrainer.from_pretrained_flan_t5(device=device, size=model_size)
+    baseline_trainer.run(
+        run_name=f"baseline_{run_id}_{vars(args)}",
+        triplet_mode=False,
+        epochs=epochs,
+        batch_size=batch_size,
+        optimizer_factory=lambda params: torch.optim.AdamW(  # from paper
+            params=params,
+            lr=5e-5,  # from paper
+            weight_decay=1e-4,  # from paper
+        ),
+        lr_scheduler_factory=lambda optimizer: torch.optim.lr_scheduler.LambdaLR(
+            optimizer,
+            lambda step: min(warmup_steps_ce, step) / warmup_steps_ce
+        ),
+        max_recency=args.max_recency,
+    )
+else:
+    print("Weaved training")
+    style_oracle_trainer = StyleOracleTrainer.from_pretrained_flan_t5(device=device, size=model_size)
 
-style_oracle_trainer = StyleOracleTrainer.from_pretrained_flan_t5(device=device, size=model_size)
-style_oracle_trainer.run(
-    run_name=f"oracle_1triplet_{run_id}",
-    triplet_mode=True,
-    epochs=epochs,
-    batch_size=batch_size,
-    optimizer_factory=lambda params: torch.optim.AdamW(  # from paper
-        params=params,
-        lr=5e-5,  # from paper
-        weight_decay=1e-4,  # from paper
-    ),
-    lr_scheduler_factory=lambda optimizer: torch.optim.lr_scheduler.LambdaLR(
-        optimizer,
-        lambda step: min(warmup_steps_triplet, step) / warmup_steps_triplet
-    ),
-    loss_fn=StyleOracleTrainer.build_triplet_loss(positive_weight=4)
-)
+    weave_history = []
 
-style_oracle_trainer.run(
-    run_name=f"oracle_2classifier_{run_id}",
-    triplet_mode=False,
-    epochs=epochs,
-    batch_size=batch_size,
-    optimizer_factory=lambda params: torch.optim.AdamW(  # from paper
-        params=params,
-        lr=5e-5,  # from paper
-        weight_decay=1e-4,  # from paper
-    ),
-    lr_scheduler_factory=lambda optimizer: torch.optim.lr_scheduler.LambdaLR(
-        optimizer,
-        lambda step: min(warmup_steps_ce, step) / warmup_steps_ce
-    ),
-)
+    for epoch in range(1, 1 + epochs):
+        weave_metrics = {}
+
+        weave_metrics["triplet"] = style_oracle_trainer.run(
+            run_name=f"oracle_1triplet_{run_id}_{vars(args)}_weave{epoch}",
+            triplet_mode=True,
+            epochs=1,
+            batch_size=batch_size,
+            optimizer_factory=lambda params: torch.optim.AdamW(  # from paper
+                params=params,
+                lr=5e-5,  # from paper
+                weight_decay=1e-4,  # from paper
+            ),
+            lr_scheduler_factory=lambda optimizer: torch.optim.lr_scheduler.LambdaLR(
+                optimizer,
+                lambda step: min(warmup_steps_triplet, step) / warmup_steps_triplet
+            ),
+            loss_fn=StyleOracleTrainer.build_triplet_loss(positive_weight=4),
+            max_recency=args.max_recency,
+            triplet_mode_weight_regularization=args.triplet_mode_weight_regularization,
+        )
+
+        weave_metrics["classifier"] = style_oracle_trainer.run(
+            run_name=f"oracle_2classifier_{run_id}_{vars(args)}_weave{epoch}",
+            triplet_mode=False,
+            epochs=1,
+            batch_size=batch_size,
+            optimizer_factory=lambda params: torch.optim.AdamW(  # from paper
+                params=params,
+                lr=5e-5,  # from paper
+                weight_decay=1e-4,  # from paper
+            ),
+            lr_scheduler_factory=lambda optimizer: torch.optim.lr_scheduler.LambdaLR(
+                optimizer,
+                lambda step: min(warmup_steps_ce, step) / warmup_steps_ce
+            ),
+            max_recency=args.max_recency,
+        )
+
+        weave_history.append(weave_metrics)
+
+        with open(f"outputs/weaved/{run_id}_{vars(args)}_weave{epoch}.history", "w") as f:
+            json.dump(weave_history, f)
+
 
 # TODO: speedrun
 #  rouge from evaluate
