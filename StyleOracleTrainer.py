@@ -378,6 +378,7 @@ class StyleOracleTrainer:
                                 + (1 - triplet_mode_weight_regularization) * loss_info["unregularized_loss"]
                             )
                     else:
+                        # TODO: memory leak here
                         encoder_outputs: torch.Tensor = self.classifier_model.encoder(
                             input_ids=input_["input_ids"],
                             attention_mask=input_["attention_mask"],
@@ -387,7 +388,7 @@ class StyleOracleTrainer:
 
                         continue  # TODO: remove bypass (debug)
 
-                        encoder_attention_mask = torch.concat(  # TODO: memory leak here?
+                        encoder_attention_mask = torch.concat(
                             tensors=[
                                 torch.ones_like(encoder_outputs[..., 0], dtype=sample["profile"]["attention_mask"].dtype),
                                 sample["profile"]["attention_mask"][..., 0]
@@ -495,73 +496,74 @@ class StyleOracleTrainer:
             max_recency: Optional[int] = 4,
             triplet_mode_weight_regularization: float = 0.,
             ):
-        if loss_fn is None:
-            if triplet_mode:
-                loss_fn = StyleOracleTrainer.build_triplet_loss()
+        with torch.no_grad():
+            if loss_fn is None:
+                if triplet_mode:
+                    loss_fn = StyleOracleTrainer.build_triplet_loss()
+                else:
+                    loss_fn = None  # nn.CrossEntropyLoss() deprecated
+
+            if run_name is None:
+                run_name = f"{datetime.now().replace(microsecond=0)}"
+
+            optimizer = optimizer_factory([self.classifier_model, self.style_oracle][triplet_mode].parameters())
+            if lr_scheduler_factory:
+                lr_scheduler = lr_scheduler_factory(optimizer)
             else:
-                loss_fn = None  # nn.CrossEntropyLoss() deprecated
+                lr_scheduler = None
 
-        if run_name is None:
-            run_name = f"{datetime.now().replace(microsecond=0)}"
+            history = []
 
-        optimizer = optimizer_factory([self.classifier_model, self.style_oracle][triplet_mode].parameters())
-        if lr_scheduler_factory:
-            lr_scheduler = lr_scheduler_factory(optimizer)
-        else:
-            lr_scheduler = None
+            # noinspection PyTypeChecker
+            dataset_tng, dataset_val = (
+                list(  # the datasets are small so its fine to load them all at once
+                    StyleOracleTrainer.get_supervised_dataset(
+                        task_number=7,
+                        split_name=split_name,
+                        is_time_based=False,
+                    )
+                ) for split_name in ("training", "validation")
+            )
 
-        history = []
-
-        # noinspection PyTypeChecker
-        dataset_tng, dataset_val = (
-            list(  # the datasets are small so its fine to load them all at once
-                StyleOracleTrainer.get_supervised_dataset(
-                    task_number=7,
-                    split_name=split_name,
-                    is_time_based=False,
+            for epoch in range(1, 1 + epochs):
+                print(f"Training ({epoch=})")
+                metrics_dict = {"epoch": epoch}
+                metrics_dict |= self.run_epoch(
+                    dataset=dataset_tng,
+                    batch_size=batch_size,
+                    loss_fn=loss_fn,
+                    triplet_mode=triplet_mode,
+                    optimizer=optimizer,
+                    lr_scheduler=lr_scheduler,
+                    log_freq=log_freq,
+                    cap_steps=(10437 // batch_size) if triplet_mode else None,
+                    max_recency=max_recency,
+                    triplet_mode_weight_regularization=triplet_mode_weight_regularization,
                 )
-            ) for split_name in ("training", "validation")
-        )
+                print(f"Validation ({epoch=})")
+                metrics_dict |= self.run_epoch(
+                    dataset=dataset_val,
+                    batch_size=batch_size,
+                    loss_fn=loss_fn,
+                    triplet_mode=triplet_mode,
+                    optimizer=None,  # validation
+                    lr_scheduler=None,
+                    log_freq=log_freq,
+                    cap_steps=(1500 // batch_size) if triplet_mode else None,
+                    max_recency=max_recency,
+                    # no regularization for validation
+                )
 
-        for epoch in range(1, 1 + epochs):
-            print(f"Training ({epoch=})")
-            metrics_dict = {"epoch": epoch}
-            metrics_dict |= self.run_epoch(
-                dataset=dataset_tng,
-                batch_size=batch_size,
-                loss_fn=loss_fn,
-                triplet_mode=triplet_mode,
-                optimizer=optimizer,
-                lr_scheduler=lr_scheduler,
-                log_freq=log_freq,
-                cap_steps=(10437 // batch_size) if triplet_mode else None,
-                max_recency=max_recency,
-                triplet_mode_weight_regularization=triplet_mode_weight_regularization,
-            )
-            print(f"Validation ({epoch=})")
-            metrics_dict |= self.run_epoch(
-                dataset=dataset_val,
-                batch_size=batch_size,
-                loss_fn=loss_fn,
-                triplet_mode=triplet_mode,
-                optimizer=None,  # validation
-                lr_scheduler=None,
-                log_freq=log_freq,
-                cap_steps=(1500 // batch_size) if triplet_mode else None,
-                max_recency=max_recency,
-                # no regularization for validation
-            )
+                print(json.dumps(metrics_dict, indent=4))
 
-            print(json.dumps(metrics_dict, indent=4))
+                # if wandb_api_key is not None:
+                #     wandb.log(metrics_dict)
 
-            # if wandb_api_key is not None:
-            #     wandb.log(metrics_dict)
+                history.append(metrics_dict)
+                model_filepath = f"outputs/style_oracle/{run_name}_step{epoch}.pt"
+                os.makedirs("/".join(model_filepath.split("/")[:-1]), exist_ok=True)
+                torch.save(obj=self.style_oracle, f=model_filepath)
+                with open(model_filepath + ".history", "w") as f:
+                    json.dump(history, f)
 
-            history.append(metrics_dict)
-            model_filepath = f"outputs/style_oracle/{run_name}_step{epoch}.pt"
-            os.makedirs("/".join(model_filepath.split("/")[:-1]), exist_ok=True)
-            torch.save(obj=self.style_oracle, f=model_filepath)
-            with open(model_filepath + ".history", "w") as f:
-                json.dump(history, f)
-
-        return history
+            return history
