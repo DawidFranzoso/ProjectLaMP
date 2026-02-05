@@ -259,6 +259,7 @@ class StyleOracleTrainer:
                     f"{prefix}regularization": regularization_metric.item(),
                 }
 
+            return {}  # TODO: remove (debug memory leaks)
             return ret
 
         with self.device:
