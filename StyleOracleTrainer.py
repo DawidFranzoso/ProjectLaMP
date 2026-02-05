@@ -178,7 +178,7 @@ class StyleOracleTrainer:
 
         encoder_representations = encoder_representations.view(*encoder_input.shape, encoder_representations.shape[-1])
 
-        if self.oracle_mean_pooling:
+        if self.oracle_mean_pooling and False:  # TODO: remove bypass (debug)
             # mean pool over non-padding tokens
             # (we use mean pool because T5 has no cls token afaik)
             representation_weight_mask = (
@@ -200,6 +200,7 @@ class StyleOracleTrainer:
 
         style_similarity = torch.nn.CosineSimilarity(dim=-1, eps=1e-08)
 
+        @torch.compile()
         def loss_fn(anchor_style: torch.Tensor, positive_style: torch.Tensor, negative_style: torch.Tensor):
             positive_similarity = style_similarity(anchor_style, positive_style)
             negative_similarity = style_similarity(anchor_style, negative_style)
@@ -208,8 +209,8 @@ class StyleOracleTrainer:
 
             # no nans expected
             loss = (
-                    negative_weight * negative_similarity
-                    - positive_weight * torch.minimum(positive_similarity, broadcast_triplet_alpha)
+                negative_weight * negative_similarity
+                - positive_weight * torch.minimum(positive_similarity, broadcast_triplet_alpha)
             )
 
             return {
@@ -260,7 +261,6 @@ class StyleOracleTrainer:
                     f"{prefix}regularization": regularization_metric.item(),
                 }
 
-            return {}  # TODO: remove (debug memory leaks)
             return ret
 
         with self.device:
@@ -448,6 +448,8 @@ class StyleOracleTrainer:
                             # )
                         }
 
+                continue  # TODO: remove bypass (debug)
+
                 loss_info["loss"].mean().backward()
                 if is_training:
                     optimizer.step()
@@ -477,11 +479,6 @@ class StyleOracleTrainer:
                 if cap_steps is not None:
                     if cap_steps <= steps_metric:
                         break
-
-                del loss_info
-                del raw_sample
-                del sample
-                gc.collect()
 
             return get_metrics_dict()
 
