@@ -12,6 +12,7 @@ import numpy as np
 import torch
 from torch import nn
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, T5ForConditionalGeneration, GenerationConfig
+import gc
 
 from DataDownloader import DataDownloader
 
@@ -480,6 +481,7 @@ class StyleOracleTrainer:
                 del loss_info
                 del raw_sample
                 del sample
+                gc.collect()
 
             return get_metrics_dict()
 

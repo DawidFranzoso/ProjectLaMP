@@ -11,9 +11,6 @@ from DataDownloader import DataDownloader
 from StyleOracleTrainer import StyleOracleTrainer
 import argparse
 
-import torch._dynamo as dynamo
-dynamo.config.recompile_limit = 1
-
 try:
     from dotenv import load_dotenv
     load_dotenv()
