@@ -250,13 +250,15 @@ class StyleOracleTrainer:
             ret = {
                 f"{prefix}total_steps": total_steps,
                 f"{prefix}total_samples": total_steps * batch_size,
-                f"{prefix}loss": loss_metric.item(),
+                f"{prefix}total_loss": loss_metric.item(),
             }
             if triplet_mode:
                 ret |= {
                     f"{prefix}positive_similarity": pos_sim_metric.item(),
                     f"{prefix}negative_similarity": neg_sim_metric.item(),
+                    f"{prefix}regularization": regularization_metric.item(),
                 }
+
             return ret
 
         with self.device:
@@ -264,6 +266,7 @@ class StyleOracleTrainer:
             if triplet_mode:
                 pos_sim_metric = nn.Parameter(torch.zeros(()), requires_grad=False)
                 neg_sim_metric = nn.Parameter(torch.zeros(()), requires_grad=False)
+                regularization_metric = nn.Parameter(torch.zeros(()), requires_grad=False)
 
                 if triplet_mode_weight_regularization != 0:
                     # noinspection PyTypeChecker
@@ -433,6 +436,10 @@ class StyleOracleTrainer:
                     StyleOracleTrainer.update_metric(
                         step=steps_metric, value=loss_info["negative_similarity"].detach().mean(), aggregate=neg_sim_metric
                     )
+                    if triplet_mode_weight_regularization != 0:
+                        StyleOracleTrainer.update_metric(
+                            step=steps_metric, value=loss_info["regularization"].detach(), aggregate=regularization_metric,
+                        )
 
                 steps_metric += 1
 
