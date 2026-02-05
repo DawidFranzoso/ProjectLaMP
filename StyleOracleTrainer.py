@@ -350,6 +350,7 @@ class StyleOracleTrainer:
                             )
                             for sample_role, data in sample.items()
                         }
+                        continue  # TODO: remove bypass (debug)
 
                     if triplet_mode:
                         loss_info = loss_fn(
@@ -447,8 +448,6 @@ class StyleOracleTrainer:
                             #     use_aggregator=True,
                             # )
                         }
-
-                continue  # TODO: remove bypass (debug)
 
                 loss_info["loss"].mean().backward()
                 if is_training:
