@@ -385,7 +385,7 @@ class StyleOracleTrainer:
                         )["last_hidden_state"]
 
                         style_vectors = predicted_styles["profile"]
-                        free, total = torch.cuda.mem_get_info("cuda")
+                        free, total = torch.cuda.mem_get_info(torch.device("cuda"))
                         mem_used_GB = (total - free) / (2 ** 30)
 
                         print(f"Cuda memory used: {mem_used_GB:.3f} GB")
