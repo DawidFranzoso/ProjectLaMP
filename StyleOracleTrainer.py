@@ -11,7 +11,7 @@ from types import MethodType
 import numpy as np
 import torch
 from torch import nn
-from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, T5ForConditionalGeneration
+from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, T5ForConditionalGeneration, GenerationConfig
 
 from DataDownloader import DataDownloader
 
@@ -297,6 +297,8 @@ class StyleOracleTrainer:
                 dataset = batched_dataset(dataset)
 
             for total_steps, sample in enumerate(dataset, start=1):
+                raw_sample = copy.deepcopy(sample)  # for debugging
+
                 if not triplet_mode:
                     input_ = self.tokenizer(sample["input"], padding="longest", return_tensors="pt").data
                     label = self.tokenizer(label_raw := sample["label"], padding="longest", return_tensors="pt").data
@@ -401,6 +403,29 @@ class StyleOracleTrainer:
                             attention_mask=encoder_attention_mask,
                             labels=label["input_ids"],
                         )
+
+                        if not is_training:
+                            generated_outputs = self.tokenizer.batch_decode(
+                                self.classifier_model.generate(
+                                    input_ids=label["input_ids"],
+                                    encoder_outputs=(encoder_outputs,),
+                                    attention_mask=encoder_attention_mask,
+
+                                    generation_config=GenerationConfig(
+                                        max_new_tokens=20,
+                                        # num_return_sequences=3,
+                                        # num_beams=4,
+                                    )
+                                ),
+                                skip_special_tokens=True,
+                            )
+                            print(
+                                "\n".join([
+                                    f"gold: {gold}\n"
+                                    f"pred: {pred}\n"
+                                    for gold, pred in zip(raw_sample["label"], generated_outputs)
+                                ])
+                            )
 
                         # TODO: implement rouge
                         """  
