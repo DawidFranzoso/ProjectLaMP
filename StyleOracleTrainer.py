@@ -406,8 +406,8 @@ class StyleOracleTrainer:
                         ).detach()
                         encoder_outputs = torch.concat([encoder_outputs, style_vectors], dim=-2)
 
-                        encoder_attention_mask = encoder_attention_mask[:, :200]
-                        encoder_outputs = encoder_outputs[:, :200]
+                        encoder_attention_mask = encoder_attention_mask[:, :100]
+                        encoder_outputs = encoder_outputs[:, :100]
 
                         decoder_input = torch.constant_pad_nd(
                             label["input_ids"].detach(),
