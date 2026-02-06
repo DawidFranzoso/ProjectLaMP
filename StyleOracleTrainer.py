@@ -402,8 +402,8 @@ class StyleOracleTrainer:
 
                         attention_mask_indices = style_vectors_attention_mask.argsort(-1, descending=True)
 
-                        style_vectors = gather_nd(style_vectors, attention_mask_indices)[:, :100]
-                        style_vectors_attention_mask = gather_nd(style_vectors_attention_mask, attention_mask_indices)[:, :100]
+                        style_vectors = gather_nd(style_vectors, attention_mask_indices)[:, :50]
+                        style_vectors_attention_mask = gather_nd(style_vectors_attention_mask, attention_mask_indices)[:, :50]
 
                         encoder_attention_mask = torch.concat(
                             tensors=[
