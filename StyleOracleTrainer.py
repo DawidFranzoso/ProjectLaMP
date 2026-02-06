@@ -393,8 +393,6 @@ class StyleOracleTrainer:
                         free, total = torch.cuda.mem_get_info(torch.device("cuda:0"))
                         mem_used_GB = (total - free) / (2 ** 30)
 
-                        print(f"Cuda memory used: {mem_used_GB:.3f} GB")
-
                         encoder_attention_mask = torch.concat(
                             tensors=[
                                 torch.ones_like(encoder_outputs[..., 0], dtype=sample["profile"]["attention_mask"].dtype),
@@ -458,7 +456,11 @@ class StyleOracleTrainer:
                             # )
                         }
 
-                loss_info["loss"].backward()
+                try:
+                    loss_info["loss"].backward()
+                except RuntimeError:
+                    print("Skipping optimization step due to bad gradient")
+
                 if is_training:
                     optimizer.step()
                 if is_training and lr_scheduler is not None:
