@@ -389,7 +389,7 @@ class StyleOracleTrainer:
                             attention_mask=input_["attention_mask"].detach(),
                         )["last_hidden_state"]
 
-                        style_vectors = predicted_styles["profile"].detach()
+                        style_vectors = predicted_styles["profile"]
                         free, total = torch.cuda.mem_get_info(torch.device("cuda:0"))
                         mem_used_GB = (total - free) / (2 ** 30)
 
