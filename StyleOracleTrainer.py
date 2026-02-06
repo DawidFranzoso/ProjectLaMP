@@ -402,8 +402,8 @@ class StyleOracleTrainer:
 
                         attention_mask_indices = style_vectors_attention_mask.argsort(-1, descending=True)
 
-                        style_vectors = gather_nd(style_vectors, attention_mask_indices)[:, :50]
-                        style_vectors_attention_mask = gather_nd(style_vectors_attention_mask, attention_mask_indices)[:, :50]
+                        style_vectors = gather_nd(style_vectors, attention_mask_indices)
+                        style_vectors_attention_mask = gather_nd(style_vectors_attention_mask, attention_mask_indices)
 
                         encoder_attention_mask = torch.concat(
                             tensors=[
@@ -411,9 +411,9 @@ class StyleOracleTrainer:
                                 style_vectors_attention_mask
                             ],
                             dim=-1,
-                        ).detach()
+                        )[:, :100].detach()
 
-                        encoder_outputs = torch.concat([encoder_outputs, style_vectors], dim=-2)
+                        encoder_outputs = torch.concat([encoder_outputs, style_vectors], dim=-2)[:, :100]
 
                         decoder_input = torch.constant_pad_nd(
                             label["input_ids"].detach(),
