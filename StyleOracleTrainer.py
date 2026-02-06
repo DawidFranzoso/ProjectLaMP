@@ -431,8 +431,8 @@ class StyleOracleTrainer:
 
                                     generation_config=GenerationConfig(
                                         max_new_tokens=60,
-                                        num_return_sequences=3,
-                                        num_beams=4,
+                                        # num_return_sequences=3,
+                                        # num_beams=4,
                                     )
                                 ),
                                 skip_special_tokens=True,
