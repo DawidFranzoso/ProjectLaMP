@@ -307,7 +307,7 @@ class StyleOracleTrainer:
                 dataset = batched_dataset(dataset)
 
             for total_steps, sample in enumerate(dataset, start=1):
-                raw_sample = copy.deepcopy(sample)  # for debugging
+                # raw_sample = copy.deepcopy(sample)  # for debugging
 
                 if not triplet_mode:
                     input_ = self.tokenizer(sample["input"], padding="longest", return_tensors="pt").data
@@ -341,7 +341,7 @@ class StyleOracleTrainer:
                                 pad=[0, 0, 0, max_profile_tokens - len(p)],
                                 value=0
                             ) for p in profiles[k]
-                        ], dim=0)
+                        ], dim=0).detach()
                         for k in profiles.keys()
                     }
 
