@@ -306,7 +306,7 @@ class StyleOracleTrainer:
                 dataset = batched_dataset(dataset)
 
             for total_steps, sample in enumerate(dataset, start=1):
-                # raw_sample = copy.deepcopy(sample)  # for debugging
+                raw_sample = copy.deepcopy(sample)  # for debugging
 
                 if not triplet_mode:
                     input_ = self.tokenizer(sample["input"], padding="longest", return_tensors="pt").data
@@ -401,14 +401,14 @@ class StyleOracleTrainer:
                                 sample["profile"]["attention_mask"][..., 0]
                             ],
                             dim=-1,
-                        ).detach()
+                        )
                         encoder_outputs = torch.concat([encoder_outputs, style_vectors], dim=-2)
 
                         decoder_input = torch.constant_pad_nd(
-                            label["input_ids"].detach(),
+                            label["input_ids"],
                             [1, 0],
                             self.classifier_model.generation_config.decoder_start_token_id
-                        )[..., :-1].detach()
+                        )[..., :-1]
 
                         outputs = self.classifier_model(
                             decoder_input_ids=decoder_input,
