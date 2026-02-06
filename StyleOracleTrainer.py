@@ -396,22 +396,24 @@ class StyleOracleTrainer:
                         )["last_hidden_state"]
 
                         style_vectors = predicted_styles["profile"].flatten(1, 2)
+                        style_vectors_attention_mask = sample["profile"]["attention_mask"].flatten(1, 2)
+
+                        gather_nd = torch.vmap(lambda tensor, indices: tensor[indices])
+
+                        attention_mask_indices = style_vectors_attention_mask.argsort(-1, descending=True)
+
+                        style_vectors = gather_nd(style_vectors, attention_mask_indices)[:, :100]
+                        style_vectors_attention_mask = gather_nd(style_vectors_attention_mask, attention_mask_indices)[:, :100]
 
                         encoder_attention_mask = torch.concat(
                             tensors=[
                                 torch.ones_like(encoder_outputs[..., 0], dtype=sample["profile"]["attention_mask"].dtype),
-                                sample["profile"]["attention_mask"].flatten(1, 2)
+                                style_vectors_attention_mask
                             ],
                             dim=-1,
                         ).detach()
+
                         encoder_outputs = torch.concat([encoder_outputs, style_vectors], dim=-2)
-
-                        attention_mask_indices = encoder_attention_mask.argsort(-1, descending=True)
-
-                        gather_nd = torch.vmap(lambda tensor, indices: tensor[indices])
-
-                        encoder_attention_mask = gather_nd(encoder_attention_mask, attention_mask_indices)[:, :100]
-                        encoder_outputs = gather_nd(encoder_outputs, attention_mask_indices)[:, :100]
 
                         decoder_input = torch.constant_pad_nd(
                             label["input_ids"].detach(),
