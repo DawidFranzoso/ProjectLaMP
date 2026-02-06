@@ -395,25 +395,20 @@ class StyleOracleTrainer:
 
                         print(f"Cuda memory used: {mem_used_GB:.3f} GB")
 
-                        gc.collect()
-                        torch.cuda.empty_cache()
-
-                        continue  # TODO: remove bypass (debug)
-
                         encoder_attention_mask = torch.concat(
                             tensors=[
-                                torch.ones_like(encoder_outputs[..., 0], dtype=sample["profile"]["attention_mask"].dtype),
-                                sample["profile"]["attention_mask"][..., 0]
+                                torch.ones_like(encoder_outputs[..., 0], dtype=sample["profile"]["attention_mask"].dtype, requires_grad=False),
+                                sample["profile"]["attention_mask"][..., 0].detach()
                             ],
                             dim=-1,
                         )
                         encoder_outputs = torch.concat([encoder_outputs, style_vectors], dim=-2)
 
                         decoder_input = torch.constant_pad_nd(
-                            label["input_ids"],
+                            label["input_ids"].detach(),
                             [1, 0],
                             self.classifier_model.generation_config.decoder_start_token_id
-                        )[..., :-1]
+                        )[..., :-1].detach()
 
                         outputs = self.classifier_model(
                             decoder_input_ids=decoder_input,
@@ -483,7 +478,8 @@ class StyleOracleTrainer:
                         StyleOracleTrainer.update_metric(
                             step=steps_metric, value=loss_info["regularization"].detach().item(), aggregate=regularization_metric,
                         )
-
+                
+                
                 steps_metric += 1
 
                 if steps_metric % log_freq == 0:
@@ -492,6 +488,9 @@ class StyleOracleTrainer:
                 if cap_steps is not None:
                     if cap_steps <= steps_metric:
                         break
+
+                gc.collect()
+                torch.cuda.empty_cache()
 
             return get_metrics_dict()
 
