@@ -386,8 +386,8 @@ class StyleOracleTrainer:
                     else:
                         # TODO: memory leak here
                         encoder_outputs: torch.Tensor = self.classifier_model.encoder(
-                            input_ids=input_["input_ids"].detach(),
-                            attention_mask=input_["attention_mask"].detach(),
+                            input_ids=input_["input_ids"].detach()[:, :5],
+                            attention_mask=input_["attention_mask"].detach()[:, :5],
                         )["last_hidden_state"]
 
                         style_vectors = predicted_styles["profile"]
