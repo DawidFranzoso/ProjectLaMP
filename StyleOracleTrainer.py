@@ -307,7 +307,7 @@ class StyleOracleTrainer:
                 dataset = batched_dataset(dataset)
 
             for total_steps, sample in enumerate(dataset, start=1):
-                # raw_sample = copy.deepcopy(sample)  # for debugging
+                raw_sample = copy.deepcopy(sample)  # for debugging
 
                 if not triplet_mode:
                     input_ = self.tokenizer(sample["input"], padding="longest", return_tensors="pt").data
@@ -395,6 +395,9 @@ class StyleOracleTrainer:
                         mem_used_GB = (total - free) / (2 ** 30)
 
                         print(f"Cuda memory used: {mem_used_GB:.3f} GB")
+
+                        gc.collect()
+                        torch.cuda.empty_cache()
 
                         continue  # TODO: remove bypass (debug)
 
