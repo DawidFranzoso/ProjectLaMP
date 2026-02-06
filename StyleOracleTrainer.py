@@ -397,11 +397,11 @@ class StyleOracleTrainer:
 
                         encoder_attention_mask = torch.concat(
                             tensors=[
-                                torch.ones_like(encoder_outputs[..., 0], dtype=sample["profile"]["attention_mask"].dtype, requires_grad=False),
-                                sample["profile"]["attention_mask"][..., 0].detach()
+                                torch.ones_like(encoder_outputs[..., 0], dtype=sample["profile"]["attention_mask"].dtype),
+                                sample["profile"]["attention_mask"][..., 0]
                             ],
                             dim=-1,
-                        )
+                        ).detach()
                         encoder_outputs = torch.concat([encoder_outputs, style_vectors], dim=-2)
 
                         decoder_input = torch.constant_pad_nd(
@@ -478,8 +478,7 @@ class StyleOracleTrainer:
                         StyleOracleTrainer.update_metric(
                             step=steps_metric, value=loss_info["regularization"].detach().item(), aggregate=regularization_metric,
                         )
-                
-                
+
                 steps_metric += 1
 
                 if steps_metric % log_freq == 0:
