@@ -387,9 +387,9 @@ class StyleOracleTrainer:
                         encoder_outputs: torch.Tensor = self.classifier_model.encoder(
                             input_ids=input_["input_ids"].detach()[:, :5],
                             attention_mask=input_["attention_mask"].detach()[:, :5],
-                        )["last_hidden_state"]
+                        )["last_hidden_state"].detach()
 
-                        style_vectors = predicted_styles["profile"]
+                        style_vectors = predicted_styles["profile"].detach()
                         free, total = torch.cuda.mem_get_info(torch.device("cuda:0"))
                         mem_used_GB = (total - free) / (2 ** 30)
 
