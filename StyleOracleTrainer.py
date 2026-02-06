@@ -290,8 +290,7 @@ class StyleOracleTrainer:
 
                 def batched_dataset(unbatched_dataset):
                     keys = ("input", "label", "profile")
-                    empty = {k: [] for k in keys}
-                    ret = copy.copy(empty)
+                    ret = {k: [] for k in keys}
                     for s in unbatched_dataset:
                         for k in keys:
                             if k == "profile":
@@ -302,12 +301,12 @@ class StyleOracleTrainer:
 
                         if len(ret["input"]) >= batch_size:
                             yield ret
-                            ret = copy.copy(empty)
+                            ret = {k: [] for k in keys}
 
                 dataset = batched_dataset(dataset)
 
             for total_steps, sample in enumerate(dataset, start=1):
-                raw_sample = copy.deepcopy(sample)  # for debugging
+                # raw_sample = copy.deepcopy(sample)  # for debugging
 
                 if not triplet_mode:
                     input_ = self.tokenizer(sample["input"], padding="longest", return_tensors="pt").data
