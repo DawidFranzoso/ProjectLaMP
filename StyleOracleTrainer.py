@@ -281,7 +281,7 @@ class StyleOracleTrainer:
                     # noinspection PyTypeChecker
                     style_anchor_weights = list(map(nn.Parameter.clone, self.classifier_model.parameters()))
             else:
-                rouge = evaluate.load('rouge')
+                # rouge = evaluate.load('rouge')
                 pass
 
             steps_metric = nn.Parameter(torch.zeros(()), requires_grad=False)
