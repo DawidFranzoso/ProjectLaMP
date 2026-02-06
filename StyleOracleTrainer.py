@@ -13,7 +13,7 @@ import torch
 from torch import nn
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, T5ForConditionalGeneration, GenerationConfig
 import gc
-import evaluate
+# import evaluate
 from DataDownloader import DataDownloader
 
 
