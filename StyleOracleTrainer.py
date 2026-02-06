@@ -13,7 +13,7 @@ import torch
 from torch import nn
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, T5ForConditionalGeneration, GenerationConfig
 import gc
-
+import evaluate
 from DataDownloader import DataDownloader
 
 
@@ -168,7 +168,7 @@ class StyleOracleTrainer:
                         "negative": negative_tokens,
                     }
 
-    def predict_style_tensor(self, encoder_input: torch.Tensor, encoder_attention_mask: torch.Tensor) -> torch.Tensor:
+    def predict_style_tensor(self, encoder_input: torch.Tensor, encoder_attention_mask: torch.Tensor, pool: bool) -> torch.Tensor:
         assert encoder_input.shape == encoder_attention_mask.shape
 
         encoder_representations = self.style_oracle(
@@ -178,19 +178,22 @@ class StyleOracleTrainer:
 
         encoder_representations = encoder_representations.view(*encoder_input.shape, encoder_representations.shape[-1])
 
-        if self.oracle_mean_pooling and False:  # TODO: remove bypass (debug)
+        if not pool:
+            return encoder_representations
+
+        if self.oracle_mean_pooling:
             # mean pool over non-padding tokens
             # (we use mean pool because T5 has no cls token afaik)
             representation_weight_mask = (
                 encoder_attention_mask
                 / torch.maximum(torch.ones(()), encoder_attention_mask.sum(-1, keepdim=True))
             )
-            return (representation_weight_mask[..., None] * encoder_representations).sum(-2)
+            return (representation_weight_mask[..., None] * encoder_representations).sum(-2, keepdim=True)
         else:
             # if not mean pooling, just return first (any) token. Using the first one has the advantage that it
             # is always the same position. Since encoder is not causal,
             # the first token can contain as much as any other token
-            return encoder_representations[..., 0, :]
+            return encoder_representations[..., 0:1, :]
 
     @staticmethod
     def build_triplet_loss(positive_weight: float = 1, triplet_alpha: float = 0.9) -> Callable[
@@ -278,7 +281,7 @@ class StyleOracleTrainer:
                     # noinspection PyTypeChecker
                     style_anchor_weights = list(map(nn.Parameter.clone, self.classifier_model.parameters()))
             else:
-                # rouge = evaluate.load('rouge')
+                rouge = evaluate.load('rouge')
                 pass
 
             steps_metric = nn.Parameter(torch.zeros(()), requires_grad=False)
@@ -353,6 +356,7 @@ class StyleOracleTrainer:
                             sample_role: self.predict_style_tensor(
                                 encoder_input=data["input_ids"].detach().to(self.device),
                                 encoder_attention_mask=data["attention_mask"].detach().to(self.device),
+                                pool=False,
                             )
                             for sample_role, data in sample.items()
                         }
@@ -363,6 +367,8 @@ class StyleOracleTrainer:
                             positive_style=predicted_styles["positive"],
                             negative_style=predicted_styles["negative"],
                         )  # I expect no nans
+
+                        loss_info["loss"] = loss_info["loss"].mean()
 
                         if triplet_mode_weight_regularization != 0:
                             loss_info["unregularized_loss"] = loss_info["loss"]
@@ -389,12 +395,12 @@ class StyleOracleTrainer:
                             attention_mask=input_["attention_mask"].detach(),
                         )["last_hidden_state"]
 
-                        style_vectors = predicted_styles["profile"]
+                        style_vectors = predicted_styles["profile"].flatten(1, 2)
 
                         encoder_attention_mask = torch.concat(
                             tensors=[
                                 torch.ones_like(encoder_outputs[..., 0], dtype=sample["profile"]["attention_mask"].dtype),
-                                sample["profile"]["attention_mask"][..., 0]
+                                sample["profile"]["attention_mask"].flatten(1, 2)
                             ],
                             dim=-1,
                         ).detach()
@@ -421,9 +427,9 @@ class StyleOracleTrainer:
                                     attention_mask=encoder_attention_mask,
 
                                     generation_config=GenerationConfig(
-                                        max_new_tokens=20,
-                                        # num_return_sequences=3,
-                                        # num_beams=4,
+                                        max_new_tokens=60,
+                                        num_return_sequences=3,
+                                        num_beams=4,
                                     )
                                 ),
                                 skip_special_tokens=True,
@@ -454,14 +460,15 @@ class StyleOracleTrainer:
                             # )
                         }
 
-                try:
-                    loss_info["loss"].backward()
-                except RuntimeError:
-                    print("Skipping optimization step due to bad gradient")
-                    continue
-
                 if is_training:
+                    try:
+                        loss_info["loss"].backward()
+                    except RuntimeError:
+                        print("Skipping optimization step due to bad gradient")
+                        continue
+
                     optimizer.step()
+
                 if is_training and lr_scheduler is not None:
                     lr_scheduler.step()
 
