@@ -383,7 +383,6 @@ class StyleOracleTrainer:
                                 + (1 - triplet_mode_weight_regularization) * loss_info["unregularized_loss"]
                             )
                     else:
-                        # TODO: memory leak here
                         encoder_outputs: torch.Tensor = self.classifier_model.encoder(
                             input_ids=input_["input_ids"].detach(),
                             attention_mask=input_["attention_mask"].detach(),
@@ -401,14 +400,14 @@ class StyleOracleTrainer:
                                 sample["profile"]["attention_mask"][..., 0]
                             ],
                             dim=-1,
-                        )
+                        ).detach()
                         encoder_outputs = torch.concat([encoder_outputs, style_vectors], dim=-2)
 
                         decoder_input = torch.constant_pad_nd(
-                            label["input_ids"],
+                            label["input_ids"].detach(),
                             [1, 0],
                             self.classifier_model.generation_config.decoder_start_token_id
-                        )[..., :-1]
+                        )[..., :-1].detach()
 
                         outputs = self.classifier_model(
                             decoder_input_ids=decoder_input,
@@ -458,7 +457,7 @@ class StyleOracleTrainer:
                             # )
                         }
 
-                loss_info["loss"].mean().backward()
+                loss_info["loss"].backward()
                 if is_training:
                     optimizer.step()
                 if is_training and lr_scheduler is not None:
