@@ -286,7 +286,7 @@ class StyleOracleTrainer:
             if triplet_mode:
                 dataset = self.contrastive_sample_generator(dataset=dataset, batch_size=batch_size)
             else:
-                dataset = list(filter(lambda sample: len(sample["input"]) <= 200, dataset))
+                # dataset = list(filter(lambda sample: len(sample["input"]) <= 200, dataset))
 
                 def batched_dataset(unbatched_dataset):
                     keys = ("input", "label", "profile")
@@ -295,7 +295,8 @@ class StyleOracleTrainer:
                         for k in keys:
                             if k == "profile":
                                 # truncate profiles to avoid insane memory usage for outliers
-                                s[k] = list(map(lambda p: p[:200], s[k]))
+                                # s[k] = list(map(lambda p: p[:200], s[k]))
+                                pass
 
                             ret[k].append(s[k])
 
@@ -523,18 +524,18 @@ class StyleOracleTrainer:
 
             history = []
 
-            # noinspection PyTypeChecker
-            dataset_tng, dataset_val = (
-                list(  # the datasets are small so its fine to load them all at once
-                    StyleOracleTrainer.get_supervised_dataset(
-                        task_number=7,
-                        split_name=split_name,
-                        is_time_based=False,
-                    )
-                ) for split_name in ("training", "validation")
-            )
-
             for epoch in range(1, 1 + epochs):
+                # noinspection PyTypeChecker
+                dataset_tng, dataset_val = (  # to avoid any remainders from previous epoch in case I changed something by reference
+                    list(  # the datasets are small so its fine to load them all at once
+                        StyleOracleTrainer.get_supervised_dataset(
+                            task_number=7,
+                            split_name=split_name,
+                            is_time_based=False,
+                        )
+                    ) for split_name in ("training", "validation")
+                )
+
                 print(f"Training ({epoch=})")
                 metrics_dict = {"epoch": epoch}
                 metrics_dict |= self.run_epoch(
