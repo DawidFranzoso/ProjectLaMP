@@ -410,8 +410,8 @@ class StyleOracleTrainer:
 
                         gather_nd = torch.vmap(lambda tensor, indices: tensor[indices])
 
-                        encoder_attention_mask = gather_nd(encoder_attention_mask, attention_mask_indices)[:, :200]
-                        encoder_outputs = gather_nd(encoder_outputs, attention_mask_indices)[:, :200]
+                        encoder_attention_mask = gather_nd(encoder_attention_mask, attention_mask_indices)[:, :100]
+                        encoder_outputs = gather_nd(encoder_outputs, attention_mask_indices)[:, :100]
 
                         decoder_input = torch.constant_pad_nd(
                             label["input_ids"].detach(),
