@@ -351,8 +351,8 @@ class StyleOracleTrainer:
                     with ([torch.no_grad, contextlib.nullcontext][triplet_mode])():
                         predicted_styles = {
                             sample_role: self.predict_style_tensor(
-                                encoder_input=data["input_ids"].to(self.device),
-                                encoder_attention_mask=data["attention_mask"].to(self.device),
+                                encoder_input=data["input_ids"].detach().to(self.device),
+                                encoder_attention_mask=data["attention_mask"].detach().to(self.device),
                             )
                             for sample_role, data in sample.items()
                         }
